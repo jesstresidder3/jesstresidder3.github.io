@@ -50,7 +50,7 @@
     .nav-right a:not(.nav-btn)::after{content:'';position:absolute;left:0;bottom:-4px;height:1.5px;width:0;background:var(--peach);transition:width .25s cubic-bezier(.16,1,.3,1)}
     .nav-right a:not(.nav-btn):hover::after{width:100%}
     .nav-right a:hover{color:var(--text)}
-    .nav-btn{background:var(--peach);color:var(--white);padding:10px 22px;border-radius:8px;font-weight:600;font-size:.82rem;transition:all .2s}.nav-btn:hover{background:var(--peach-dark);box-shadow:0 6px 20px rgba(224,145,111,.32);transform:translateY(-1px)}
+    .nav-btn{background:var(--navy);color:var(--white);padding:10px 24px;border-radius:8px;font-weight:700;font-size:.84rem;transition:all .2s;letter-spacing:0.01em}.nav-btn:hover{background:#243444;box-shadow:0 6px 20px rgba(22,33,45,.3);transform:translateY(-1px)}
 
     /* ===== HERO ===== */
     .hero{padding:60px clamp(24px,4vw,56px) 70px;background:var(--off-white);position:relative;overflow:hidden}
@@ -86,34 +86,19 @@
     .hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s cubic-bezier(.16,1,.3,1)}
     .hero-photo-wrap:hover img{transform:scale(1.03)}
 
-    /* ===== OUTCOME TICKER ===== */
-    .ticker{background:var(--navy);color:#fff;padding:20px 0;overflow:hidden;position:relative;border-top:1px solid rgba(255,255,255,.04)}
-    .ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-    .ticker::before{left:0;background:linear-gradient(to right,var(--navy),transparent)}
-    .ticker::after{right:0;background:linear-gradient(to left,var(--navy),transparent)}
-    .ticker-track{display:flex;width:max-content;animation:tick 95s linear infinite}
-    .ticker-item{padding:0 28px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.95rem;letter-spacing:-0.01em;color:rgba(255,255,255,.92);white-space:nowrap;display:inline-flex;align-items:baseline;gap:10px;flex-shrink:0}
-    .ticker-item .t-num{color:var(--peach);font-weight:700;font-size:1.1rem;letter-spacing:-0.02em}
-    .ticker-sep{color:var(--peach);padding:0 4px;flex-shrink:0;align-self:center;opacity:.6;font-size:.7rem}
-    @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-    /* ===== MEDIA MARQUEE ===== */
-    .media{background:var(--white);border-bottom:1px solid var(--border-light);padding:18px 0;overflow:hidden;position:relative}
+    /* ===== MEDIA MARQUEE (credibility banner) ===== */
+    .media{background:var(--white);border-bottom:1px solid var(--border-light);padding:24px 0 20px;overflow:hidden;position:relative;margin-top:64px}
     .media::before,.media::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
     .media::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
     .media::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
     .media-label{font-family:'Space Grotesk',sans-serif;font-size:.6rem;font-weight:500;text-transform:uppercase;letter-spacing:.14em;color:var(--text-light);text-align:center;display:block;margin-bottom:10px;padding:0 24px}
     .media-marquee{display:flex;width:max-content}
-    .media-item{padding:4px 36px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-    .media-item.text{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:600;color:rgba(28,43,58,.35);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;transition:color .3s}
-    .media-item.text:hover{color:rgba(28,43,58,.65)}
-    /* Logo-style wordmarks */
-    .media-item.logo-word{font-weight:800;font-size:.95rem;letter-spacing:-0.03em;text-transform:none;color:rgba(28,43,58,.3);transition:color .3s}
-    .media-item.logo-word:hover{color:rgba(28,43,58,.6)}
-    .media-item.logo-word.serif{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:400;font-size:1.1rem;letter-spacing:0}
-    .media-item.logo-word.caps{text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;font-weight:700}
-    .media-item.logo-word.bold{font-weight:900;font-size:1rem;letter-spacing:-0.04em}
-    .media-item.logo-word.light{font-weight:300;font-size:.92rem;letter-spacing:.04em}
+    .media-item{padding:4px 48px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .media-item img{height:32px;width:auto;object-fit:contain;filter:grayscale(1) opacity(0.5);transition:filter .3s,opacity .3s}
+    .media-item img:hover{filter:grayscale(0) opacity(0.85)}
+    .media-item img[alt="ABC News"]{height:40px}
+    .media-item img[alt="SAFM 107.1"]{height:38px}
+    .media-item img[alt="Business News Australia"]{height:30px}
 
     /* ===== SECTIONS ===== */
     .sec{padding:100px clamp(24px,4vw,56px)}.sec-inner{max-width:1100px;margin:0 auto}
@@ -223,6 +208,12 @@
     </div>
   </nav>
 
+  <!-- ===== AS FEATURED IN (credibility banner, directly below nav) ===== -->
+  <section class="media">
+    <span class="media-label">As featured in</span>
+    <div class="media-marquee" id="mediaMarquee"></div>
+  </section>
+
   <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-c1"></div>
@@ -242,17 +233,6 @@
         <img src="jess-photo.jpg" alt="Jess Tresidder">
       </div>
     </div>
-  </section>
-
-  <!-- ===== OUTCOME TICKER ===== -->
-  <section class="ticker" aria-label="Outcome highlights">
-    <div class="ticker-track" id="tickerTrack"></div>
-  </section>
-
-  <!-- ===== AS FEATURED IN (logo-style marquee) ===== -->
-  <section class="media">
-    <span class="media-label">As featured in</span>
-    <div class="media-marquee" id="mediaMarquee"></div>
   </section>
 
   <!-- ===== SOUND FAMILIAR ===== -->
@@ -284,7 +264,7 @@
           <span class="pill pill-blue"><span class="pill-dot"></span> About me</span>
           <h2>&ldquo;Where do I even start with AI?&rdquo;</h2>
           <p>After starting and selling my first business before turning 18 (featured in The Advertiser, ABC, News.com.au), that's exactly what I thought when someone told me to "learn AI."</p>
-          <p>Three years later, based between regional South Australia and Hong Kong, I've helped companies like Coles, Red Bull Australia, Airtree, Blackbird and Startmate with their marketing and sales, all using AI. I spent the past 18 months as GTM lead at an AI SaaS startup, building the entire sales system from scratch: prospect research, outreach sequences, CRM automations, content pipelines. Everything ran on AI from day one because it had to.</p>
+          <p>Three years later, based between regional South Australia and Hong Kong, I've worked across marketing and sales for startups, scale-ups and major brands, all using AI. I spent the past 18 months as GTM lead at an AI SaaS startup, building the entire sales system from scratch: prospect research, outreach sequences, CRM automations, content pipelines. Everything ran on AI from day one because it had to.</p>
           <p>Most business owners I work with aren't anti-AI. They've tried ChatGPT a couple of times, got a weirdly formal email back, and quietly decided it wasn't for them. What most people don't realise is that a well-built AI workflow can draft content that genuinely sounds like your business, build prospect lists while you sleep, and become a personal assistant that deep-researches a client before your meeting and emails you the brief.</p>
           <p>I close the gap between knowing AI could help and actually having it set up and working. Whether that's building the full go-to-market system for a startup, running a hands-on workshop with your team, or setting up automations that save you hours every week.</p>
           <div class="about-featured">
@@ -469,36 +449,18 @@
   </footer>
 
   <script>
-    // ===== OUTCOME TICKER (navy bar) =====
+    // ===== MEDIA MARQUEE (image logos) =====
     (function(){
-      const items=[
-        {n:'$140m',t:'in deal flow from beta users in one month after leading GTM strategy at an AI SaaS startup'},
-        {n:'100+',t:'investment funds onboarded in under 3 weeks running APAC GTM at founding-team level'},
-        {n:'2.5m+',t:'media reach across ABC, News.com.au and The Advertiser'},
-        {n:'100,000+',t:'store visits in the first 12 weeks via prelaunch GTM and marketing'},
-        {n:'Top 5%',t:'bestseller status within four weeks of launch via prelaunch GTM'},
-        {n:'~47%',t:'reduction in research review time after introducing AI tools at Ehrenberg-Bass'}
-      ];
-      const el=document.getElementById('tickerTrack');
-      const sep='<span class="ticker-sep">&bull;</span>';
-      function makeSet(){return items.map(it=>'<span class="ticker-item"><span class="t-num">'+it.n+'</span><span>'+it.t+'</span></span>'+sep).join('');}
-      el.innerHTML=makeSet()+makeSet();
-    })();
-
-    // ===== MEDIA MARQUEE (logo-style wordmarks) =====
-    (function(){
-      const brands=[
-        {name:'ABC',cls:'logo-word caps'},
-        {name:'The Advertiser',cls:'logo-word serif'},
-        {name:'news.com.au',cls:'logo-word bold'},
-        {name:'SA Life',cls:'logo-word light'},
-        {name:'Business News Australia',cls:'logo-word caps'},
-        {name:'SAFM',cls:'logo-word bold'},
-        {name:'Lime FM',cls:'logo-word light'},
-        {name:'ABC Radio',cls:'logo-word caps'}
+      const logos=[
+        {src:'media-logos/abc.png',alt:'ABC News'},
+        {src:'media-logos/advertiser.png',alt:'The Advertiser'},
+        {src:'media-logos/newscomau.png',alt:'news.com.au'},
+        {src:'media-logos/salife.png',alt:'SA Life'},
+        {src:'media-logos/bna.png',alt:'Business News Australia'},
+        {src:'media-logos/safm.png',alt:'SAFM 107.1'}
       ];
       const el=document.getElementById('mediaMarquee');
-      function makeSet(){return brands.map(b=>'<span class="media-item '+b.cls+'">'+b.name+'</span>').join('');}
+      function makeSet(){return logos.map(l=>'<span class="media-item"><img src="'+l.src+'" alt="'+l.alt+'"></span>').join('');}
       const oneSet=makeSet();
       const tmp=document.createElement('div');
       tmp.style.cssText='position:absolute;visibility:hidden;display:flex;';
