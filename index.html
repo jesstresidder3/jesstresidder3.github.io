@@ -140,26 +140,6 @@
     .linkedin-link{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:600;color:var(--blue-dark);text-decoration:none;margin-top:12px;padding:8px 16px;border-radius:8px;background:var(--blue-soft);transition:background .15s}.linkedin-link:hover{background:#D6E8F5}
     .linkedin-icon{display:inline-flex;align-items:center}
 
-    /* ===== OUTCOME STATS (stat tiles like BuilderBase) ===== */
-    .outcomes{padding:80px clamp(24px,4vw,56px) 90px;background:var(--off-white);position:relative;z-index:2}
-    .outcomes-inner{max-width:1100px;margin:0 auto}
-    .outcomes-label{font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--peach-dark);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-    .outcomes-label::before{content:'';width:24px;height:1.5px;background:var(--peach);display:inline-block}
-    .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .stat-tile{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 22px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .25s,box-shadow .25s}
-    .stat-tile::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--peach);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.16,1,.3,1)}
-    .stat-tile:nth-child(2)::before{background:var(--blue)}
-    .stat-tile:nth-child(3)::before{background:var(--yellow)}
-    .stat-tile:nth-child(4)::before{background:var(--peach)}
-    .stat-tile:hover::before{transform:scaleX(1)}
-    .stat-tile:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.06);border-color:rgba(224,145,111,.3)}
-    .stat-tile .st-num{font-family:'Space Grotesk',sans-serif;font-size:2.3rem;font-weight:700;letter-spacing:-0.04em;color:var(--peach-dark);line-height:1;margin-bottom:10px}
-    .stat-tile:nth-child(2) .st-num{color:var(--blue-dark)}
-    .stat-tile:nth-child(3) .st-num{color:var(--yellow-dark)}
-    .stat-tile:nth-child(4) .st-num{color:var(--peach-dark)}
-    .stat-tile .st-context{font-size:.82rem;color:var(--text-mid);line-height:1.55}
-    .stat-tile .st-where{font-family:'Space Grotesk',sans-serif;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--text-light);margin-top:14px;display:block;border-top:1px solid var(--border-light);padding-top:12px}
-
     /* ===== SERVICES ===== */
     .services{background:var(--cream);border-top:1px solid var(--border-light)}
     .services-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
@@ -302,10 +282,11 @@
         </div>
         <div class="about-text reveal d1">
           <span class="pill pill-blue"><span class="pill-dot"></span> About me</span>
-          <h2>I started and sold my first business before turning 18</h2>
-          <p>I'm an AI go-to-market operator working across Australia and Hong Kong, with experience across sales, go-to-market and AI implementation. After starting and selling my first business before turning 18 (featured in The Advertiser, ABC, News.com.au), I've spent the years since working with companies like Coles, Red Bull Australia, Airtree, Blackbird and Startmate on their marketing and sales, all using AI.</p>
-          <p>For the past 18 months I've been building go-to-market systems with AI every single day. Prospect research, outreach sequences, CRM automations, content pipelines. I built the entire GTM stack at a deal intelligence startup from scratch, and I've helped businesses across APAC find, reach and close the right customers using AI tools and automation.</p>
-          <p>Now I run go-to-market strategy for startups and scale-ups, build the sales infrastructure underneath it, and train teams to use AI properly through hands-on workshops.</p>
+          <h2>&ldquo;Where do I even start with AI?&rdquo;</h2>
+          <p>After starting and selling my first business before turning 18 (featured in The Advertiser, ABC, News.com.au), that's exactly what I thought when someone told me to "learn AI."</p>
+          <p>Three years later, based between regional South Australia and Hong Kong, I've helped companies like Coles, Red Bull Australia, Airtree, Blackbird and Startmate with their marketing and sales, all using AI. I spent the past 18 months as GTM lead at an AI SaaS startup, building the entire sales system from scratch: prospect research, outreach sequences, CRM automations, content pipelines. Everything ran on AI from day one because it had to.</p>
+          <p>Most business owners I work with aren't anti-AI. They've tried ChatGPT a couple of times, got a weirdly formal email back, and quietly decided it wasn't for them. What most people don't realise is that a well-built AI workflow can draft content that genuinely sounds like your business, build prospect lists while you sleep, and become a personal assistant that deep-researches a client before your meeting and emails you the brief.</p>
+          <p>I close the gap between knowing AI could help and actually having it set up and working. Whether that's building the full go-to-market system for a startup, running a hands-on workshop with your team, or setting up automations that save you hours every week.</p>
           <div class="about-featured">
             <span class="featured-tag">SA Woman of the Year Finalist</span>
             <span class="featured-tag">Startmate Fellow</span>
@@ -316,35 +297,6 @@
             <span class="linkedin-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></span>
             Find me on LinkedIn
           </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== OUTCOME STATS (BuilderBase-style tiles) ===== -->
-  <section class="outcomes" id="outcomes">
-    <div class="outcomes-inner">
-      <div class="outcomes-label reveal">The outcomes</div>
-      <div class="stat-grid">
-        <div class="stat-tile reveal d1">
-          <div class="st-num" data-target="100" data-suffix="+">0</div>
-          <div class="st-context">Investment funds onboarded before public launch while leading GTM across beta v1 and v2.</div>
-          <span class="st-where">AI SaaS startup (founding team)</span>
-        </div>
-        <div class="stat-tile reveal d2">
-          <div class="st-num" data-target="140" data-prefix="$" data-suffix="m">$0m</div>
-          <div class="st-context">Deal flow activity from beta users in the first month of running the GTM strategy.</div>
-          <span class="st-where">AI SaaS startup (founding team)</span>
-        </div>
-        <div class="stat-tile reveal d3">
-          <div class="st-num" data-target="47" data-prefix="~" data-suffix="%">0%</div>
-          <div class="st-context">Reduction in manual research review time after introducing AI tools into the analysis workflow.</div>
-          <span class="st-where">Ehrenberg-Bass Institute</span>
-        </div>
-        <div class="stat-tile reveal d4">
-          <div class="st-num" data-target="100000" data-suffix="+">0</div>
-          <div class="st-context">Store visits from 327 cities in 12 weeks. Bestseller and top 5% of category in four weeks.</div>
-          <span class="st-where">E-commerce business I founded and sold</span>
         </div>
       </div>
     </div>
@@ -562,26 +514,6 @@
       el.addEventListener('mouseleave',()=>{el.style.animationPlayState='running'});
     })();
 
-    // ===== ANIMATED STAT COUNTERS =====
-    const counterObs=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(!e.isIntersecting)return;
-        const el=e.target;const target=parseInt(el.dataset.target,10);const suffix=el.dataset.suffix||'';const prefix=el.dataset.prefix||'';
-        const isLarge=target>=10000;const dur=1600;const start=performance.now();
-        function fmt(n){return isLarge?Math.round(n).toLocaleString('en-AU'):Math.round(n).toString()}
-        function tick(now){
-          const t=Math.min((now-start)/dur,1);
-          const eased=1-Math.pow(1-t,3);
-          const v=target*eased;
-          el.textContent=prefix+fmt(v)+suffix;
-          if(t<1)requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-        counterObs.unobserve(el);
-      });
-    },{threshold:.4});
-    document.querySelectorAll('.st-num[data-target]').forEach(el=>counterObs.observe(el));
-
     // ===== FAQ ACCORDION =====
     document.querySelectorAll('.faq-q').forEach(q=>{
       q.addEventListener('click',()=>{
@@ -619,17 +551,6 @@
       if(c2)c2.style.transform='translateY('+y*.08+'px) rotate(-'+y*.015+'deg)';
       if(c3)c3.style.transform='translateY('+y*.18+'px) rotate('+y*.04+'deg)';
     },{passive:true});
-
-    // ===== SUBTLE 3D TILT ON STAT TILES =====
-    document.querySelectorAll('.stat-tile').forEach(card=>{
-      card.addEventListener('mousemove',e=>{
-        const r=card.getBoundingClientRect();
-        const x=(e.clientX-r.left)/r.width-.5;
-        const y=(e.clientY-r.top)/r.height-.5;
-        card.style.transform='translateY(-4px) rotateX('+(-y*4)+'deg) rotateY('+(x*4)+'deg)';
-      });
-      card.addEventListener('mouseleave',()=>{card.style.transform=''});
-    });
 
     // ===== PHOTO TILT =====
     (function(){
