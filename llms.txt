@@ -1,0 +1,24 @@
+# Jess Tresidder
+
+> Jess Tresidder is an AI consultant, trainer, and growth systems engineer based in South Australia, working across Australia and APAC. She runs hands-on AI workshops, builds AI-powered go-to-market systems for B2B startups, and sets up AI automations that save businesses hours every week.
+
+## About
+
+Jess Tresidder started and sold her first business before turning 18 (featured in The Advertiser, ABC, and news.com.au). She has built the full go-to-market system at a B2B AI SaaS startup from scratch, covering prospect research, outreach sequences, CRM automations, and content pipelines, and she trains corporate teams on practical, day-to-day AI use. She has been recognised as a 40 Under 40 and Inspiring Young Leaders Award recipient, an SA Woman of the Year finalist, a Startmate Women Fellow, an Ehrenberg-Bass Scholar, and a New Colombo Plan Scholar.
+
+## Services
+
+- **AI workshops and training**: Hands-on sessions for businesses and teams, in person across South Australia and online across Australia. Attendees leave with AI tools set up and working on their own laptop. Suitable for individuals through to corporate teams.
+- **AI-powered growth systems**: AI go-to-market infrastructure for B2B startups, including AI-driven prospect research, automated list building and enrichment, personalised outreach sequences, CRM automation, and reporting.
+- **AI implementation and automation**: Done-for-you AI automations built around a business's specific workflows, such as automated prospect research briefs before every meeting, follow-up drafting, lead enrichment, and on-brand content systems.
+
+## Common questions
+
+- **Is AI just ChatGPT?** No. AI now supports automated workflows for on-brand content, scheduled posting, personalised lead follow-up, automated morning briefs, and CRM updates. The chatbot is a small part of it.
+- **Do you need to be technical?** No. If you can send an email and use Google, you can do this. No coding is taught or required.
+- **Where are workshops run?** In person across South Australia (including Adelaide) and online for anyone in Australia.
+
+## Contact
+
+- Website: https://jesstresidder3.github.io/
+- LinkedIn: https://www.linkedin.com/in/jesstresidder/
