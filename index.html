@@ -261,15 +261,17 @@
           "name": "University of South Australia"
         },
         "award": [
-          "40 Under 40",
-          "Inspiring Young Leaders Award",
+          "InDaily 40 Under 40 (South Australia), 2026",
+          "Inspiring Future Leaders Award, SA Business Chamber, 2026",
           "SA Woman of the Year (Finalist)",
+          "Business News Australia scholarship, 2021",
           "Startmate Women Fellow",
           "Ehrenberg-Bass Scholar",
           "New Colombo Plan Scholar"
         ],
         "sameAs": [
-          "https://www.linkedin.com/in/jesstresidder/"
+          "https://www.linkedin.com/in/jesstresidder/",
+          "https://github.com/jesstresidder3"
         ]
       },
       {
@@ -408,7 +410,7 @@
   <!-- ===== AS FEATURED IN (credibility banner, directly below nav) ===== -->
   <section class="media">
     <span class="media-label">As featured in</span>
-    <p class="sr-only">Jess Tresidder has been featured in ABC News, The Advertiser, news.com.au, SA Life, Business News Australia, and SAFM 107.1.</p>
+    <p class="sr-only">Jess Tresidder was named in InDaily's 40 Under 40 (South Australia, 2026) and awarded the Inspiring Future Leaders Award by the SA Business Chamber. She has been featured by ABC, news.com.au, SA Life, and Business News Australia.</p>
     <div class="media-marquee" id="mediaMarquee"></div>
   </section>
 
@@ -426,7 +428,7 @@
           <a href="#contact" class="btn btn-primary">Get in touch</a>
           <a href="#services" class="btn btn-ghost">See how I can help</a>
         </div>
-        <p class="hero-cred"><strong>40 Under 40</strong> and <strong>Inspiring Young Leaders Award</strong> recipient. SA Woman of the Year finalist, featured in ABC, The Advertiser and news.com.au.</p>
+        <p class="hero-cred">Named in <strong>InDaily's 40 Under 40</strong> (South Australia, 2026) and awarded the <strong>Inspiring Future Leaders Award</strong>. SA Woman of the Year finalist, featured in ABC, news.com.au and SA Life.</p>
       </div>
       <div class="hero-photo-wrap">
         <img src="jess-headshot-red.jpg" alt="Jess Tresidder, AI consultant and trainer based in South Australia" fetchpriority="high" width="320" height="400">
@@ -467,8 +469,8 @@
           <p>Most business owners I work with aren't anti-AI. They've tried ChatGPT a couple of times, got a weirdly formal email back, and quietly decided it wasn't for them. What most people don't realise is that a well-built AI workflow can draft content that genuinely sounds like your business, build prospect lists while you sleep, and become a personal assistant that deep-researches a client before your meeting and emails you the brief.</p>
           <p>I close the gap between knowing AI could help and actually having it set up and working. Whether that's building the full go-to-market system for a startup, running a hands-on workshop with your team, or setting up automations that save you hours every week.</p>
           <div class="about-featured">
-            <span class="featured-tag">40 Under 40</span>
-            <span class="featured-tag">Inspiring Young Leaders Award</span>
+            <span class="featured-tag">InDaily 40 Under 40, 2026</span>
+            <span class="featured-tag">Inspiring Future Leaders Award</span>
             <span class="featured-tag">SA Woman of the Year Finalist</span>
             <span class="featured-tag">Startmate Fellow</span>
             <span class="featured-tag">Ehrenberg-Bass Scholar</span>
@@ -662,12 +664,12 @@
         {src:'media-logos/abc.png',alt:'ABC News'},
         {src:'media-logos/advertiser.png',alt:'The Advertiser'},
         {src:'media-logos/newscomau.png',alt:'news.com.au'},
-        {src:'media-logos/salife.png',alt:'SA Life'},
-        {src:'media-logos/bna.png',alt:'Business News Australia'},
+        {src:'media-logos/salife.png',alt:'SA Life',url:'https://www.indailysa.com.au/salife/archive/2022/04/04/young-ambition-school-age-start-ups'},
+        {src:'media-logos/bna.png',alt:'Business News Australia',url:'https://www.businessnewsaustralia.com/articles/a-wild-idea-is-a-winner.html'},
         {src:'media-logos/safm.png',alt:'SAFM 107.1'}
       ];
       const el=document.getElementById('mediaMarquee');
-      function makeSet(){return logos.map(l=>'<span class="media-item"><img src="'+l.src+'" alt="'+l.alt+'"></span>').join('');}
+      function makeSet(){return logos.map(function(l){var img='<img src="'+l.src+'" alt="'+l.alt+'">';var inner=l.url?'<a href="'+l.url+'" target="_blank" rel="noopener" aria-label="'+l.alt+' feature on Jess Tresidder">'+img+'</a>':img;return '<span class="media-item">'+inner+'</span>';}).join('');}
       const oneSet=makeSet();
       const tmp=document.createElement('div');
       tmp.style.cssText='position:absolute;visibility:hidden;display:flex;';
