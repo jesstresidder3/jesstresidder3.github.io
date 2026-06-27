@@ -32,4 +32,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://jesstresidder3.github.io/sitemap.xml
+Sitemap: https://jesstresidder.com/sitemap.xml
