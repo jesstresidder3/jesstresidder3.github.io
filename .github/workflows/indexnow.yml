@@ -1,0 +1,29 @@
+name: IndexNow ping
+
+# Submits the site to IndexNow (Bing, Copilot, Yandex, and all participating
+# engines) on every push to main, so search engines recrawl within hours of a
+# change instead of waiting for their next scheduled crawl.
+# The IndexNow key is public by design (it is served at the site root), so it is
+# safe to keep here in the clear. No repository secret is required.
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit URLs to IndexNow
+        run: |
+          KEY=d74b1144534986d5ce75a3e51d0d711e
+          HOST=jesstresidder.com
+          # Add new pages to this list as the site grows.
+          URLS="https://jesstresidder.com/"
+          for URL in $URLS; do
+            for ENDPOINT in https://api.indexnow.org/indexnow https://www.bing.com/indexnow; do
+              CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+                "$ENDPOINT?url=$URL&key=$KEY&keyLocation=https://$HOST/$KEY.txt")
+              echo "$ENDPOINT  $URL  ->  HTTP $CODE"
+            done
+          done
