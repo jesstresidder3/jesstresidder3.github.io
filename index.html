@@ -231,6 +231,28 @@
     /* ===== RESPONSIVE ===== */
     @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:32px;text-align:center}.hero-photo-wrap{width:240px;height:300px;margin:0 auto}.hero-btns{justify-content:center}.familiar-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;text-align:left}.about-photo{width:200px;height:250px;margin:0 auto}.services-grid{grid-template-columns:1fr}.compare-row{grid-template-columns:1fr;gap:12px}.compare-arrow{transform:rotate(90deg)}.cta-inner{grid-template-columns:1fr;gap:32px}}
     @media(max-width:600px){.hero{padding-top:110px}.hero h1{font-size:1.8rem}.hero-btns{flex-direction:column;align-items:stretch}.hero-btns .btn{text-align:center}.nav-right .hide-m{display:none}}
+
+    /* ===== TESTIMONIALS / PROOF ===== */
+    .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
+    .proof .sec-header{text-align:center;margin-bottom:44px}
+    .proof .sec-header h2{margin:0 auto}
+    .proof .sec-header p{margin:12px auto 0;max-width:440px}
+    .proof-grid{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+    .tcard{position:relative;background:var(--white);border:1px solid var(--border);border-radius:18px;padding:22px 24px 24px;box-shadow:0 10px 40px rgba(0,0,0,.04);transition:border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1)}
+    .tcard:hover{border-color:var(--peach);box-shadow:0 16px 48px rgba(224,145,111,.10);transform:translateY(-3px)}
+    .tcard-mark{position:absolute;top:14px;right:26px;font-family:'Space Grotesk',sans-serif;font-size:3.4rem;line-height:1;color:var(--peach);opacity:.15;pointer-events:none}
+    .tcard-head{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+    .tavatar{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem}
+    .ta-peach{background:var(--peach-soft);color:var(--peach-dark)}.ta-blue{background:var(--blue-soft);color:var(--blue-dark)}.ta-yellow{background:var(--yellow-soft);color:var(--yellow-dark)}
+    .tmeta{flex:1;min-width:0}
+    .tname{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.95rem;color:var(--text);line-height:1.25}
+    .trole{font-size:.78rem;color:var(--text-light);margin-top:1px}
+    .tstars{color:var(--yellow-dark);font-size:.85rem;letter-spacing:1px;flex-shrink:0}
+    .tshot{border:1px solid var(--border-light);border-radius:12px;overflow:hidden;background:var(--white)}
+    .tshot img{display:block;width:100%;height:auto}
+    .tverify{display:inline-flex;align-items:center;gap:5px;margin-top:14px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;color:var(--aqua-dark);background:var(--aqua-soft);padding:4px 10px;border-radius:5px}
+    .tverify svg{width:11px;height:11px;stroke:var(--aqua-dark);stroke-width:2.5;fill:none}
+    @media(max-width:600px){.tcard{padding:18px 16px 20px}.tcard-mark{font-size:2.6rem;right:18px}}
   </style>
 
   <script type="application/ld+json">
@@ -536,6 +558,68 @@
     </div>
   </section>
 
+  <!-- ===== TESTIMONIALS / PROOF ===== -->
+  <section class="sec proof" id="testimonials">
+    <div class="sec-inner">
+      <div class="sec-header reveal">
+        <span class="pill pill-aqua"><span class="pill-dot"></span> In their words</span>
+        <h2>What people say <em>after</em> a session</h2>
+        <p>Real messages, copied straight from my inbox after working together.</p>
+      </div>
+      <div class="proof-grid">
+
+        <div class="tcard reveal">
+          <span class="tcard-mark">&rdquo;</span>
+          <div class="tcard-head">
+            <div class="tavatar ta-peach">&ldquo;</div>
+            <div class="tmeta">
+              <div class="tname">Workshop attendee</div>
+              <div class="trole">After an AI presentation</div>
+            </div>
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <div class="tshot">
+            <img src="testimonials/testimonial-presentation.jpg" alt="Message: Hey Jess, dare I say, the best presentation I've ever had work wise. Thank you, I really appreciated your training, it was very helpful." loading="lazy">
+          </div>
+          <span class="tverify"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Real message</span>
+        </div>
+
+        <div class="tcard reveal d1">
+          <span class="tcard-mark">&rdquo;</span>
+          <div class="tcard-head">
+            <div class="tavatar ta-yellow">M</div>
+            <div class="tmeta">
+              <div class="tname">Maryan J. Maher</div>
+              <div class="trole">After an AI training session</div>
+            </div>
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <div class="tshot">
+            <img src="testimonials/testimonial-maryan.jpg" alt="Message from Maryan J. Maher: Love your approach to AI, it's refreshing. I'm feeling much more positive about AI and less overwhelmed. Whatever you charge, charge double. That was great." loading="lazy">
+          </div>
+          <span class="tverify"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Real message</span>
+        </div>
+
+        <div class="tcard reveal d2">
+          <span class="tcard-mark">&rdquo;</span>
+          <div class="tcard-head">
+            <div class="tavatar ta-blue">J</div>
+            <div class="tmeta">
+              <div class="tname">Janelle Martin</div>
+              <div class="trole">After an AI training session</div>
+            </div>
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <div class="tshot">
+            <img src="testimonials/testimonial-janelle.jpg" alt="Message from Janelle Martin: Thanks for your time and training this morning on AI with the team. Super keen to see how my tasks can be done at a whole new level." loading="lazy">
+          </div>
+          <span class="tverify"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Real message</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===== SERVICES ===== -->
   <section class="sec services" id="services">
     <div class="sec-inner">
@@ -581,36 +665,6 @@
       </div>
       <div style="text-align:center;margin-top:40px;" class="reveal d3">
         <a href="#contact" class="btn btn-primary">Get in touch</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BEFORE / AFTER ===== -->
-  <section class="sec compare">
-    <div class="sec-inner">
-      <div class="sec-header reveal">
-        <span class="pill pill-peach"><span class="pill-dot"></span> Before and after</span>
-        <h2>What your week could look like <em>after</em></h2>
-      </div>
-      <div class="compare-row reveal">
-        <div class="compare-before">Your sales rep spends three hours every morning copy-pasting from LinkedIn into a spreadsheet, cross-referencing with Crunchbase, then writing a personalised first line that still reads like everyone else's.</div>
-        <div class="compare-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="14 7 19 12 14 17"/></svg></div>
-        <div class="compare-after">An AI system builds your prospect list overnight, enriches every contact with funding data, tech stack, and recent news, then writes personalised outreach that references something specific about their business. Your rep walks in to a queue of warm leads ready to sequence. <span class="time-saved">3 hours of research, gone</span></div>
-      </div>
-      <div class="compare-row reveal d1">
-        <div class="compare-before">A potential customer fills out your website form at 7pm on a Friday. You see it Monday morning. They've already gone with someone who replied faster.</div>
-        <div class="compare-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="14 7 19 12 14 17"/></svg></div>
-        <div class="compare-after">An automated sequence replies in under a minute with answers to their question, your availability, and a booking link. Then adds them to your CRM, tags them by intent, and sends a case-study follow-up three days later if they haven't booked. You didn't touch your phone. <span class="time-saved">Leads nurtured while you sleep</span></div>
-      </div>
-      <div class="compare-row reveal d2">
-        <div class="compare-before">You're sitting in a coffee shop the night before a pitch, frantically Googling the prospect, scrolling their LinkedIn, and praying your notes app from the last call still makes sense. ("Sarah - fintech - ask about the thing.")</div>
-        <div class="compare-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="14 7 19 12 14 17"/></svg></div>
-        <div class="compare-after">AI has already deep-researched them and emailed you a one-page brief that morning: their recent funding round, the exec you're meeting and what they post about, who they're up against, and three conversation starters that aren't "so tell me about your business." Automatically, before every meeting. <span class="time-saved">Walk in prepared, every time</span></div>
-      </div>
-      <div class="compare-row reveal d3">
-        <div class="compare-before">Your marketing person batch-creates social content on Sunday. Three hours later: four posts, two recycled ideas, and a Canva template that screams "we made this in 2023 and never updated it."</div>
-        <div class="compare-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="14 7 19 12 14 17"/></svg></div>
-        <div class="compare-after">An automated workflow generates seven on-brand social posts every Monday morning, complete with graphics in your actual brand colours and fonts (not a template), captions written in your voice, and the whole lot scheduled for the week. You review them over coffee and change one caption. Done. <span class="time-saved">Full week of content, automated</span></div>
       </div>
     </div>
   </section>
