@@ -37,6 +37,12 @@ Go-to-market (GTM) engineering, go-to-market strategy, B2B sales, sales developm
 - **What is a GTM engineer?** GTM stands for go-to-market. A GTM engineer builds the systems that handle the repetitive parts of sales, marketing and operations so a small team can do the work of a much bigger one.
 - **Where are workshops run?** In person across South Australia (including Adelaide) and online for anyone in Australia.
 
+## Service pages
+
+- AI workshops in Adelaide: https://jesstresidder.com/ai-workshops-adelaide.html
+- GTM engineer for Australian B2B startups: https://jesstresidder.com/gtm-engineer-australia.html
+- AI automation consultant: https://jesstresidder.com/ai-automation-consultant.html
+
 ## Media coverage
 
 - SA Life (InDaily): https://www.indailysa.com.au/salife/archive/2022/04/04/young-ambition-school-age-start-ups

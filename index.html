@@ -124,6 +124,8 @@
     .hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top}
     .hero-cred{font-size:.8rem;color:var(--text-light);margin-top:22px;max-width:480px;line-height:1.65}
     .hero-cred strong{color:var(--peach-dark);font-weight:600}
+    .hero-cred a{color:inherit;text-decoration:underline;text-decoration-color:rgba(200,122,90,.35);text-underline-offset:2px;transition:text-decoration-color .15s}
+    .hero-cred a:hover{text-decoration-color:var(--peach-dark)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
     /* ===== MEDIA MARQUEE (credibility banner) ===== */
@@ -537,7 +539,7 @@
           <a href="#contact" class="btn btn-primary">Get in touch</a>
           <a href="#services" class="btn btn-ghost">See how I can help</a>
         </div>
-        <p class="hero-cred">Named in <strong>InDaily's 40 Under 40</strong> (South Australia, 2026), awarded the <strong>Inspiring Future Leaders Award</strong>, and a finalist for The Advertiser's SkyCity Woman of the Year. Featured in ABC, news.com.au and SA Life.</p>
+        <p class="hero-cred">Named in <a href="https://www.indailysa.com.au/news/in-depth/2026/06/19/meet-south-australias-40-under-40-of-2026" target="_blank" rel="noopener noreferrer"><strong>InDaily's 40 Under 40</strong></a> (South Australia, 2026), awarded the <strong>Inspiring Future Leaders Award</strong>, and a finalist for The Advertiser's SkyCity Woman of the Year. Featured in ABC, news.com.au and SA Life.</p>
       </div>
       <div class="hero-photo-wrap">
         <img src="jess-headshot-red.jpg" alt="Jess Tresidder, AI consultant and trainer based in South Australia" fetchpriority="high" width="320" height="400">
@@ -786,6 +788,7 @@
   <a href="#" class="back-top" id="backTop"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></a>
   <footer>
     <p>&copy; 2026 Jess Tresidder &middot; AI consultant &amp; GTM engineer, Adelaide &middot; <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="/privacy.html">Privacy policy</a></p>
+    <p style="margin-top:8px;font-size:.74rem"><a href="/ai-workshops-adelaide.html">AI workshops in Adelaide</a> &middot; <a href="/gtm-engineer-australia.html">GTM engineer for Australia</a> &middot; <a href="/ai-automation-consultant.html">AI automation consultant</a></p>
   </footer>
 
   <script>
@@ -807,9 +810,9 @@
     // ===== MEDIA MARQUEE (image logos) =====
     (function(){
       const logos=[
-        {src:'media-logos/abc.png',alt:'ABC News'},
-        {src:'media-logos/advertiser.png',alt:'The Advertiser'},
-        {src:'media-logos/newscomau.png',alt:'news.com.au'},
+        {src:'media-logos/abc.png',alt:'ABC News',url:'https://www.abc.net.au/news/2021-12-18/jess-tresidders-key-ring-business-takes-off/100694908'},
+        {src:'media-logos/advertiser.png',alt:'The Advertiser',url:'https://www.adelaidenow.com.au/news/south-australia/vote-now-the-advertisersunday-mail-woman-of-the-year-2025-finalists-named/news-story/335e1b145d94a1e8d92c67719c637940'},
+        {src:'media-logos/newscomau.png',alt:'news.com.au',url:'https://www.news.com.au/finance/small-business/south-australian-teens-850-a-week-personalised-key-chain-idea/news-story/8b62cdc7de1fda9f1d9139d30c2f23e9'},
         {src:'media-logos/salife.png',alt:'SA Life',url:'https://www.indailysa.com.au/salife/archive/2022/04/04/young-ambition-school-age-start-ups'},
         {src:'media-logos/bna.png',alt:'Business News Australia',url:'https://www.businessnewsaustralia.com/articles/a-wild-idea-is-a-winner.html'},
         {src:'media-logos/safm.png',alt:'SAFM 107.1'}
@@ -882,8 +885,11 @@
       });
       hero.addEventListener('mouseleave',function(){ph.style.transform='';});
     })();
-
   </script>
+
+  <!-- Cloudflare Web Analytics: cookieless, privacy-friendly, no consent banner needed.
+       Activate by pasting your beacon token from Cloudflare dashboard > Web Analytics into the token string below. -->
+  <script>(function(){var t="REPLACE_WITH_CLOUDFLARE_TOKEN";if(t.indexOf("REPLACE")<0){var s=document.createElement("script");s.defer=true;s.src="https://static.cloudflareinsights.com/beacon.min.js";s.setAttribute("data-cf-beacon",JSON.stringify({token:t}));document.head.appendChild(s);}})();</script>
 
 </body>
 </html>
