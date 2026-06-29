@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jess Tresidder | AI Workshops, Training & Growth Systems in Australia</title>
-  <meta name="description" content="Jess Tresidder is an AI consultant and GTM engineer in Adelaide. She runs hands-on AI workshops and builds AI-powered go-to-market and sales systems for businesses across Australia.">
+  <title>Jess Tresidder | AI Workshops & GTM Systems, Adelaide</title>
+  <meta name="description" content="Jess Tresidder is an AI consultant and GTM engineer in Adelaide, running hands-on AI workshops and building AI-powered sales and growth systems for businesses across Australia.">
   <link rel="canonical" href="https://jesstresidder.com/">
   <meta name="msvalidate.01" content="76E53BC736B6D0F764AAAFD463067E58" />
   <meta name="google-site-verification" content="MOQBVpGimUm0Nk2xHKQZVKdKCLnDK4VnNfbpXVU52ro" />
@@ -36,9 +36,12 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
   <meta name="theme-color" content="#FF2E8E">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@400;700&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="jess-headshot-red.jpg" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
-    :root{--white:#FFFFFF;--off-white:#FFF6F1;--cream:#FEFCFA;--peach:#E0916F;--peach-dark:#C87A5A;--peach-soft:#FCEEE7;--blue:#6BAED6;--blue-dark:#4A8AB5;--blue-soft:#EAF3FA;--yellow:#EFC94C;--yellow-dark:#D4A832;--yellow-soft:#FDF5DC;--aqua:#9DBFB5;--aqua-dark:#7BA89C;--aqua-soft:#E3EFEC;--navy:#16212D;--text:#1A1A1A;--text-mid:#555555;--text-light:#999999;--border:#E8E3DD;--border-light:#F0ECE7}
+    :root{--white:#FFFFFF;--off-white:#FFF6F1;--cream:#FEFCFA;--peach:#E0916F;--peach-dark:#C87A5A;--peach-soft:#FCEEE7;--blue:#6BAED6;--blue-dark:#4A8AB5;--blue-soft:#EAF3FA;--yellow:#EFC94C;--yellow-dark:#D4A832;--yellow-soft:#FDF5DC;--aqua:#9DBFB5;--aqua-dark:#7BA89C;--aqua-soft:#E3EFEC;--navy:#16212D;--text:#1A1A1A;--text-mid:#555555;--text-light:#767676;--border:#E8E3DD;--border-light:#F0ECE7}
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
     body{background:var(--white);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;font-size:1rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.03em;line-height:1.12}
@@ -48,25 +51,18 @@
     .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.reveal.v{opacity:1;transform:translateY(0)}.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
     /* Hero staggered entrance */
-    .hero-text .pill{opacity:0;transform:translateY(20px);animation:heroIn .6s cubic-bezier(.16,1,.3,1) .3s forwards}
-    .hero-text h1{opacity:0;transform:translateY(20px);animation:heroIn .6s cubic-bezier(.16,1,.3,1) .45s forwards}
-    .hero-text .hero-sub{opacity:0;transform:translateY(20px);animation:heroIn .6s cubic-bezier(.16,1,.3,1) .6s forwards}
-    .hero-text .hero-btns{opacity:0;transform:translateY(20px);animation:heroIn .6s cubic-bezier(.16,1,.3,1) .75s forwards}
-    .hero-text .hero-cred{opacity:0;transform:translateY(20px);animation:heroIn .6s cubic-bezier(.16,1,.3,1) .9s forwards}
-    .hero-photo-wrap{opacity:0;transform:translateY(30px);animation:heroIn .85s cubic-bezier(.16,1,.3,1) .5s forwards}
+    .hero-text .pill{opacity:0;transform:translateY(20px);animation:heroIn .5s cubic-bezier(.16,1,.3,1) .05s forwards}
+    .hero-text h1{opacity:0;transform:translateY(20px);animation:heroIn .5s cubic-bezier(.16,1,.3,1) .12s forwards}
+    .hero-text .hero-sub{opacity:0;transform:translateY(20px);animation:heroIn .5s cubic-bezier(.16,1,.3,1) .22s forwards}
+    .hero-text .hero-btns{opacity:0;transform:translateY(20px);animation:heroIn .5s cubic-bezier(.16,1,.3,1) .32s forwards}
+    .hero-text .hero-cred{opacity:0;transform:translateY(20px);animation:heroIn .5s cubic-bezier(.16,1,.3,1) .42s forwards}
+    .hero-photo-wrap{opacity:0;transform:translateY(30px);animation:heroIn .7s cubic-bezier(.16,1,.3,1) .15s forwards}
     @keyframes heroIn{to{opacity:1;transform:translateY(0)}}
 
     /* Pulse glow on primary buttons */
     @keyframes btnGlow{0%,100%{box-shadow:0 0 0 0 rgba(224,145,111,0)}50%{box-shadow:0 0 0 8px rgba(224,145,111,.12)}}
     .btn-primary{animation:btnGlow 3s ease infinite 2s}
     .btn-primary:hover{animation:none}
-
-    /* Compare arrow bounce on hover */
-    .compare-row:hover .compare-arrow svg{animation:arrowBounce .4s ease}
-    @keyframes arrowBounce{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
-
-    /* Smooth gradient shift on hero background */
-    @keyframes bgShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 
     /* FAQ answer slide */
     .faq-a{transition:max-height .4s cubic-bezier(.16,1,.3,1),padding .4s cubic-bezier(.16,1,.3,1)}
@@ -84,6 +80,17 @@
     .nav-right a:not(.nav-btn):hover::after{width:100%}
     .nav-right a:hover{color:var(--text)}
     .nav-right a.nav-btn{background:var(--peach);color:#FFFFFF;padding:12px 28px;border-radius:8px;font-weight:800;font-size:.88rem;transition:all .2s;letter-spacing:0.02em;box-shadow:0 2px 10px rgba(224,145,111,.25)}.nav-right a.nav-btn:hover{background:var(--peach-dark);color:#FFFFFF;box-shadow:0 6px 20px rgba(224,145,111,.35);transform:translateY(-1px)}
+    /* Mobile hamburger + slide-down menu */
+    .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:8px;margin-left:4px}
+    .nav-toggle span{display:block;height:2px;width:22px;background:var(--text);border-radius:2px;transition:transform .25s cubic-bezier(.16,1,.3,1),opacity .2s}
+    .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(255,246,241,.98);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(0,0,0,.06);z-index:95;flex-direction:column;box-shadow:0 10px 28px rgba(0,0,0,.07)}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:500;color:var(--text);text-decoration:none;padding:15px clamp(24px,4vw,56px);border-top:1px solid rgba(0,0,0,.05)}
+    .mobile-menu a:first-child{border-top:none}
+    .mobile-menu a:active,.mobile-menu a:hover{background:var(--peach-soft);color:var(--peach-dark)}
 
     /* ===== HERO ===== */
     .hero{padding:60px clamp(24px,4vw,56px) 70px;background:var(--off-white);position:relative;overflow:hidden}
@@ -175,17 +182,6 @@
     .service-icon.ic-blue{background:var(--blue-soft)}.service-icon.ic-blue svg{stroke:var(--blue-dark)}
     .service-icon.ic-yellow{background:var(--yellow-soft)}.service-icon.ic-yellow svg{stroke:var(--yellow-dark)}
 
-    /* ===== COMPARE ===== */
-    .compare{background:var(--off-white);border-top:1px solid var(--border-light)}
-    .compare-row{display:grid;grid-template-columns:1fr 56px 1fr;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 32px;margin-bottom:16px;transition:border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1)}
-    .compare-row:hover{border-color:var(--peach);box-shadow:0 8px 32px rgba(224,145,111,.06);transform:translateY(-2px)}
-    .compare-row:last-child{margin-bottom:0}
-    .compare-before{font-size:.9rem;color:#777;line-height:1.6}
-    .compare-arrow{display:flex;align-items:center;justify-content:center}
-    .compare-arrow svg{width:28px;height:28px;stroke:var(--peach);stroke-width:2;fill:none}
-    .compare-after{font-size:.92rem;color:var(--text);line-height:1.6;font-weight:500}
-    .time-saved{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:600;color:var(--peach-dark);background:var(--peach-soft);padding:3px 10px;border-radius:4px;margin-top:8px}
-
     /* ===== FAQ ===== */
     .faq{background:var(--cream);border-top:1px solid var(--border-light)}
     .faq-inner{max-width:1080px;margin:0 auto}
@@ -236,8 +232,8 @@
     footer{padding:28px clamp(24px,4vw,56px);text-align:center;font-size:.78rem;color:var(--text-light);background:var(--white);border-top:1px solid var(--border-light)}footer a{color:var(--text-mid);text-decoration:none;transition:color .15s}footer a:hover{color:var(--peach-dark)}
 
     /* ===== RESPONSIVE ===== */
-    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:16px;text-align:center}.hero-photo-wrap{width:160px;height:200px;margin:0 auto;order:-1}.hero-btns{justify-content:center}.familiar-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;text-align:left}.about-photo{width:200px;height:250px;margin:0 auto}.services-grid{grid-template-columns:1fr}.services-grid .service-card:nth-child(2){order:-1}.compare-row{grid-template-columns:1fr;gap:12px}.compare-arrow{transform:rotate(90deg)}.cta-inner{grid-template-columns:1fr;gap:22px}.cta-photo{margin-top:18px;max-width:280px}}
-    @media(max-width:600px){.hero{padding-top:24px;padding-bottom:44px}.cta{padding-bottom:40px}.hero h1{font-size:1.8rem}.hero-btns{flex-direction:column;align-items:stretch}.hero-btns .btn{text-align:center}.nav-right .hide-m{display:none}}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:16px;text-align:center}.hero-photo-wrap{width:160px;height:200px;margin:0 auto;order:-1}.hero-btns{justify-content:center}.familiar-grid{grid-template-columns:1fr}.about-grid{grid-template-columns:1fr;text-align:left}.about-photo{width:200px;height:250px;margin:0 auto}.services-grid{grid-template-columns:1fr}.services-grid .service-card:nth-child(2){order:-1}.cta-inner{grid-template-columns:1fr;gap:22px}.cta-photo{margin-top:18px;max-width:280px}}
+    @media(max-width:600px){.hero{padding-top:20px;padding-bottom:44px}.cta{padding-bottom:40px}.hero h1{font-size:1.8rem}.hero-btns{flex-direction:column;align-items:stretch}.hero-btns .btn{text-align:center}.nav-right .hide-m{display:none}.nav-toggle{display:flex}.nav-right{gap:10px}.nav-right a.nav-btn{display:none}.hero-photo-wrap{width:140px;height:175px}}
 
     /* ===== TESTIMONIALS / PROOF ===== */
     .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
@@ -271,7 +267,12 @@
     .service-card:hover .service-icon{transform:scale(1.08) rotate(-3deg)}
     .hero-photo-wrap{transition:transform .25s ease-out}
     @media(max-width:900px){.faq-layout{grid-template-columns:1fr;gap:28px}.faq-photo{position:static;max-width:360px;margin:0 auto}}
-    @media(prefers-reduced-motion:reduce){.pill-dot,.proof::before{animation:none}}
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;animation-delay:0ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+      .reveal{opacity:1!important;transform:none!important}
+      .hero-text .pill,.hero-text h1,.hero-text .hero-sub,.hero-text .hero-btns,.hero-text .hero-cred,.hero-photo-wrap{opacity:1!important;transform:none!important}
+      .hero h1 .accent::after{transform:scaleX(1)!important}
+    }
   </style>
 
   <script type="application/ld+json">
@@ -284,7 +285,12 @@
         "name": "Jess Tresidder",
         "url": "https://jesstresidder.com/",
         "email": "hello@jesstresidder.com",
-        "image": "https://jesstresidder.com/jess-headshot-red.jpg",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://jesstresidder.com/jess-headshot-red.jpg",
+          "width": 800,
+          "height": 1000
+        },
         "jobTitle": "GTM Engineer, AI Consultant and Trainer",
         "description": "Jess Tresidder is an AI consultant, trainer and go-to-market (GTM) engineer based in South Australia. She runs hands-on AI workshops, builds AI-powered go-to-market and sales systems for B2B startups, and automates business workflows for teams across Australia.",
         "knowsAbout": [
@@ -315,7 +321,7 @@
           "addressRegion": "SA",
           "addressCountry": "AU"
         },
-        "nationality": "Australian",
+        "nationality": { "@type": "Country", "name": "Australia" },
         "worksFor": { "@id": "https://jesstresidder.com/#practice" },
         "alumniOf": {
           "@type": "CollegeOrUniversity",
@@ -343,11 +349,12 @@
         "name": "Jess Tresidder AI Consulting, Training and Workshops",
         "url": "https://jesstresidder.com/",
         "image": "https://jesstresidder.com/og-image.jpg",
+        "logo": "https://jesstresidder.com/apple-touch-icon.png",
         "description": "AI workshops, training, and done-for-you AI growth systems and automation for businesses and B2B startups across Australia.",
         "email": "hello@jesstresidder.com",
         "contactPoint": {
           "@type": "ContactPoint",
-          "contactType": "Sales and enquiries",
+          "contactType": "sales",
           "email": "hello@jesstresidder.com",
           "areaServed": "AU",
           "availableLanguage": "en-AU"
@@ -406,7 +413,7 @@
         "about": { "@id": "https://jesstresidder.com/#jess" },
         "primaryImageOfPage": "https://jesstresidder.com/og-image.jpg",
         "datePublished": "2026-06-24",
-        "dateModified": "2026-06-27",
+        "dateModified": "2026-06-29",
         "inLanguage": "en-AU"
       },
       {
@@ -485,15 +492,35 @@
       <a href="#testimonials" class="hide-m">Testimonials</a>
       <a href="#services" class="hide-m">AI services</a>
       <a href="#faq" class="hide-m">FAQ</a>
-      <a href="#contact" class="nav-btn">Contact me</a>
+      <a href="#contact" class="nav-btn">Get in touch</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About me</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#services">AI services</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Get in touch</a>
+  </div>
 
   <!-- ===== AS FEATURED IN (credibility banner, directly below nav) ===== -->
   <section class="media">
     <span class="media-label">As featured in</span>
     <p class="sr-only">Jess Tresidder was named in InDaily's 40 Under 40 (South Australia, 2026), awarded the Inspiring Future Leaders Award by the SA Business Chamber, and was a finalist for The Advertiser and Sunday Mail SkyCity Woman of the Year in 2025. She has been featured by ABC, news.com.au, SA Life, and Business News Australia.</p>
     <div class="media-marquee" id="mediaMarquee"></div>
+    <noscript>
+      <div class="media-marquee" style="justify-content:center;flex-wrap:wrap;width:auto">
+        <span class="media-item"><img src="media-logos/abc.png" alt="ABC News"></span>
+        <span class="media-item"><img src="media-logos/advertiser.png" alt="The Advertiser"></span>
+        <span class="media-item"><img src="media-logos/newscomau.png" alt="news.com.au"></span>
+        <span class="media-item"><img src="media-logos/salife.png" alt="SA Life"></span>
+        <span class="media-item"><img src="media-logos/bna.png" alt="Business News Australia"></span>
+        <span class="media-item"><img src="media-logos/safm.png" alt="SAFM 107.1"></span>
+      </div>
+    </noscript>
   </section>
 
   <!-- ===== HERO ===== -->
@@ -505,9 +532,9 @@
       <div class="hero-text">
         <span class="pill pill-peach"><span class="pill-dot"></span> AI, GTM & Sales</span>
         <h1>AI growth systems, training, and implementation for <span class="accent">businesses</span></h1>
-        <p class="hero-sub">I build AI-powered growth systems that cut the repetitive work out of your sales, marketing, and operations. And if you're a business owner or AI-curious professional sitting there thinking "I know I should be learning and implementing AI but I don't know where to start, let alone train my team," I can help with that too.</p>
+        <p class="hero-sub">I build AI-powered systems that take the repetitive work out of your sales, marketing and operations, then train your team to run them. Based in Adelaide, working with businesses across Australia.</p>
         <div class="hero-btns">
-          <a href="#contact" class="btn btn-primary">Get in touch / contact me!</a>
+          <a href="#contact" class="btn btn-primary">Get in touch</a>
           <a href="#services" class="btn btn-ghost">See how I can help</a>
         </div>
         <p class="hero-cred">Named in <strong>InDaily's 40 Under 40</strong> (South Australia, 2026), awarded the <strong>Inspiring Future Leaders Award</strong>, and a finalist for The Advertiser's SkyCity Woman of the Year. Featured in ABC, news.com.au and SA Life.</p>
@@ -529,8 +556,9 @@
 
         <div class="tcard reveal">
           <div class="tshot">
-            <img src="testimonials/testimonial-presentation.jpg" alt="Message: Hey Jess, dare I say, the best presentation I've ever had work wise. Thank you, I really appreciated your training, it was very helpful." loading="lazy">
+            <img src="testimonials/testimonial-presentation.jpg" alt="Message: Hey Jess, dare I say, the best presentation I've ever had work wise. Thank you, I really appreciated your training, it was very helpful." loading="lazy" width="1266" height="299">
           </div>
+          <blockquote class="sr-only">&ldquo;Hey Jess, dare I say, the best presentation I&rsquo;ve ever had work wise. Thank you, I really appreciated your training, it was very helpful.&rdquo; <cite>From an AI workshop attendee</cite></blockquote>
           <div class="tcard-foot">
             <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <div class="trole">From an AI workshop attendee</div>
@@ -539,8 +567,9 @@
 
         <div class="tcard reveal d1">
           <div class="tshot">
-            <img src="testimonials/testimonial-maryan.jpg" alt="Message: Love your approach to AI, it's refreshing. I'm feeling much more positive about AI and less overwhelmed. Whatever you charge, charge double. That was great." loading="lazy">
+            <img src="testimonials/testimonial-maryan.jpg" alt="Message: Love your approach to AI, it's refreshing. I'm feeling much more positive about AI and less overwhelmed. Whatever you charge, charge double. That was great." loading="lazy" width="1138" height="424">
           </div>
+          <blockquote class="sr-only">&ldquo;Love your approach to AI, it&rsquo;s refreshing. I&rsquo;m feeling much more positive about AI and less overwhelmed. Whatever you charge, charge double. That was great.&rdquo; <cite>From an organisation Jess Tresidder worked with on AI</cite></blockquote>
           <div class="tcard-foot">
             <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <div class="trole">From an organisation I worked with on AI</div>
@@ -549,8 +578,9 @@
 
         <div class="tcard reveal d2">
           <div class="tshot">
-            <img src="testimonials/testimonial-janelle.jpg" alt="Message: Thanks for your time and training this morning on AI with the team. Super keen to see how my tasks can be done at a whole new level." loading="lazy">
+            <img src="testimonials/testimonial-janelle.jpg" alt="Message: Thanks for your time and training this morning on AI with the team. Super keen to see how my tasks can be done at a whole new level." loading="lazy" width="1266" height="353">
           </div>
+          <blockquote class="sr-only">&ldquo;Thanks for your time and training this morning on AI with the team. Super keen to see how my tasks can be done at a whole new level.&rdquo; <cite>From an AI presentation client</cite></blockquote>
           <div class="tcard-foot">
             <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <div class="trole">From an AI presentation client</div>
@@ -566,13 +596,13 @@
     <div class="sec-inner">
       <div class="about-grid">
         <div class="about-photo reveal">
-          <img src="jess-working-laptop.jpg" alt="Jess Tresidder working at her laptop" loading="lazy" decoding="async">
+          <img src="jess-working-laptop.jpg" alt="Jess Tresidder, AI consultant and GTM engineer in Adelaide, working at her laptop" loading="lazy" decoding="async" width="894" height="1100">
         </div>
         <div class="about-text reveal d1">
           <span class="pill pill-blue"><span class="pill-dot"></span> About me</span>
           <h2>&ldquo;Where do I even start with AI?&rdquo;</h2>
           <p>After starting my first business at 18 (featured in The Advertiser, ABC, News.com.au), that's exactly what I thought when someone told me to "learn AI."</p>
-          <p>Three years later, based between regional South Australia and Hong Kong, I've spent my professional career working with some of the fastest-growing B2B tech startups, all the way through to training corporate teams to build their team's AI literacy and save them time. That includes building the entire sales system at an AI SaaS startup from scratch: prospect research, outreach sequences, CRM automations, content pipelines, the full go-to-market infrastructure powered by AI.</p>
+          <p>Three years later, based in Adelaide, I've spent my professional career working with some of the fastest-growing B2B tech startups, through to training corporate teams to build their AI literacy and save themselves hours every week. That includes building the entire sales system at ReubenAI, an AI SaaS startup, from scratch: prospect research, list building and enrichment, outreach sequences, CRM automations and content pipelines, the full go-to-market infrastructure powered by AI.</p>
           <p>Most business owners I work with aren't anti-AI. They've tried ChatGPT a couple of times, got a weirdly formal email back, and quietly decided it wasn't for them. What most people don't realise is that a well-built AI workflow can draft content that genuinely sounds like your business, build prospect lists while you sleep, and become a personal assistant that deep-researches a client before your meeting and emails you the brief.</p>
           <p>I close the gap between knowing AI could help and actually having it set up and working. Whether that's building the full go-to-market system for a startup, running a hands-on workshop with your team, or setting up automations that save you hours every week.</p>
           <div class="about-featured">
@@ -583,12 +613,12 @@
             <span class="featured-tag">Ehrenberg-Bass Scholar</span>
             <span class="featured-tag">New Colombo Plan Scholar</span>
           </div>
-          <a href="https://linkedin.com/in/jesstresidder/" target="_blank" class="linkedin-link">
+          <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
             <span class="linkedin-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></span>
             Find me on LinkedIn
           </a>
           <div style="margin-top:24px">
-            <a href="#contact" class="btn btn-primary">Get in touch / contact me!</a>
+            <a href="#contact" class="btn btn-primary">Get in touch</a>
           </div>
         </div>
       </div>
@@ -657,7 +687,7 @@
 
       </div>
       <div style="text-align:center;margin-top:40px;" class="reveal d3">
-        <a href="#contact" class="btn btn-primary">Get in touch / contact me!</a>
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
       </div>
     </div>
   </section>
@@ -671,7 +701,7 @@
       </div>
       <div class="faq-layout">
         <div class="faq-photo reveal">
-          <div class="ph"><img src="jess-speaking.jpg" alt="Jess Tresidder speaking at an event" loading="lazy" decoding="async"></div>
+          <div class="ph"><img src="jess-speaking.jpg" alt="Jess Tresidder speaking at an event in Adelaide" loading="lazy" decoding="async" width="1000" height="1263"></div>
         </div>
         <div class="faq-list">
       <div class="faq-item reveal">
@@ -715,7 +745,7 @@
         <h2>Whether you want to build AI growth systems, implement AI in your business, or upskill your <em>team</em></h2>
         <p>Please don't hesitate to reach out. Tell me a bit about what you're working on and what's been taking up too much of your week. I'll get back to you within a day.</p>
         <div class="cta-links">
-          <a href="https://linkedin.com/in/jesstresidder/" target="_blank" class="cta-link">
+          <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer" class="cta-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:var(--blue-dark)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
             Connect on LinkedIn
           </a>
@@ -725,7 +755,7 @@
           </a>
         </div>
         <div class="cta-photo reveal d3">
-          <img src="jess-waving.jpg" alt="Jess Tresidder waving" loading="lazy" decoding="async">
+          <img src="jess-waving.jpg" alt="Jess Tresidder waving" loading="lazy" decoding="async" width="866" height="1100">
         </div>
       </div>
       <div class="cta-form-card reveal d2">
@@ -733,7 +763,8 @@
           <input type="hidden" name="_subject" value="New enquiry from jesstresidder.com">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_next" value="https://jesstresidder.com/thank-you.html">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-group">
             <label for="name">Full name</label>
             <input type="text" id="name" name="name" placeholder="Sarah Mitchell" required>
@@ -754,10 +785,25 @@
 
   <a href="#" class="back-top" id="backTop"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></a>
   <footer>
-    <p>&copy; 2026 Jess Tresidder &middot; <a href="https://linkedin.com/in/jesstresidder/" target="_blank">LinkedIn</a></p>
+    <p>&copy; 2026 Jess Tresidder &middot; AI consultant &amp; GTM engineer, Adelaide &middot; <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="/privacy.html">Privacy policy</a></p>
   </footer>
 
   <script>
+    // ===== MOBILE NAV TOGGLE =====
+    (function(){
+      const t=document.getElementById('navToggle');
+      const m=document.getElementById('mobileMenu');
+      if(!t||!m)return;
+      function close(){m.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');}
+      t.addEventListener('click',function(){
+        const open=m.classList.toggle('open');
+        t.setAttribute('aria-expanded',open?'true':'false');
+        t.setAttribute('aria-label',open?'Close menu':'Open menu');
+      });
+      m.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+      document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+    })();
+
     // ===== MEDIA MARQUEE (image logos) =====
     (function(){
       const logos=[
