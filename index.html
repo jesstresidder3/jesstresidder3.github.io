@@ -137,8 +137,8 @@
     .media-item img[alt="Business News Australia"]{height:30px}
 
     /* ===== SECTIONS ===== */
-    .sec{padding:100px clamp(24px,4vw,56px)}.sec-inner{max-width:1100px;margin:0 auto}
-    .sec-header{margin-bottom:48px}.sec-header h2{font-size:2rem;font-weight:700;margin-bottom:10px}.sec-header p{color:var(--text-mid);font-size:1rem;max-width:480px;line-height:1.7}
+    .sec{padding:64px clamp(24px,4vw,56px)}.sec-inner{max-width:1100px;margin:0 auto}
+    .sec-header{margin-bottom:32px}.sec-header h2{font-size:2rem;font-weight:700;margin-bottom:10px}.sec-header p{color:var(--text-mid);font-size:1rem;max-width:480px;line-height:1.7}
 
     /* ===== FAMILIAR ===== */
     .familiar{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);padding:48px clamp(24px,4vw,56px)}
@@ -199,7 +199,7 @@
     .faq-a p{font-size:.9rem;color:var(--text-mid);line-height:1.8}
 
     /* ===== CTA ===== */
-    .cta{padding:100px clamp(24px,4vw,56px);background:var(--off-white);border-top:1px solid var(--border);position:relative;overflow:hidden}
+    .cta{padding:64px clamp(24px,4vw,56px);background:var(--off-white);border-top:1px solid var(--border);position:relative;overflow:hidden}
     .cta::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(224,145,111,.08) 0%,transparent 70%);animation:meshDrift 18s ease-in-out infinite alternate}
     .cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;position:relative;z-index:1}
     .cta-text h2{font-size:2rem;font-weight:700;margin-bottom:16px}.cta-text p{color:var(--text-mid);font-size:.95rem;line-height:1.8;margin-bottom:14px}
@@ -236,7 +236,8 @@
     .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
     .proof .sec-header{text-align:center;margin-bottom:44px}
     .proof .sec-header h2{margin:0 auto}
-    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+    .proof .sec-inner{max-width:1340px}
+    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
     .tcard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.04);transition:border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1)}
     .tcard:hover{border-color:var(--peach);box-shadow:0 16px 48px rgba(224,145,111,.10);transform:translateY(-3px)}
     .tshot{border:1px solid var(--border-light);border-radius:10px;overflow:hidden;background:var(--white)}
@@ -462,10 +463,11 @@
   <nav>
     <a href="#" class="nav-logo"><span class="logo-mark"></span> Jess Tresidder <span class="nav-tag">AI consultant, GTM &amp; sales</span></a>
     <div class="nav-right">
-      <a href="#about" class="hide-m">About</a>
-      <a href="#services" class="hide-m">Services</a>
+      <a href="#about" class="hide-m">About me</a>
+      <a href="#testimonials" class="hide-m">Testimonials</a>
+      <a href="#services" class="hide-m">AI services</a>
       <a href="#faq" class="hide-m">FAQ</a>
-      <a href="#contact" class="nav-btn">Get in touch</a>
+      <a href="#contact" class="nav-btn">Contact me</a>
     </div>
   </nav>
 
@@ -494,58 +496,6 @@
       </div>
       <div class="hero-photo-wrap">
         <img src="jess-headshot-red.jpg" alt="Jess Tresidder, AI consultant and trainer based in South Australia" fetchpriority="high" width="320" height="400">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SOUND FAMILIAR ===== -->
-  <section class="familiar">
-    <div class="familiar-inner">
-      <p class="familiar-label reveal">Does any of this sound familiar?</p>
-      <div class="familiar-grid">
-        <div class="familiar-card reveal">
-          <p>"Everyone's talking about AI and automations and I'm still not sure what any of it actually means for my business."</p>
-        </div>
-        <div class="familiar-card reveal d1">
-          <p>"I bought an AI sales tool, used it for a week, then went back to LinkedIn and a spreadsheet."</p>
-        </div>
-        <div class="familiar-card reveal d2">
-          <p>"I know there's a better way to do half of what I do every day, I just don't have the time or patience to sit through a 47-minute YouTube tutorial to find out."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="sec about" id="about">
-    <div class="sec-inner">
-      <div class="about-grid">
-        <div class="about-photo reveal">
-          <img src="jess-working-laptop.jpg" alt="Jess Tresidder working at her laptop" loading="lazy" decoding="async">
-        </div>
-        <div class="about-text reveal d1">
-          <span class="pill pill-blue"><span class="pill-dot"></span> About me</span>
-          <h2>&ldquo;Where do I even start with AI?&rdquo;</h2>
-          <p>After starting and selling my first business before turning 18 (featured in The Advertiser, ABC, News.com.au), that's exactly what I thought when someone told me to "learn AI."</p>
-          <p>Three years later, based between regional South Australia and Hong Kong, I've spent my professional career working with some of the fastest-growing B2B tech startups, all the way through to training corporate teams to build their team's AI literacy and save them time. That includes building the entire sales system at an AI SaaS startup from scratch: prospect research, outreach sequences, CRM automations, content pipelines, the full go-to-market infrastructure powered by AI.</p>
-          <p>Most business owners I work with aren't anti-AI. They've tried ChatGPT a couple of times, got a weirdly formal email back, and quietly decided it wasn't for them. What most people don't realise is that a well-built AI workflow can draft content that genuinely sounds like your business, build prospect lists while you sleep, and become a personal assistant that deep-researches a client before your meeting and emails you the brief.</p>
-          <p>I close the gap between knowing AI could help and actually having it set up and working. Whether that's building the full go-to-market system for a startup, running a hands-on workshop with your team, or setting up automations that save you hours every week.</p>
-          <div class="about-featured">
-            <span class="featured-tag">InDaily 40 Under 40, 2026</span>
-            <span class="featured-tag">Inspiring Future Leaders Award</span>
-            <span class="featured-tag">Woman of the Year Finalist, 2025</span>
-            <span class="featured-tag">Startmate Fellow</span>
-            <span class="featured-tag">Ehrenberg-Bass Scholar</span>
-            <span class="featured-tag">New Colombo Plan Scholar</span>
-          </div>
-          <a href="https://linkedin.com/in/jesstresidder/" target="_blank" class="linkedin-link">
-            <span class="linkedin-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></span>
-            Find me on LinkedIn
-          </a>
-          <div style="margin-top:24px">
-            <a href="#contact" class="btn btn-primary">Get in touch</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -589,6 +539,58 @@
           </div>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="sec about" id="about">
+    <div class="sec-inner">
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="jess-working-laptop.jpg" alt="Jess Tresidder working at her laptop" loading="lazy" decoding="async">
+        </div>
+        <div class="about-text reveal d1">
+          <span class="pill pill-blue"><span class="pill-dot"></span> About me</span>
+          <h2>&ldquo;Where do I even start with AI?&rdquo;</h2>
+          <p>After starting and selling my first business before turning 18 (featured in The Advertiser, ABC, News.com.au), that's exactly what I thought when someone told me to "learn AI."</p>
+          <p>Three years later, based between regional South Australia and Hong Kong, I've spent my professional career working with some of the fastest-growing B2B tech startups, all the way through to training corporate teams to build their team's AI literacy and save them time. That includes building the entire sales system at an AI SaaS startup from scratch: prospect research, outreach sequences, CRM automations, content pipelines, the full go-to-market infrastructure powered by AI.</p>
+          <p>Most business owners I work with aren't anti-AI. They've tried ChatGPT a couple of times, got a weirdly formal email back, and quietly decided it wasn't for them. What most people don't realise is that a well-built AI workflow can draft content that genuinely sounds like your business, build prospect lists while you sleep, and become a personal assistant that deep-researches a client before your meeting and emails you the brief.</p>
+          <p>I close the gap between knowing AI could help and actually having it set up and working. Whether that's building the full go-to-market system for a startup, running a hands-on workshop with your team, or setting up automations that save you hours every week.</p>
+          <div class="about-featured">
+            <span class="featured-tag">InDaily 40 Under 40, 2026</span>
+            <span class="featured-tag">Inspiring Future Leaders Award</span>
+            <span class="featured-tag">Woman of the Year Finalist, 2025</span>
+            <span class="featured-tag">Startmate Fellow</span>
+            <span class="featured-tag">Ehrenberg-Bass Scholar</span>
+            <span class="featured-tag">New Colombo Plan Scholar</span>
+          </div>
+          <a href="https://linkedin.com/in/jesstresidder/" target="_blank" class="linkedin-link">
+            <span class="linkedin-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></span>
+            Find me on LinkedIn
+          </a>
+          <div style="margin-top:24px">
+            <a href="#contact" class="btn btn-primary">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOUND FAMILIAR ===== -->
+  <section class="familiar">
+    <div class="familiar-inner">
+      <p class="familiar-label reveal">Does any of this sound familiar?</p>
+      <div class="familiar-grid">
+        <div class="familiar-card reveal">
+          <p>"Everyone's talking about AI and automations and I'm still not sure what any of it actually means for my business."</p>
+        </div>
+        <div class="familiar-card reveal d1">
+          <p>"I bought an AI sales tool, used it for a week, then went back to LinkedIn and a spreadsheet."</p>
+        </div>
+        <div class="familiar-card reveal d2">
+          <p>"I know there's a better way to do half of what I do every day, I just don't have the time or patience to sit through a 47-minute YouTube tutorial to find out."</p>
+        </div>
       </div>
     </div>
   </section>
