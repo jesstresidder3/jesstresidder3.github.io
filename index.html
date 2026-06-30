@@ -291,34 +291,27 @@
     .cvw-card.after .cvw-note{color:var(--peach-dark);font-weight:600}
     .cvw-vs{display:flex;align-items:center;justify-content:center;position:relative}
     .cvw-vs-line{position:absolute;top:0;bottom:0;width:1px;background:var(--border)}
-    .cvw-vs-badge{position:relative;width:60px;height:60px;border-radius:50%;background:var(--peach);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;box-shadow:0 8px 24px rgba(224,145,111,.35);cursor:pointer;transition:transform .2s}
-    .cvw-vs-badge:hover{transform:scale(1.06)}
-    .cvw-vs-badge:focus-visible{outline:2px solid var(--peach-dark);outline-offset:3px}
+    .cvw-vs-badge{position:relative;width:60px;height:60px;border-radius:50%;background:var(--peach);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;box-shadow:0 8px 24px rgba(224,145,111,.35)}
     .cvw-pipe{flex:1;position:relative}
     .cvw-rail{position:absolute;left:21px;top:22px;bottom:22px;width:2px;background:rgba(224,145,111,.22);border-radius:2px}
     .cvw-rail-fill{position:absolute;left:21px;top:22px;width:2px;background:var(--peach);border-radius:2px;height:100%}
     .cvw-steps{display:flex;flex-direction:column;gap:16px;position:relative}
-    .cvw-step{display:flex;align-items:center;gap:14px;position:relative;opacity:1;--d:0s}
-    .cvw-step:nth-child(2){--d:.18s}.cvw-step:nth-child(3){--d:.36s}.cvw-step:nth-child(4){--d:.54s}
-    .cvw-ico{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--peach);border:1px solid var(--peach);color:#fff}
+    .cvw-step{display:flex;align-items:center;gap:14px;position:relative;opacity:1;transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
+    .cvw-ico{flex:none;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--peach);border:1px solid var(--peach);color:#fff;transition:background .45s ease,border-color .45s ease,color .45s ease}
     .cvw-ico svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
     .cvw-step-body{flex:1}
     .cvw-step-title{font-family:'Space Grotesk',sans-serif;font-size:.86rem;font-weight:600;letter-spacing:-.01em;color:var(--text)}
     .cvw-step-detail{font-size:.76rem;color:var(--text-light);margin-top:2px;line-height:1.4}
-    .cvw-tick{flex:none;width:22px;height:22px;border-radius:50%;background:var(--peach);color:#fff;display:flex;align-items:center;justify-content:center;opacity:1;transform:scale(1)}
+    .cvw-tick{flex:none;width:22px;height:22px;border-radius:50%;background:var(--peach);color:#fff;display:flex;align-items:center;justify-content:center;opacity:1;transform:scale(1);transition:opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)}
     .cvw-tick svg{width:13px;height:13px;stroke:currentColor;stroke-width:2.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
-    .cvw-armed .cvw-step{opacity:0}
-    .cvw-armed .cvw-ico{background:#F1EEEA;border-color:var(--border);color:#B8AFA6}
-    .cvw-armed .cvw-tick{opacity:0;transform:scale(.5)}
-    .cvw-armed .cvw-rail-fill{height:0}
-    .cvw-armed.cvw-go .cvw-step{animation:cvw-rise .55s cubic-bezier(.16,1,.3,1) var(--d) both}
-    .cvw-armed.cvw-go .cvw-ico{animation:cvw-fill .45s ease calc(var(--d) + .35s) both}
-    .cvw-armed.cvw-go .cvw-tick{animation:cvw-tick .4s cubic-bezier(.16,1,.3,1) calc(var(--d) + .45s) both}
-    .cvw-armed.cvw-go .cvw-rail-fill{animation:cvw-rail .85s linear .4s both}
-    @keyframes cvw-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-    @keyframes cvw-fill{from{background:#F1EEEA;border-color:var(--border);color:#B8AFA6}to{background:var(--peach);border-color:var(--peach);color:#fff}}
-    @keyframes cvw-tick{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
-    @keyframes cvw-rail{from{height:0}to{height:100%}}
+    /* scroll-driven: JS adds .cvw-scroll, sets rail height inline, toggles .cvw-on per step as the fill passes each icon */
+    .cvw-scroll .cvw-step{opacity:0;transform:translateY(14px)}
+    .cvw-scroll .cvw-ico{background:#F1EEEA;border-color:var(--border);color:#B8AFA6}
+    .cvw-scroll .cvw-tick{opacity:0;transform:scale(.5)}
+    .cvw-scroll .cvw-rail-fill{height:0}
+    .cvw-scroll .cvw-step.cvw-on{opacity:1;transform:none}
+    .cvw-scroll .cvw-step.cvw-on .cvw-ico{background:var(--peach);border-color:var(--peach);color:#fff}
+    .cvw-scroll .cvw-step.cvw-on .cvw-tick{opacity:1;transform:scale(1)}
     @media(max-width:760px){.cvw-compare{grid-template-columns:1fr;gap:0}.cvw-vs{padding:18px 0}.cvw-vs-line{top:50%;bottom:auto;left:0;right:0;width:auto;height:1px}}
 
     @media(prefers-reduced-motion:reduce){
@@ -326,10 +319,10 @@
       .reveal{opacity:1!important;transform:none!important}
       .hero-text .pill,.hero-text h1,.hero-text .hero-sub,.hero-text .hero-btns,.hero-text .hero-cred,.hero-photo-wrap{opacity:1!important;transform:none!important}
       .hero h1 .accent::after{transform:scaleX(1)!important}
-      .cvw-armed .cvw-step{opacity:1!important}
-      .cvw-armed .cvw-ico{background:var(--peach)!important;border-color:var(--peach)!important;color:#fff!important}
-      .cvw-armed .cvw-tick{opacity:1!important;transform:none!important}
-      .cvw-armed .cvw-rail-fill{height:100%!important}
+      .cvw-scroll .cvw-step{opacity:1!important;transform:none!important}
+      .cvw-scroll .cvw-ico{background:var(--peach)!important;border-color:var(--peach)!important;color:#fff!important}
+      .cvw-scroll .cvw-tick{opacity:1!important;transform:none!important}
+      .cvw-scroll .cvw-rail-fill{height:100%!important}
     }
   </style>
 
@@ -780,7 +773,7 @@
         <!-- vs -->
         <div class="cvw-vs">
           <div class="cvw-vs-line"></div>
-          <div class="cvw-vs-badge" id="cvwReplay" role="button" tabindex="0" aria-label="Replay the animation">vs</div>
+          <div class="cvw-vs-badge" aria-hidden="true">vs</div>
         </div>
 
         <!-- After -->
@@ -977,29 +970,37 @@
     },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
     document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-    // ===== AI IN ACTION ANIMATION (chatbot vs workflow) =====
+    // ===== AI IN ACTION ANIMATION (scroll-driven) =====
     (function(){
       const sec=document.querySelector('.cvw');
       if(!sec)return;
-      sec.classList.add('cvw-armed');
-      let played=false;
-      function go(){if(played)return;played=true;sec.classList.add('cvw-go');}
-      const trigger=sec.querySelector('.cvw-compare')||sec;
-      if('IntersectionObserver' in window){
-        const io=new IntersectionObserver(function(entries){
-          if(entries.some(e=>e.isIntersecting)){go();io.disconnect();}
-        },{threshold:.2,rootMargin:'0px 0px -6% 0px'});
-        io.observe(trigger);
-      } else {go();}
-      // Fallback so it always reveals even if the observer never fires
-      setTimeout(go,1800);
-      // Replay on the vs badge
-      const badge=document.getElementById('cvwReplay');
-      if(badge){
-        function replay(){sec.classList.remove('cvw-go');void sec.offsetWidth;sec.classList.add('cvw-go');}
-        badge.addEventListener('click',replay);
-        badge.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();replay();}});
+      const compare=sec.querySelector('.cvw-compare');
+      const fill=sec.querySelector('.cvw-rail-fill');
+      const steps=[].slice.call(sec.querySelectorAll('.cvw-step'));
+      if(!compare||!fill||!steps.length)return;
+      // Respect reduced-motion: leave the finished state, no scroll binding
+      if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+      sec.classList.add('cvw-scroll');
+      // each step locks in as the rail fill passes its icon
+      const thresholds=[.12,.37,.62,.86];
+      let ticking=false;
+      function update(){
+        ticking=false;
+        const vh=window.innerHeight||document.documentElement.clientHeight;
+        const r=compare.getBoundingClientRect();
+        // 0 when the block sits near the bottom of the viewport, 1 once it reaches the upper third
+        const startTop=vh*0.88, endTop=vh*0.30;
+        let p=(startTop-r.top)/(startTop-endTop);
+        p=Math.max(0,Math.min(1,p));
+        fill.style.height=(p*100).toFixed(2)+'%';
+        for(let i=0;i<steps.length;i++){
+          steps[i].classList.toggle('cvw-on',p>=thresholds[i]);
+        }
       }
+      function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+      window.addEventListener('scroll',onScroll,{passive:true});
+      window.addEventListener('resize',onScroll,{passive:true});
+      update();
     })();
 
     // ===== SCROLL EFFECTS =====
