@@ -185,11 +185,20 @@
     .cvw-scroll .cvw-step.cvw-on .cvw-ico{background:var(--peach);border-color:var(--peach);color:#fff}
     .cvw-scroll .cvw-step.cvw-on .cvw-tick{opacity:1;transform:scale(1)}
     @media(max-width:760px){.cvw-compare{grid-template-columns:1fr;gap:0}.cvw-vs{padding:18px 0}.cvw-vs-line{top:50%;bottom:auto;left:0;right:0;width:auto;height:1px}}
-    .faqs{display:grid;grid-template-columns:1fr 1fr;gap:22px 34px}
-    .faq-item h3{font-size:1rem;font-weight:700;margin-bottom:8px;line-height:1.35}
-    .faq-item p{color:var(--text-mid);font-size:.93rem;line-height:1.72;margin:0}
-    .updated{margin-top:32px;font-size:.8rem;color:var(--text-light)}
-    @media(max-width:800px){.faqs{grid-template-columns:1fr}}
+    .faqs{max-width:820px;border-top:1px solid var(--border-light)}
+    .faq-item{border-bottom:1px solid var(--border-light)}
+    .faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 4px;font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:var(--text);line-height:1.4;transition:color .2s}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary:hover{color:var(--peach-dark)}
+    .faq-q-mark{flex:none;width:26px;height:26px;border-radius:50%;background:var(--peach-soft);display:flex;align-items:center;justify-content:center;transition:background .25s,transform .3s cubic-bezier(.16,1,.3,1)}
+    .faq-q-mark svg{width:13px;height:13px;stroke:var(--peach-dark);stroke-width:2.4;fill:none;stroke-linecap:round}
+    .faq-item[open] .faq-q-mark{background:var(--peach);transform:rotate(45deg)}
+    .faq-item[open] .faq-q-mark svg{stroke:#fff}
+    .faq-item[open] summary{color:var(--peach-dark)}
+    .faq-a{padding:0 46px 20px 4px;color:var(--text-mid);font-size:.94rem;line-height:1.75;margin:0}
+    .updated{margin-top:28px;font-size:.8rem;color:var(--text-light)}
+    .sec-cta{margin-top:32px}
+    .sec-cta .btn{text-decoration:none}
     .contact{background:var(--off-white);border-top:1px solid var(--border);padding:52px clamp(24px,4vw,56px);text-align:center}
     .contact h2{font-size:1.7rem;font-weight:700;margin-bottom:12px}
     .contact p{color:var(--text-mid);max-width:540px;margin:0 auto 14px}
@@ -415,12 +424,6 @@
     </div>
   </section>
 
-  <section class="clarify">
-    <div class="clarify-inner reveal">
-      <div class="clarify-mark"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-      <p>Most AI training is someone talking over a slide deck for an hour while you nod along and forget it by Friday. Mine runs the other way. <strong>Everyone who's walked in nervous has left a bit sheepish...</strong> "oh, that was WAY easier than I thought."</p>
-    </div>
-  </section>
 
   <section class="sec cream" id="testimonials">
     <div class="sec-inner">
@@ -498,6 +501,9 @@
           </ul>
         </div>
       </div>
+      <div class="sec-cta reveal d2">
+        <a href="#contact" class="btn btn-primary">Contact me</a>
+      </div>
     </div>
   </section>
 
@@ -531,6 +537,9 @@
         </div>
       </div>
       <p class="dur-note reveal d3"><strong>Not sure which one you need?</strong> Tell me what your team is doing manually every week and how much AI they've used, and I'll tell you honestly what length would be worth your money.</p>
+      <div class="sec-cta reveal d3">
+        <a href="#contact" class="btn btn-primary">Contact me</a>
+      </div>
     </div>
   </section>
 
@@ -635,38 +644,38 @@
         <h2>The things people ask me <em>first</em></h2>
       </div>
       <div class="faqs">
-        <div class="faq-item reveal">
-          <h3>Do I need to be technical to come to an AI workshop?</h3>
-          <p>No, and most people who come are not. If you can send an email and use Google, you can do everything we cover. Nobody is taught to code. The sessions are built for people who tried ChatGPT once, found it underwhelming, and left it there.</p>
-        </div>
-        <div class="faq-item reveal d1">
-          <h3>What will we actually build in the session?</h3>
-          <p>You bring the task that eats your week and we build the AI tool that handles it, on your own laptop. That is usually content drafting that sounds like your business, meeting prep briefs, lead research, inbox triage, follow-up drafting, or a Monday morning brief.</p>
-        </div>
-        <div class="faq-item reveal">
-          <h3>How long is an AI workshop?</h3>
-          <p>I run them as one to two hour sessions, half days, or full days. One to two hours gets everyone set up and one workflow built. A full day suits teams who want the advanced end of it, including agents that run a task end to end and a proper AI second brain.</p>
-        </div>
-        <div class="faq-item reveal d1">
-          <h3>Do you run sessions for individuals, or only for teams?</h3>
-          <p>Both. I run 1:1 sessions for business owners and individuals, and group workshops for teams, from a handful of people through to corporate groups. The content is built around whoever is in the room, so a 1:1 goes deeper on your own specific work.</p>
-        </div>
-        <div class="faq-item reveal">
-          <h3>Where do you run AI workshops?</h3>
-          <p>In person across Adelaide and South Australia, and I travel for client sessions in Victoria and New South Wales. I run the same sessions online for teams anywhere in Australia, and the online version is still hands-on, with everyone building on their own laptop.</p>
-        </div>
-        <div class="faq-item reveal d1">
-          <h3>Is this just ChatGPT training?</h3>
-          <p>No. Prompting is one part of a session and on its own it is the smallest part. We set up context files so the AI sounds like your business, connect it to Gmail, your CRM and your calendar, and build agents that carry out a whole task instead of answering one question.</p>
-        </div>
-        <div class="faq-item reveal">
-          <h3>What if my team has already used AI?</h3>
-          <p>Then we skip the basics. Advanced sessions cover optimising the workflows you already run, setting up an AI second brain so everything your business knows sits in one place the AI can draw on, and connecting your tools so work moves between them without anyone copying and pasting.</p>
-        </div>
-        <div class="faq-item reveal d1">
-          <h3>What does an AI workshop cost?</h3>
-          <p>It depends on the length of the session and how many people are in the room. Email me at hello@jesstresidder.com with what your team does and roughly how many of them there are, and I'll send a figure back.</p>
-        </div>
+        <details class="faq-item">
+          <summary><span>Do I need to be technical to come to an AI workshop?</span><span class="faq-q-mark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p class="faq-a">No, and most people who come are not. If you can send an email and use Google, you can do everything we cover. Nobody is taught to code. The sessions are built for people who tried ChatGPT once, found it underwhelming, and left it there.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span>What will we actually build in the session?</span><span class="faq-q-mark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p class="faq-a">You bring the task that eats your week and we build the AI tool that handles it, on your own laptop. That is usually content drafting that sounds like your business, meeting prep briefs, lead research, inbox triage, follow-up drafting, or a Monday morning brief.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span>How long is an AI workshop?</span><span class="faq-q-mark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p class="faq-a">I run them as one to two hour sessions, half days, or full days. One to two hours gets everyone set up and one workflow built. A full day suits teams who want the advanced end of it, including agents that run a task end to end and a proper AI second brain.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span>Do you run sessions for individuals, or only for teams?</span><span class="faq-q-mark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p class="faq-a">Both. I run 1:1 sessions for business owners and individuals, and group workshops for teams, from a handful of people through to corporate groups. The content is built around whoever is in the room, so a 1:1 goes deeper on your own specific work.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span>Where do you run AI workshops?</span><span class="faq-q-mark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p class="faq-a">In person across Adelaide and South Australia, and I travel for client sessions in Victoria and New South Wales. I run the same sessions online for teams anywhere in Australia, and the online version is still hands-on, with everyone building on their own laptop.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span>Is this just ChatGPT training?</span><span class="faq-q-mark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p class="faq-a">No. Prompting is one part of a session and on its own it is the smallest part. We set up context files so the AI sounds like your business, connect it to Gmail, your CRM and your calendar, and build agents that carry out a whole task instead of answering one question.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span>What if my team has already used AI?</span><span class="faq-q-mark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p class="faq-a">Then we skip the basics. Advanced sessions cover optimising the workflows you already run, setting up an AI second brain so everything your business knows sits in one place the AI can draw on, and connecting your tools so work moves between them without anyone copying and pasting.</p>
+        </details>
+        <details class="faq-item">
+          <summary><span>What does an AI workshop cost?</span><span class="faq-q-mark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+          <p class="faq-a">It depends on the length of the session and how many people are in the room. Email me at hello@jesstresidder.com with what your team does and roughly how many of them there are, and I'll send a figure back.</p>
+        </details>
       </div>
       <p class="updated">Last updated 14 July 2026.</p>
     </div>
