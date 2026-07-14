@@ -144,6 +144,11 @@
     .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--border-light)}
     .tag{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;color:var(--peach-dark);background:var(--peach-soft);padding:5px 13px;border-radius:6px}
     .li-link{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:600;color:var(--blue-dark);text-decoration:none;margin-top:16px;padding:8px 16px;border-radius:8px;background:var(--blue-soft)}.li-link:hover{background:#D6E8F5}
+    .faqs{display:grid;grid-template-columns:1fr 1fr;gap:22px 34px}
+    .faq-item h3{font-size:1rem;font-weight:700;margin-bottom:8px;line-height:1.35}
+    .faq-item p{color:var(--text-mid);font-size:.93rem;line-height:1.72;margin:0}
+    .updated{margin-top:32px;font-size:.8rem;color:var(--text-light)}
+    @media(max-width:800px){.faqs{grid-template-columns:1fr}}
     .contact{background:var(--off-white);border-top:1px solid var(--border);padding:52px clamp(24px,4vw,56px);text-align:center}
     .contact h2{font-size:1.7rem;font-weight:700;margin-bottom:12px}
     .contact p{color:var(--text-mid);max-width:540px;margin:0 auto 14px}
@@ -169,15 +174,149 @@
         "name": "AI workshops in Adelaide | Jess Tresidder",
         "isPartOf": { "@id": "https://jesstresidder.com/#website" },
         "about": { "@id": "https://jesstresidder.com/#jess" },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://jesstresidder.com/jess-speaking.jpg" },
+        "dateModified": "2026-07-14",
+        "datePublished": "2026-06-29",
         "inLanguage": "en-AU"
       },
       {
         "@type": "Service",
+        "@id": "https://jesstresidder.com/ai-workshops-adelaide.html#service",
         "name": "AI workshops and training",
         "serviceType": "AI workshops and training",
         "provider": { "@id": "https://jesstresidder.com/#practice" },
-        "areaServed": ["Adelaide", "South Australia", "Australia"],
-        "description": "Hands-on AI workshops for businesses and teams, in person across Adelaide and South Australia and online across Australia. Attendees bring their own work and leave with AI tools set up and running on their laptop. No coding required."
+        "areaServed": [
+          { "@type": "City", "name": "Adelaide" },
+          { "@type": "State", "name": "South Australia" },
+          { "@type": "State", "name": "Victoria" },
+          { "@type": "State", "name": "New South Wales" },
+          { "@type": "Country", "name": "Australia" }
+        ],
+        "audience": { "@type": "BusinessAudience", "name": "Business owners, teams and corporate groups" },
+        "description": "Hands-on AI workshops for businesses and teams, in person across Adelaide and South Australia, travelling for client sessions in Victoria and New South Wales, and online across Australia. Attendees bring their own work and leave with AI tools set up and running on their laptop. No coding required.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "AI workshop formats",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "One to two hour AI workshop",
+                "description": "A short session that gets everyone set up properly and builds one working AI workflow together. Suited to a team that has never done this before. Available 1:1 or as a group."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Half day AI workshop",
+                "description": "Time to build several workflows, connect AI to the tools the team already uses (Gmail, CRM, calendar), and work through the real tasks attendees bring with them."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Full day AI workshop",
+                "description": "For teams who want the advanced end: optimising existing workflows, AI agents that run a task end to end, connecting tools together, and setting up an AI second brain."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Course",
+        "@id": "https://jesstresidder.com/ai-workshops-adelaide.html#course",
+        "name": "Hands-on AI workshop",
+        "description": "A practical, hands-on AI workshop where attendees bring a laptop and the work that takes up their week, and build a working AI tool or agent during the session. Covers setting AI up with context files so it sounds like the business, building workflows and agents live, connecting AI to Gmail, CRM and calendar, and prompting that returns a usable answer first time. No coding required.",
+        "provider": { "@id": "https://jesstresidder.com/#practice" },
+        "inLanguage": "en-AU",
+        "teaches": [
+          "Setting AI up with context files so it sounds like your business",
+          "Building practical AI workflows and agents live",
+          "Connecting AI to existing tools such as Gmail, CRM and calendar",
+          "Prompting that gets a usable answer the first time",
+          "Optimising existing AI workflows",
+          "Setting up an AI second brain"
+        ],
+        "educationalLevel": ["Beginner", "Advanced"],
+        "coursePrerequisites": "None. No coding or technical background required.",
+        "hasCourseInstance": [
+          {
+            "@type": "CourseInstance",
+            "name": "In-person AI workshop",
+            "courseMode": "Onsite",
+            "courseWorkload": "PT2H",
+            "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressRegion": "SA", "addressCountry": "AU" } }
+          },
+          {
+            "@type": "CourseInstance",
+            "name": "Half day in-person AI workshop",
+            "courseMode": "Onsite",
+            "courseWorkload": "PT4H",
+            "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressRegion": "SA", "addressCountry": "AU" } }
+          },
+          {
+            "@type": "CourseInstance",
+            "name": "Full day in-person AI workshop",
+            "courseMode": "Onsite",
+            "courseWorkload": "PT8H",
+            "location": { "@type": "Place", "address": { "@type": "PostalAddress", "addressRegion": "SA", "addressCountry": "AU" } }
+          },
+          {
+            "@type": "CourseInstance",
+            "name": "Online AI workshop",
+            "courseMode": "Online",
+            "courseWorkload": "PT2H"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://jesstresidder.com/ai-workshops-adelaide.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need to be technical to come to an AI workshop?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No, and most people who come are not. If you can send an email and use Google, you can do everything we cover. Nobody is taught to code. The sessions are built for people who tried ChatGPT once, found it underwhelming, and left it there." }
+          },
+          {
+            "@type": "Question",
+            "name": "What will we actually build in the session?",
+            "acceptedAnswer": { "@type": "Answer", "text": "You bring the task that eats your week and we build the AI tool that handles it, on your own laptop. That is usually content drafting that sounds like your business, meeting prep briefs, lead research, inbox triage, follow-up drafting, or a Monday morning brief." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long is an AI workshop?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jess Tresidder runs AI workshops as one to two hour sessions, half days, or full days. One to two hours gets everyone set up and one workflow built. A full day suits teams who want the advanced end of it, including agents that run a task end to end and a proper AI second brain." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you run sessions for individuals, or only for teams?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Both. Jess runs 1:1 sessions for business owners and individuals, and group workshops for teams, from a handful of people through to corporate groups. The content is built around whoever is in the room, so a 1:1 goes deeper on your own specific work." }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do you run AI workshops?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In person across Adelaide and South Australia, and Jess travels for client sessions in Victoria and New South Wales. The same sessions run online for teams anywhere in Australia, and the online version is still hands-on, with everyone building on their own laptop." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this just ChatGPT training?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Prompting is one part of a session and on its own it is the smallest part. We set up context files so the AI sounds like your business, connect it to Gmail, your CRM and your calendar, and build agents that carry out a whole task instead of answering one question." }
+          },
+          {
+            "@type": "Question",
+            "name": "What if my team has already used AI?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Then the session skips the basics. Advanced workshops cover optimising the workflows you already run, setting up an AI second brain so everything your business knows sits in one place the AI can draw on, and connecting your tools so work moves between them without anyone copying and pasting." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does an AI workshop cost?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It depends on the length of the session and how many people are in the room. Email hello@jesstresidder.com with what your team does and roughly how many of them there are, and Jess will send a figure back." }
+          }
+        ]
       },
       {
         "@type": "BreadcrumbList",
@@ -197,6 +336,7 @@
     <div class="nav-right">
       <a href="#include" class="hide-m">What the workshops include</a>
       <a href="#about" class="hide-m">About me</a>
+      <a href="#faq" class="hide-m">FAQ</a>
       <a href="#contact" class="nav-btn">Contact me</a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
@@ -204,6 +344,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#include">What the workshops include</a>
     <a href="#about">About me</a>
+    <a href="#faq">FAQ</a>
     <a href="/">Home</a>
     <a href="#contact">Contact me</a>
   </div>
@@ -408,6 +549,50 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="sec" id="faq">
+    <div class="sec-inner">
+      <div class="sec-head reveal">
+        <span class="pill pill-peach"><span class="pill-dot"></span> Questions</span>
+        <h2>The things people ask me <em>first</em></h2>
+      </div>
+      <div class="faqs">
+        <div class="faq-item reveal">
+          <h3>Do I need to be technical to come to an AI workshop?</h3>
+          <p>No, and most people who come are not. If you can send an email and use Google, you can do everything we cover. Nobody is taught to code. The sessions are built for people who tried ChatGPT once, found it underwhelming, and left it there.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>What will we actually build in the session?</h3>
+          <p>You bring the task that eats your week and we build the AI tool that handles it, on your own laptop. That is usually content drafting that sounds like your business, meeting prep briefs, lead research, inbox triage, follow-up drafting, or a Monday morning brief.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>How long is an AI workshop?</h3>
+          <p>I run them as one to two hour sessions, half days, or full days. One to two hours gets everyone set up and one workflow built. A full day suits teams who want the advanced end of it, including agents that run a task end to end and a proper AI second brain.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>Do you run sessions for individuals, or only for teams?</h3>
+          <p>Both. I run 1:1 sessions for business owners and individuals, and group workshops for teams, from a handful of people through to corporate groups. The content is built around whoever is in the room, so a 1:1 goes deeper on your own specific work.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>Where do you run AI workshops?</h3>
+          <p>In person across Adelaide and South Australia, and I travel for client sessions in Victoria and New South Wales. I run the same sessions online for teams anywhere in Australia, and the online version is still hands-on, with everyone building on their own laptop.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>Is this just ChatGPT training?</h3>
+          <p>No. Prompting is one part of a session and on its own it is the smallest part. We set up context files so the AI sounds like your business, connect it to Gmail, your CRM and your calendar, and build agents that carry out a whole task instead of answering one question.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3>What if my team has already used AI?</h3>
+          <p>Then we skip the basics. Advanced sessions cover optimising the workflows you already run, setting up an AI second brain so everything your business knows sits in one place the AI can draw on, and connecting your tools so work moves between them without anyone copying and pasting.</p>
+        </div>
+        <div class="faq-item reveal d1">
+          <h3>What does an AI workshop cost?</h3>
+          <p>It depends on the length of the session and how many people are in the room. Email me at hello@jesstresidder.com with what your team does and roughly how many of them there are, and I'll send a figure back.</p>
+        </div>
+      </div>
+      <p class="updated">Last updated 14 July 2026.</p>
     </div>
   </section>
 
