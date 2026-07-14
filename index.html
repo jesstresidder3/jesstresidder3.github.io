@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jess Tresidder | AI Workshops & GTM Systems, Adelaide</title>
-  <meta name="description" content="Jess Tresidder is an AI consultant and GTM engineer in Adelaide, running hands-on AI workshops and building AI-powered sales and growth systems for businesses across Australia.">
+  <meta name="description" content="Jess Tresidder is an AI educator and consultant in Adelaide, running hands-on AI workshops and building AI-powered sales and growth systems for businesses across Australia.">
   <link rel="canonical" href="https://jesstresidder.com/">
   <meta name="msvalidate.01" content="76E53BC736B6D0F764AAAFD463067E58" />
   <meta name="google-site-verification" content="MOQBVpGimUm0Nk2xHKQZVKdKCLnDK4VnNfbpXVU52ro" />
@@ -39,7 +39,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="jess-headshot-red.jpg" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"></noscript>
   <style>
     :root{--white:#FFFFFF;--off-white:#FFF6F1;--cream:#FEFCFA;--peach:#E0916F;--peach-dark:#C87A5A;--peach-soft:#FCEEE7;--blue:#6BAED6;--blue-dark:#4A8AB5;--blue-soft:#EAF3FA;--yellow:#EFC94C;--yellow-dark:#D4A832;--yellow-soft:#FDF5DC;--aqua:#9DBFB5;--aqua-dark:#7BA89C;--aqua-soft:#E3EFEC;--navy:#16212D;--text:#1A1A1A;--text-mid:#555555;--text-light:#767676;--border:#E8E3DD;--border-light:#F0ECE7}
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -129,21 +130,22 @@
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
     /* ===== MEDIA MARQUEE (credibility banner) ===== */
-    .media{background:var(--white);border-bottom:1px solid var(--border);padding:9px 0 7px;overflow:hidden;position:sticky;top:64px;z-index:90;margin-top:64px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .media{background:var(--white);border-bottom:1px solid var(--border);padding:20px 0 18px;overflow:hidden;position:sticky;top:64px;z-index:90;margin-top:64px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
     .media::before,.media::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
     .media::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
     .media::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
-    .media-label{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#888;text-align:center;display:block;margin-bottom:4px;padding:0 24px}
-    .media-marquee{display:flex;width:max-content}
-    .media-item{padding:2px 44px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-    .media-item img{height:24px;width:auto;object-fit:contain;filter:grayscale(0.15) opacity(0.9);transition:filter .3s,opacity .3s}
+    .media-label{font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:600;letter-spacing:-0.01em;color:var(--text);text-align:center;display:block;margin-bottom:14px;padding:0 24px}
+    .media-marquee{display:flex;width:max-content;align-items:center}
+    .media-item{padding:2px 42px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .media-item img{height:38px;width:auto;object-fit:contain;filter:grayscale(0.15) opacity(0.9);transition:filter .3s,opacity .3s}
     .media-item img:hover{filter:grayscale(0) opacity(1)}
-    .media-item img[alt="ABC News"]{height:42px}
-    .media-item img[alt="The Advertiser"]{height:50px}
-    .media-item img[alt="SAFM 107.1"]{height:20px}
-    .media-item img[alt="SA Life"]{height:16px;filter:grayscale(0.15) opacity(0.9) invert(1)}
+    .media-item img[alt="ABC News"]{height:62px}
+    .media-item img[alt="The Advertiser"]{height:84px}
+    .media-item img[alt="SAFM 107.1"]{height:42px}
+    .media-item img[alt="SA Life"]{height:24px;filter:grayscale(0.15) opacity(0.9) invert(1)}
     .media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1) invert(1)}
-    .media-item img[alt="Business News Australia"]{height:30px}
+    .media-item img[alt="Business News Australia"]{height:46px}
+    @media(max-width:600px){.media{padding:14px 0 12px}.media-label{font-size:.82rem;margin-bottom:10px}.media-item{padding:2px 26px}.media-item img{height:28px}.media-item img[alt="ABC News"]{height:46px}.media-item img[alt="The Advertiser"]{height:62px}.media-item img[alt="Business News Australia"]{height:34px}.media-item img[alt="SAFM 107.1"]{height:22px}.media-item img[alt="SA Life"]{height:18px}}
 
     /* ===== SECTIONS ===== */
     .sec{padding:52px clamp(24px,4vw,56px)}.sec-inner{max-width:1100px;margin:0 auto}
@@ -260,6 +262,9 @@
     .proof{position:relative;overflow:hidden}
     .proof::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 15% 20%,rgba(157,191,181,.12),transparent 42%),radial-gradient(circle at 85% 78%,rgba(224,145,111,.10),transparent 44%);pointer-events:none;z-index:0;animation:meshDrift 24s ease-in-out infinite alternate}
     .proof .sec-inner{position:relative;z-index:1}
+    .service-cta{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:#2F618A;background:var(--blue-soft);padding:12px 22px;border-radius:8px;text-decoration:none;transition:background .2s,transform .2s}
+    .service-cta:hover{background:#D6E8F5;transform:translateY(-1px)}
+    .service-cta svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
     .service-card{position:relative;overflow:hidden}
     .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--peach);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1)}
     .service-card:hover::before{transform:scaleX(1)}
@@ -538,7 +543,7 @@
 
   <div class="scroll-progress" id="scrollProgress"></div>
   <nav>
-    <a href="#" class="nav-logo"><span class="logo-mark"></span> Jess Tresidder <span class="nav-tag">AI consultant, GTM &amp; sales</span></a>
+    <a href="#" class="nav-logo"><span class="logo-mark"></span> Jess Tresidder <span class="nav-tag">AI educator and consultant</span></a>
     <div class="nav-right">
       <a href="#about" class="hide-m">About me</a>
       <a href="#testimonials" class="hide-m">Testimonials</a>
@@ -586,7 +591,7 @@
       <div class="hero-text">
         <span class="pill pill-peach"><span class="pill-dot"></span> AI, GTM & Sales</span>
         <h1>AI growth systems, training, and implementation for <span class="accent">businesses</span></h1>
-        <p class="hero-sub">I build AI-powered growth systems that cut the repetitive work out of your sales, marketing, and operations. And if you're a business owner or AI-curious professional sitting there thinking "I know I should be learning and implementing AI but I don't know where to start, let alone train my team," I can help with that too.</p>
+        <p class="hero-sub">I'm an AI educator and consultant based in Adelaide. I run hands-on AI workshops with teams who want to learn this properly, and I build AI-powered growth systems that take the repetitive work out of sales, marketing and operations. If you're a business owner sitting there thinking "I know I should be using AI but I don't know where to start, let alone train my team," that's the part I can help with.</p>
         <div class="hero-btns">
           <a href="https://book.jesstresidder.com" class="btn btn-primary">Book a call</a>
           <a href="#contact" class="btn btn-ghost">Contact me</a>
@@ -727,6 +732,7 @@
           <h3>AI workshops and training</h3>
           <p>I run workshops with businesses and teams where you leave with AI tools that are set up and actually working for your business. You bring your laptop, tell me what's costing you time, and we build it together during the session. Every person who's come in nervous has left with a slightly sheepish "oh, that was actually way easier than I thought" expression.</p>
           <div class="service-detail">In-person &amp; online &middot; Individual training to corporate teams</div>
+          <a href="/ai-workshops" class="service-cta">Learn more about my AI workshops <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
 
         <!-- Card 3: AI Implementation -->
@@ -913,7 +919,7 @@
 
   <a href="#" class="back-top" id="backTop"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></a>
   <footer>
-    <p>&copy; 2026 Jess Tresidder &middot; AI consultant &amp; GTM engineer, Adelaide &middot; <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="/privacy.html">Privacy policy</a></p>
+    <p>&copy; 2026 Jess Tresidder &middot; AI educator and consultant, Adelaide &middot; <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="/privacy.html">Privacy policy</a></p>
     <p style="margin-top:8px;font-size:.74rem"><a href="/ai-workshops-adelaide.html">AI workshops in Adelaide</a> &middot; <a href="/gtm-engineer-australia.html">GTM engineer for Australia</a> &middot; <a href="/ai-automation-consultant.html">AI automation consultant</a></p>
   </footer>
 

@@ -21,7 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="jess-speaking.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"></noscript>
   <style>
     :root{--white:#FFFFFF;--off-white:#FFF6F1;--cream:#FEFCFA;--peach:#E0916F;--peach-dark:#C87A5A;--peach-soft:#FCEEE7;--blue:#6BAED6;--blue-dark:#4A8AB5;--blue-soft:#EAF3FA;--yellow:#EFC94C;--yellow-dark:#D4A832;--yellow-soft:#FDF5DC;--aqua:#9DBFB5;--aqua-dark:#7BA89C;--aqua-soft:#E3EFEC;--navy:#16212D;--text:#1A1A1A;--text-mid:#555;--text-light:#767676;--border:#E8E3DD;--border-light:#F0ECE7}
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
@@ -47,18 +48,19 @@
     .mobile-menu.open{display:flex}
     .mobile-menu a{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:500;color:var(--text);text-decoration:none;padding:15px clamp(24px,4vw,56px);border-top:1px solid rgba(0,0,0,.05)}
     .mobile-menu a:first-child{border-top:none}.mobile-menu a:hover{background:var(--peach-soft);color:var(--peach-dark)}
-    .media{background:var(--white);border-bottom:1px solid var(--border);padding:9px 0 7px;overflow:hidden;position:sticky;top:64px;z-index:90;margin-top:64px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .media{background:var(--white);border-bottom:1px solid var(--border);padding:20px 0 18px;overflow:hidden;position:sticky;top:64px;z-index:90;margin-top:64px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
     .media::before,.media::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
     .media::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
     .media::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
-    .media-label{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#888;text-align:center;display:block;margin-bottom:4px;padding:0 24px}
-    .media-marquee{display:flex;width:max-content}
-    .media-item{padding:2px 44px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-    .media-item img{height:24px;width:auto;object-fit:contain;filter:grayscale(.15) opacity(.9);transition:filter .3s,opacity .3s}
+    .media-label{font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:600;letter-spacing:-0.01em;color:var(--text);text-align:center;display:block;margin-bottom:14px;padding:0 24px}
+    .media-marquee{display:flex;width:max-content;align-items:center}
+    .media-item{padding:2px 42px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .media-item img{height:38px;width:auto;object-fit:contain;filter:grayscale(.15) opacity(.9);transition:filter .3s,opacity .3s}
     .media-item img:hover{filter:grayscale(0) opacity(1)}
-    .media-item img[alt="ABC News"]{height:42px}.media-item img[alt="The Advertiser"]{height:50px}.media-item img[alt="SAFM 107.1"]{height:20px}
-    .media-item img[alt="SA Life"]{height:16px;filter:grayscale(.15) opacity(.9) invert(1)}.media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1) invert(1)}
-    .media-item img[alt="Business News Australia"]{height:30px}
+    .media-item img[alt="ABC News"]{height:62px}.media-item img[alt="The Advertiser"]{height:84px}.media-item img[alt="SAFM 107.1"]{height:42px}
+    .media-item img[alt="SA Life"]{height:24px;filter:grayscale(.15) opacity(.9) invert(1)}.media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1) invert(1)}
+    .media-item img[alt="Business News Australia"]{height:46px}
+    @media(max-width:600px){.media{padding:14px 0 12px}.media-label{font-size:.82rem;margin-bottom:10px}.media-item{padding:2px 26px}.media-item img{height:28px}.media-item img[alt="ABC News"]{height:46px}.media-item img[alt="The Advertiser"]{height:62px}.media-item img[alt="Business News Australia"]{height:34px}.media-item img[alt="SAFM 107.1"]{height:22px}.media-item img[alt="SA Life"]{height:18px}}
     .hero{padding:56px clamp(24px,4vw,56px) 56px;background:var(--off-white);position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 20% 30%,rgba(224,145,111,.10),transparent 35%),radial-gradient(circle at 80% 20%,rgba(107,174,214,.10),transparent 40%),radial-gradient(circle at 60% 85%,rgba(239,201,76,.08),transparent 45%);pointer-events:none;z-index:0}
     .hero-c1{position:absolute;top:50px;right:-70px;width:280px;height:280px;border:1.5px solid rgba(224,145,111,.14);border-radius:50%;pointer-events:none;z-index:1}
@@ -87,7 +89,7 @@
     .clarify-mark svg{width:22px;height:22px;stroke:var(--aqua-dark);stroke-width:2;fill:none}
     .clarify p{color:var(--text);font-size:1.02rem;margin:0}
     .clarify strong{color:var(--aqua-dark);font-family:'Space Grotesk',sans-serif;font-weight:600}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
     .fcard{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 26px;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s,transform .3s cubic-bezier(.16,1,.3,1)}
     .fcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1)}
     .fcard:hover{border-color:var(--peach);box-shadow:0 12px 40px rgba(224,145,111,.08);transform:translateY(-3px)}
@@ -104,9 +106,36 @@
     .tools p{color:rgba(255,255,255,.82);font-size:1.02rem;max-width:760px}
     .tools .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
     .chip{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:500;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 16px;border-radius:100px}
-    .proof-strip{background:var(--peach-soft);border-radius:18px;padding:32px 34px;border:1px solid var(--border)}
-    .proof-strip h3{font-size:1.15rem;font-weight:700;margin-bottom:10px}
-    .proof-strip p{color:var(--text-mid);margin:0;max-width:760px}
+    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+    .tcard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.04);transition:border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1)}
+    .tcard:hover{border-color:var(--peach);box-shadow:0 16px 48px rgba(224,145,111,.10);transform:translateY(-3px)}
+    .tshot{border:1px solid var(--border-light);border-radius:10px;overflow:hidden;background:var(--white)}
+    .tshot img{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+    .tcard:hover .tshot img{transform:scale(1.04)}
+    .tcard-foot{margin-top:auto;padding-top:16px;text-align:center}
+    .tstars{color:var(--yellow-dark);font-size:.95rem;letter-spacing:2px}
+    .trole{font-size:.76rem;color:var(--text-light);margin-top:6px}
+    .cov{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:start}
+    .cov-card{border-radius:16px;padding:30px 28px;border:1px solid var(--border)}
+    .cov-card.beginner{background:var(--white)}
+    .cov-card.advanced{background:var(--yellow-soft);border-color:rgba(212,168,50,.3)}
+    .cov-card h3{font-size:1.12rem;font-weight:700;margin-bottom:6px}
+    .cov-lede{color:var(--text-mid);font-size:.9rem;margin-bottom:18px}
+    .cov-list{list-style:none;display:flex;flex-direction:column;gap:13px}
+    .cov-list li{display:flex;gap:12px;align-items:flex-start;color:var(--text-mid);font-size:.93rem;line-height:1.65}
+    .cov-tick{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:var(--peach-soft);display:flex;align-items:center;justify-content:center;margin-top:3px}
+    .cov-tick svg{width:12px;height:12px;stroke:var(--peach-dark);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .cov-card.advanced .cov-tick{background:rgba(212,168,50,.22)}
+    .cov-card.advanced .cov-tick svg{stroke:#7A5C0E}
+    .cov-out{margin-top:20px;padding-top:18px;border-top:1px solid var(--border-light);font-size:.93rem;color:var(--text);font-weight:600;font-family:'Space Grotesk',sans-serif;line-height:1.6}
+    .dur-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px}
+    .dur-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px 24px 26px;transition:border-color .25s,transform .3s cubic-bezier(.16,1,.3,1),box-shadow .25s}
+    .dur-card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 12px 36px rgba(107,174,214,.10)}
+    .dur-len{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--text)}
+    .dur-card p{color:var(--text-mid);font-size:.9rem;line-height:1.7;margin:0}
+    .dur-note{margin-top:24px;background:var(--blue-soft);border-radius:14px;padding:22px 26px;color:var(--text);font-size:.96rem}
+    .dur-note strong{font-family:'Space Grotesk',sans-serif;font-weight:600;color:#2F618A}
+    @media(max-width:900px){.cov{grid-template-columns:1fr}.dur-grid{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}}
     .about-grid{display:grid;grid-template-columns:260px 1fr;gap:46px;align-items:start}
     .about-photo{width:260px;height:320px;border-radius:16px;overflow:hidden;border:3px solid rgba(107,174,214,.16);box-shadow:0 18px 50px rgba(0,0,0,.10)}
     .about-photo img{width:100%;height:100%;object-fit:cover}
@@ -166,17 +195,17 @@
   <nav>
     <a href="/" class="nav-logo"><span class="logo-mark"></span> Jess Tresidder</a>
     <div class="nav-right">
-      <a href="#walkout" class="hide-m">What you get</a>
+      <a href="#include" class="hide-m">What the workshops include</a>
       <a href="#about" class="hide-m">About me</a>
-      <a href="#contact" class="nav-btn">Get in touch</a>
+      <a href="#contact" class="nav-btn">Contact me</a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#walkout">What you get</a>
+    <a href="#include">What the workshops include</a>
     <a href="#about">About me</a>
     <a href="/">Home</a>
-    <a href="#contact">Get in touch</a>
+    <a href="#contact">Contact me</a>
   </div>
 
   <section class="media">
@@ -192,10 +221,10 @@
         <p class="crumb"><a href="/">Home</a> &rsaquo; AI workshops in Adelaide</p>
         <span class="pill pill-peach"><span class="pill-dot"></span> AI workshops &middot; Adelaide</span>
         <h1>Hands-on AI workshops in <em>Adelaide</em></h1>
-        <p class="hero-sub">You bring your laptop and the work that eats your week. We build the AI tool that fixes it together, in the room, and you walk out with it running.</p>
+        <p class="hero-sub">I'm a believer in learning by doing over death by PowerPoint, so every session is hands-on and everyone brings a laptop. You tell me what's costing you time, and we build the AI tool that fixes it together, in the room, on your own laptop.</p>
         <div class="hero-btns">
-          <a href="#contact" class="btn btn-primary">Get in touch</a>
-          <a href="#walkout" class="btn btn-ghost">What you walk out with</a>
+          <a href="#contact" class="btn btn-primary">Contact me</a>
+          <a href="#include" class="btn btn-ghost">More information about the workshops</a>
         </div>
       </div>
       <div class="hero-photo">
@@ -211,11 +240,11 @@
     </div>
   </section>
 
-  <section class="sec" id="walkout">
+  <section class="sec" id="include">
     <div class="sec-inner">
       <div class="sec-head reveal">
-        <span class="pill pill-blue"><span class="pill-dot"></span> What you walk out with</span>
-        <h2>Not notes. A tool that's <em>working</em></h2>
+        <span class="pill pill-blue"><span class="pill-dot"></span> What the sessions include</span>
+        <h2>You leave with a tool that's <em>working</em></h2>
         <p>You tell me what's costing you time, and we build the fix together during the session, on your own laptop.</p>
       </div>
       <div class="cards">
@@ -243,6 +272,65 @@
     </div>
   </section>
 
+  <section class="sec cream" id="cover">
+    <div class="sec-inner">
+      <div class="sec-head reveal">
+        <span class="pill pill-yellow"><span class="pill-dot"></span> What we cover</span>
+        <h2>Starting out, or going <em>deeper</em></h2>
+        <p>Every session is built around the people in the room, so the exact content shifts. Here's the shape of it, depending on where your team is starting from.</p>
+      </div>
+      <div class="cov">
+        <div class="cov-card beginner reveal">
+          <h3>If you're starting out</h3>
+          <p class="cov-lede">For teams who have opened ChatGPT a few times and left it there. Some of what we'd cover:</p>
+          <ul class="cov-list">
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Setting your AI up properly with context files, so it sounds like your business instead of a chatbot</li>
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Building practical workflows and AI agents together, live</li>
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Connecting AI to the tools you already use, like Gmail, your CRM and your calendar</li>
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Prompting that gets a usable answer the first time</li>
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Real tasks brought by the people in the room</li>
+          </ul>
+          <p class="cov-out">Everyone leaves with at least one working AI agent or workflow.</p>
+        </div>
+        <div class="cov-card advanced reveal d1">
+          <h3>If you're already using AI</h3>
+          <p class="cov-lede">For teams past the basics who want the more advanced end of it:</p>
+          <ul class="cov-list">
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Optimising the workflows you're already running, so they're faster and more reliable</li>
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Setting up an AI second brain, where everything your business knows sits in one place the AI can draw on</li>
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Connecting your tools together so work moves between them without anyone copying and pasting</li>
+            <li><span class="cov-tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Building agents that handle a whole task end to end, not one prompt at a time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="duration">
+    <div class="sec-inner">
+      <div class="sec-head reveal">
+        <span class="pill pill-aqua"><span class="pill-dot"></span> Workshop length</span>
+        <h2>One-on-one, or with the whole <em>team</em></h2>
+        <p>I run these as 1:1 sessions or as group workshops, in whichever length suits what you're trying to get through.</p>
+      </div>
+      <div class="dur-grid">
+        <div class="dur-card reveal">
+          <div class="dur-len">One to two hours</div>
+          <p>Enough to get everyone set up properly and build one workflow together. A good first session for a team that's never done this.</p>
+        </div>
+        <div class="dur-card reveal d1">
+          <div class="dur-len">Half day</div>
+          <p>Room to build a few workflows, connect AI to the tools you already use, and work through the real tasks people bring with them.</p>
+        </div>
+        <div class="dur-card reveal d2">
+          <div class="dur-len">Full day</div>
+          <p>For teams who want to get into the nitty gritty. The more advanced workflows, agents that run end to end, and a proper second brain set up before you leave.</p>
+        </div>
+      </div>
+      <p class="dur-note reveal d3"><strong>Not sure which one you need?</strong> Tell me what your team is doing manually every week and how much AI they've used, and I'll tell you honestly what length would be worth your money.</p>
+    </div>
+  </section>
+
   <section class="tools">
     <div class="tools-inner reveal">
       <h2>What we might build in a session</h2>
@@ -253,11 +341,47 @@
     </div>
   </section>
 
-  <section class="sec cream">
+  <section class="sec cream" id="testimonials">
     <div class="sec-inner">
-      <div class="proof-strip reveal">
-        <h3>What people say after a session</h3>
-        <p>After one workshop an attendee messaged to say it was the best work presentation they'd had. Another told me, whatever you charge, charge double. (I'm holding onto that one.) I run these in person across Adelaide and South Australia, and online for anyone in Australia, with teams from a few people through to corporate groups.</p>
+      <div class="sec-head reveal" style="max-width:none;text-align:center">
+        <span class="pill pill-aqua"><span class="pill-dot"></span> Testimonials</span>
+        <h2>What organisations are saying <em>after</em> working with me</h2>
+      </div>
+      <div class="proof-grid">
+
+        <div class="tcard reveal">
+          <div class="tshot">
+            <img src="testimonials/testimonial-presentation.jpg" alt="Message: Hey Jess, dare I say, the best presentation I've ever had work wise. Thank you, I really appreciated your training, it was very helpful." loading="lazy" width="1266" height="299">
+          </div>
+          <blockquote class="sr-only">&ldquo;Hey Jess, dare I say, the best presentation I&rsquo;ve ever had work wise. Thank you, I really appreciated your training, it was very helpful.&rdquo; <cite>From an AI workshop attendee</cite></blockquote>
+          <div class="tcard-foot">
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="trole">From an AI workshop attendee</div>
+          </div>
+        </div>
+
+        <div class="tcard reveal d1">
+          <div class="tshot">
+            <img src="testimonials/testimonial-maryan.jpg" alt="Message: Love your approach to AI, it's refreshing. I'm feeling much more positive about AI and less overwhelmed. Whatever you charge, charge double. That was great." loading="lazy" width="1138" height="424">
+          </div>
+          <blockquote class="sr-only">&ldquo;Love your approach to AI, it&rsquo;s refreshing. I&rsquo;m feeling much more positive about AI and less overwhelmed. Whatever you charge, charge double. That was great.&rdquo; <cite>From an organisation Jess Tresidder worked with on AI</cite></blockquote>
+          <div class="tcard-foot">
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="trole">From an organisation I worked with on AI</div>
+          </div>
+        </div>
+
+        <div class="tcard reveal d2">
+          <div class="tshot">
+            <img src="testimonials/testimonial-janelle.jpg" alt="Message: Thanks for your time and training this morning on AI with the team. Super keen to see how my tasks can be done at a whole new level." loading="lazy" width="1266" height="353">
+          </div>
+          <blockquote class="sr-only">&ldquo;Thanks for your time and training this morning on AI with the team. Super keen to see how my tasks can be done at a whole new level.&rdquo; <cite>From an AI presentation client</cite></blockquote>
+          <div class="tcard-foot">
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="trole">From an AI presentation client</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -289,10 +413,11 @@
 
   <section class="contact" id="contact">
     <div class="sec-inner">
-      <span class="pill pill-peach"><span class="pill-dot"></span> Get in touch</span>
+      <span class="pill pill-peach"><span class="pill-dot"></span> Contact me</span>
       <h2>Want a workshop for your team?</h2>
       <p>Tell me what's taking up too much of your week and I'll show you what we'd build together in the session.</p>
-      <p>In person across Adelaide and South Australia, online for anyone in Australia. Happy to come to your office.</p>
+      <p>I work from the belief that everyone can learn AI, and that it should be accessible to people who don't come from a technical background at all. So the sessions are practical and hands-on, and we build and learn together in the room.</p>
+      <p>I run client sessions across every state, mostly South Australia, Victoria and New South Wales, and online for teams anywhere in Australia.</p>
       <div class="contact-links">
         <a href="mailto:hello@jesstresidder.com" class="clink mail">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
@@ -308,7 +433,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2026 Jess Tresidder &middot; AI consultant &amp; GTM engineer, Adelaide &middot; <a href="/">Home</a> &middot; <a href="/privacy.html">Privacy policy</a></p>
+    <p>&copy; 2026 Jess Tresidder &middot; AI educator and consultant, Adelaide &middot; <a href="/">Home</a> &middot; <a href="/privacy.html">Privacy policy</a></p>
   </footer>
 
   <script>
