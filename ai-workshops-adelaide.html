@@ -60,7 +60,7 @@
     .media-item img[alt="ABC News"]{height:42px}.media-item img[alt="The Advertiser"]{height:50px}.media-item img[alt="SAFM 107.1"]{height:20px}
     .media-item img[alt="SA Life"]{height:16px;filter:grayscale(.15) opacity(.9) invert(1)}.media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1) invert(1)}
     .media-item img[alt="Business News Australia"]{height:30px}
-    .hero{padding:56px clamp(24px,4vw,56px) 56px;background:var(--off-white);position:relative;overflow:hidden}
+    .hero{padding:34px clamp(24px,4vw,56px) 34px;background:var(--off-white);position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 20% 30%,rgba(224,145,111,.10),transparent 35%),radial-gradient(circle at 80% 20%,rgba(107,174,214,.10),transparent 40%),radial-gradient(circle at 60% 85%,rgba(239,201,76,.08),transparent 45%);pointer-events:none;z-index:0}
     .hero-c1{position:absolute;top:50px;right:-70px;width:280px;height:280px;border:1.5px solid rgba(224,145,111,.14);border-radius:50%;pointer-events:none;z-index:1}
     .hero-c2{position:absolute;bottom:30px;left:-50px;width:180px;height:180px;border:1.5px solid rgba(107,174,214,.12);border-radius:50%;pointer-events:none;z-index:1}
@@ -75,7 +75,7 @@
     .btn{display:inline-block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.88rem;padding:14px 28px;border-radius:8px;text-decoration:none;transition:all .25s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none}
     .btn-primary{background:var(--peach);color:#fff}.btn-primary:hover{background:var(--peach-dark);transform:translateY(-1px);box-shadow:0 10px 28px rgba(224,145,111,.28)}
     .btn-ghost{background:none;color:var(--text);border:1.5px solid rgba(28,43,58,.2)}.btn-ghost:hover{border-color:var(--peach);color:var(--peach-dark)}
-    .hero-photo{width:300px;height:380px;border-radius:20px;overflow:hidden;position:relative;z-index:1;border:3px solid rgba(224,145,111,.14);box-shadow:0 24px 70px rgba(0,0,0,.10)}
+    .hero-photo{width:300px;height:330px;border-radius:20px;overflow:hidden;position:relative;z-index:1;border:3px solid rgba(224,145,111,.14);box-shadow:0 24px 70px rgba(0,0,0,.10)}
     .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;transform:scale(1.32);transform-origin:center 30%}
     .sec{padding:54px clamp(24px,4vw,56px)}.sec-inner{max-width:1100px;margin:0 auto}
     .sec.cream{background:var(--cream);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
@@ -384,6 +384,7 @@
   <nav>
     <a href="/" class="nav-logo"><span class="logo-mark"></span> Jess Tresidder</a>
     <div class="nav-right">
+      <a href="#testimonials" class="hide-m">Testimonials</a>
       <a href="#include" class="hide-m">What the workshops include</a>
       <a href="#about" class="hide-m">About me</a>
       <a href="#faq" class="hide-m">FAQ</a>
@@ -392,6 +393,7 @@
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
+    <a href="#testimonials">Testimonials</a>
     <a href="#include">What the workshops include</a>
     <a href="#about">About me</a>
     <a href="#faq">FAQ</a>
@@ -677,7 +679,6 @@
           <p class="faq-a">It depends on the length of the session and how many people are in the room. Email me at hello@jesstresidder.com with what your team does and roughly how many of them there are, and I'll send a figure back.</p>
         </details>
       </div>
-      <p class="updated">Last updated 14 July 2026.</p>
     </div>
   </section>
 
