@@ -111,11 +111,12 @@
     .pill{display:inline-flex;align-items:center;gap:6px;font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;padding:6px 16px;border-radius:6px;margin-bottom:20px}
     .pill .pill-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7;display:inline-block}
     .pill-peach{background:var(--peach-soft);color:var(--peach-dark)}.pill-blue{background:var(--blue-soft);color:var(--blue-dark)}.pill-yellow{background:var(--yellow-soft);color:var(--yellow-dark)}.pill-aqua{background:var(--aqua-soft);color:var(--aqua-dark)}
-    .hero h1{font-size:clamp(2.2rem,4.8vw,3.2rem);font-weight:700;color:var(--text);margin-bottom:20px;max-width:560px;letter-spacing:-0.04em;line-height:1.06}
+    .hero h1{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:700;color:var(--text);margin-bottom:20px;max-width:560px;letter-spacing:-0.04em;line-height:1.12}
     .hero h1 .accent{position:relative;display:inline-block}
     .hero h1 .accent::after{content:'';position:absolute;left:-2px;right:-2px;bottom:6px;height:10px;background:var(--yellow);opacity:.4;z-index:-1;border-radius:2px;transform:scaleX(0);transform-origin:left;animation:underline 1s cubic-bezier(.16,1,.3,1) 1.1s forwards}
     @keyframes underline{to{transform:scaleX(1)}}
     .hero-sub{font-size:1.02rem;color:var(--text-mid);max-width:480px;margin-bottom:36px;line-height:1.75}
+    .hero-sub-gap{display:block;height:10px;content:''}
     .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
     .btn{display:inline-block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.88rem;padding:14px 28px;border-radius:8px;text-decoration:none;transition:all .25s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none}
     .btn-primary{background:var(--peach);color:var(--white)}.btn-primary:hover{background:var(--peach-dark);transform:translateY(-1px);box-shadow:0 10px 28px rgba(224,145,111,.28)}
@@ -140,7 +141,7 @@
     .media-item img{height:24px;width:auto;object-fit:contain;filter:grayscale(0.15) opacity(0.9);transition:filter .3s,opacity .3s}
     .media-item img:hover{filter:grayscale(0) opacity(1)}
     .media-item img[alt="ABC News"]{height:42px}
-    .media-item img[alt="The Advertiser"]{height:50px}
+    .media-item img[alt="The Advertiser"]{height:66px}
     .media-item img[alt="SAFM 107.1"]{height:20px}
     .media-item img[alt="SA Life"]{height:16px;filter:grayscale(0.15) opacity(0.9) invert(1)}
     .media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1) invert(1)}
@@ -590,7 +591,7 @@
       <div class="hero-text">
         <span class="pill pill-peach"><span class="pill-dot"></span> AI, GTM & Sales</span>
         <h1>AI consultation and training for AI curious <span class="accent">businesses, individuals and government sectors</span></h1>
-        <p class="hero-sub">If AI feels like another thing on your to-do list... you're not alone.<br><br>Most individuals and businesses I work with know AI can save them <em>hours</em>, but they're unsure where to start, how to use it in their day to day, or get their team using it confidently.<br><br>As an AI consultant, I help change that. Through AI strategy, practical (<em>not</em> "death by powerpoint") workshops, training and tailored AI systems, I help teams reduce repetitive work across sales, marketing and operations, giving people back time to focus on higher value work.</p>
+        <p class="hero-sub">If AI feels like another thing on your to-do list... you're not alone.<br><span class="hero-sub-gap"></span>Most individuals and businesses I work with know AI can save them <em>hours</em>, but they're unsure where to start, how to use it in their day to day, or get their team using it confidently.<br><span class="hero-sub-gap"></span>As an AI consultant, I help change that. Through AI strategy, practical (<em>not</em> "death by powerpoint") workshops, training and tailored AI systems, I help teams reduce repetitive work across sales, marketing and operations, giving people back time to focus on higher value work.</p>
         <div class="hero-btns">
           <a href="https://book.jesstresidder.com" class="btn btn-primary">Book a call</a>
           <a href="#contact" class="btn btn-ghost">Contact me</a>
