@@ -49,17 +49,17 @@
     .mobile-menu.open{display:flex}
     .mobile-menu a{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:500;color:var(--text);text-decoration:none;padding:15px clamp(24px,4vw,56px);border-top:1px solid rgba(0,0,0,.05)}
     .mobile-menu a:first-child{border-top:none}.mobile-menu a:hover{background:var(--peach-soft);color:var(--peach-dark)}
-    .media{background:var(--white);border-bottom:1px solid var(--border);padding:3px 0 2px;overflow:hidden;position:sticky;top:64px;z-index:90;margin-top:64px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .media{background:var(--peach-soft);border-bottom:1px solid var(--border);padding:3px 0 2px;overflow:hidden;position:sticky;top:64px;z-index:90;margin-top:64px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
     .media::before,.media::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-    .media::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
-    .media::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
+    .media::before{left:0;background:linear-gradient(to right,var(--peach-soft),transparent)}
+    .media::after{right:0;background:linear-gradient(to left,var(--peach-soft),transparent)}
     .media-label{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:#888;text-align:center;display:block;margin-bottom:4px;padding:0 24px}
     .media-marquee{display:flex;width:max-content}
     .media-item{padding:2px 44px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
     .media-item img{height:22px;width:auto;object-fit:contain;filter:grayscale(.15) opacity(.9);transition:filter .3s,opacity .3s}
     .media-item img:hover{filter:grayscale(0) opacity(1)}
     .media-item img[alt="ABC News"]{height:34px}.media-item img[alt="The Advertiser"]{height:16px}.media-item img[alt="The Age"]{height:14px}.media-item img[alt="SAFM 107.1"]{height:20px}
-    .media-item img[alt="SA Life"]{height:13px;filter:grayscale(.15) opacity(.9) invert(1)}.media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1) invert(1)}
+    .media-item img[alt="SA Life"]{height:13px;filter:grayscale(.15) opacity(.9)}.media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1)}
     .media-item img[alt="Business News Australia"]{height:20px}
     .hero{padding:56px clamp(24px,4vw,56px) 56px;background:var(--off-white);position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 20% 30%,rgba(224,145,111,.10),transparent 35%),radial-gradient(circle at 80% 20%,rgba(107,174,214,.10),transparent 40%),radial-gradient(circle at 60% 85%,rgba(239,201,76,.08),transparent 45%);pointer-events:none;z-index:0}
