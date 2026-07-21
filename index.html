@@ -142,7 +142,7 @@
     .media-item img{height:24px;width:auto;object-fit:contain;filter:grayscale(0.15) opacity(0.9);transition:filter .3s,opacity .3s}
     .media-item img:hover{filter:grayscale(0) opacity(1)}
     .media-item img[alt="ABC News"]{height:42px}
-    .media-item img[alt="The Advertiser"]{height:66px}
+    .media-item img[alt="The Advertiser"]{height:82px}.media-item img[alt="The Age"]{height:48px}
     .media-item img[alt="SAFM 107.1"]{height:30px}
     .media-item img[alt="SA Life"]{height:16px;filter:grayscale(0.15) opacity(0.9) invert(1)}
     .media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1) invert(1)}
@@ -569,12 +569,13 @@
   <!-- ===== AS FEATURED IN (credibility banner, directly below nav) ===== -->
   <section class="media">
     <span class="media-label">As featured in</span>
-    <p class="sr-only">Jess Tresidder was named in InDaily's 40 Under 40 (South Australia, 2026), awarded the Inspiring Future Leaders Award by the SA Business Chamber, and was a finalist for The Advertiser and Sunday Mail SkyCity Woman of the Year in 2025. She has been featured by ABC, news.com.au, SA Life, and Business News Australia.</p>
+    <p class="sr-only">Jess Tresidder was named in InDaily's 40 Under 40 (South Australia, 2026), awarded the Inspiring Future Leaders Award by the SA Business Chamber, and was a finalist for The Advertiser and Sunday Mail SkyCity Woman of the Year in 2025. She has been featured by ABC, The Age, news.com.au, SA Life, and Business News Australia.</p>
     <div class="media-marquee" id="mediaMarquee"></div>
     <noscript>
       <div class="media-marquee" style="justify-content:center;flex-wrap:wrap;width:auto">
         <span class="media-item"><img src="media-logos/abc.png" alt="ABC News"></span>
         <span class="media-item"><img src="media-logos/advertiser.png" alt="The Advertiser"></span>
+        <span class="media-item"><img src="media-logos/the-age.png" alt="The Age"></span>
         <span class="media-item"><img src="media-logos/newscomau.png" alt="news.com.au"></span>
         <span class="media-item"><img src="media-logos/salife.png" alt="SA Life"></span>
         <span class="media-item"><img src="media-logos/bna.png" alt="Business News Australia"></span>
@@ -944,6 +945,7 @@
       const logos=[
         {src:'media-logos/abc.png',alt:'ABC News',url:'https://www.abc.net.au/news/2021-12-18/jess-tresidders-key-ring-business-takes-off/100694908'},
         {src:'media-logos/advertiser.png',alt:'The Advertiser',url:'https://www.adelaidenow.com.au/news/south-australia/vote-now-the-advertisersunday-mail-woman-of-the-year-2025-finalists-named/news-story/335e1b145d94a1e8d92c67719c637940'},
+        {src:'media-logos/the-age.png',alt:'The Age'},
         {src:'media-logos/newscomau.png',alt:'news.com.au',url:'https://www.news.com.au/finance/small-business/south-australian-teens-850-a-week-personalised-key-chain-idea/news-story/8b62cdc7de1fda9f1d9139d30c2f23e9'},
         {src:'media-logos/salife.png',alt:'SA Life',url:'https://www.indailysa.com.au/salife/archive/2022/04/04/young-ambition-school-age-start-ups'},
         {src:'media-logos/bna.png',alt:'Business News Australia',url:'https://www.businessnewsaustralia.com/articles/a-wild-idea-is-a-winner.html'},
