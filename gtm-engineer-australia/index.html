@@ -54,11 +54,11 @@
     .scroll-progress{position:absolute;left:0;bottom:-1px;width:100%;height:2px;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--peach),var(--yellow));will-change:transform}
     @supports (animation-timeline:scroll()){.scroll-progress{animation:progressGrow linear both;animation-timeline:scroll(root block);animation-range:0% 100%}@keyframes progressGrow{to{transform:scaleX(1)}}}
     /* media marquee */
-    .media{background:var(--white);border-bottom:1px solid var(--border);padding:3px 0 2px;overflow:hidden;position:sticky;top:64px;z-index:90;margin-top:64px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .media{background:var(--white);border-bottom:1px solid var(--border);padding:4px 0 3px;text-align:center;overflow:hidden;position:sticky;top:64px;z-index:90;margin-top:64px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
     .media::before,.media::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
     .media::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
     .media::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
-    .media-label{font-family:'Space Grotesk',sans-serif;font-size:.86rem;font-weight:600;letter-spacing:-0.01em;color:var(--peach-text);text-align:center;display:block;margin-bottom:2px;padding:0 24px}
+    .media-label{font-family:'Space Grotesk',sans-serif;font-size:.86rem;font-weight:600;letter-spacing:-0.01em;color:var(--peach-text);text-align:center;display:block;width:100%;margin:0 auto 2px;padding:0 24px}
     .media-marquee{display:flex;width:max-content;will-change:transform}
     .media-item{padding:2px 44px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
     .media-item img{height:22px;width:auto;object-fit:contain;filter:grayscale(.15) opacity(.9);transition:filter .3s,opacity .3s}
@@ -67,7 +67,7 @@
     .media-item img[alt="SA Life"]{height:13px;filter:grayscale(.15) opacity(.9)}.media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1)}
     .media-item img[alt="Business News Australia"]{height:20px}
     /* hero */
-    .hero{padding:56px clamp(24px,4vw,56px) 56px;background:var(--off-white);position:relative;overflow:hidden}
+    .hero{padding:48px clamp(24px,4vw,56px) 52px;background:var(--off-white);position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 20% 30%,rgba(224,145,111,.10),transparent 35%),radial-gradient(circle at 80% 20%,rgba(107,174,214,.10),transparent 40%),radial-gradient(circle at 60% 85%,rgba(239,201,76,.08),transparent 45%);pointer-events:none;z-index:0}
     .hero-c1{position:absolute;top:50px;right:-70px;width:280px;height:280px;border:1.5px solid rgba(224,145,111,.14);border-radius:50%;pointer-events:none;z-index:1}
     .hero-c2{position:absolute;bottom:30px;left:-50px;width:180px;height:180px;border:1.5px solid rgba(107,174,214,.12);border-radius:50%;pointer-events:none;z-index:1}
@@ -92,16 +92,18 @@
     .hero-photo{animation:photoIn .95s cubic-bezier(.16,1,.3,1) .18s both}
     .hero-photo img{transform:translate3d(0,var(--py,0px),0) scale(1.06);will-change:transform}
     /* sections */
-    .sec{padding:clamp(76px,8vw,116px) clamp(24px,4vw,56px)}.sec-inner{max-width:1100px;margin:0 auto}
+    .sec{padding:clamp(52px,5.4vw,78px) clamp(24px,4vw,56px)}.sec-inner{max-width:1100px;margin:0 auto}
     .sec.cream{background:var(--cream);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
-    .sec-head{margin-bottom:clamp(34px,4vw,50px);max-width:30ch}
+    .sec-head{margin-bottom:clamp(30px,3.4vw,44px);max-width:30ch}
+    .sec-head.wide{max-width:none}
+    .sec-head.wide h2{font-size:clamp(1.6rem,2.9vw,2.15rem);max-width:none}
     .sec-head h2,.proof-head h2,.contact h2,.process-head h2{font-size:var(--h2);font-weight:700;line-height:1.08;letter-spacing:-0.035em;margin-bottom:12px}
     .sec-head p{color:var(--text-mid)}
     /* testimonials */
-    .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);padding:clamp(72px,7.5vw,108px) clamp(24px,4vw,56px);position:relative;overflow:hidden}
+    .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);padding:clamp(52px,5.4vw,78px) clamp(24px,4vw,56px);position:relative;overflow:hidden}
     .proof::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 15% 20%,rgba(157,191,181,.12),transparent 42%),radial-gradient(circle at 85% 78%,rgba(224,145,111,.10),transparent 44%);pointer-events:none;z-index:0}
     .proof-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
-    .proof-head{text-align:center;margin-bottom:clamp(38px,4.4vw,54px)}
+    .proof-head{text-align:center;margin-bottom:clamp(28px,3.2vw,40px)}
     
     .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
     .tcard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.04);transition:border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1)}
@@ -111,43 +113,74 @@
     .tcard:hover .tshot img{transform:scale(1.04)}
     .tcard-foot{margin-top:auto;padding-top:16px;text-align:center}
     .tstars{color:var(--yellow-dark);font-size:.95rem;letter-spacing:2px}
-    /* process, colour blocked phases */
-    .process{padding:clamp(76px,8vw,116px) 0 0;background:var(--white)}
-    .process-head{max-width:1100px;margin:0 auto 34px;padding:0 clamp(24px,4vw,56px)}
-    
-    .phase{padding:clamp(54px,6vw,82px) clamp(24px,4vw,56px)}
-    .phase-a{background:var(--peach-soft)}
-    .phase-b{background:var(--aqua-soft)}
-    .phase-inner{max-width:1100px;margin:0 auto}
-    .phase-bar{display:grid;grid-template-columns:290px 1fr;gap:40px;align-items:start;position:sticky;top:var(--sticky-top,112px);z-index:5;padding:16px 0 12px;margin-bottom:16px}
-    .phase-a .phase-bar{background:var(--peach-soft)}
-    .phase-b .phase-bar{background:var(--aqua-soft)}
-    .phase-rule{grid-column:1/-1;display:block;height:2px;margin-top:16px;border-radius:2px;background:rgba(0,0,0,.06);overflow:hidden}
-    .phase-rule i{display:block;height:100%;width:100%;transform:scaleX(var(--p,0));transform-origin:0 50%;background:var(--peach-dark);will-change:transform}
-    .phase-b .phase-rule i{background:var(--aqua-text)}
-    @media(max-width:900px){.phase-bar{position:static;padding:0;background:none}.phase-rule{display:none}}
-    .phase-title{display:flex;flex-direction:column;gap:4px}
+    /* flywheel */
+    .fly-wrap{max-width:1100px;margin:0 auto clamp(34px,4vw,54px);padding:0 clamp(24px,4vw,56px);display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center}
+    .fly-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:600;color:var(--peach-text);display:block;margin-bottom:10px}
+    .fly-copy h3{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:12px;min-height:1.1em}
+    .fly-copy p{color:var(--text-mid);font-size:1rem;max-width:46ch;min-height:5.4em}
+    .fly-jump{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--peach-text);text-decoration:none;margin-top:14px;padding:9px 0}
+    .fly-jump::after{content:'';width:14px;height:2px;background:currentColor;transition:width .25s}
+    .fly-jump:hover::after{width:26px}
+    .fly-stage{display:flex;justify-content:center}
+    #flywheel{width:100%;max-width:400px;height:auto;overflow:visible}
+    .fly-ring{fill:none;stroke:var(--border);stroke-width:2;stroke-dasharray:4 7;stroke-linecap:round}
+    .fly-node circle{fill:var(--white);stroke:var(--border);stroke-width:2;transition:fill .3s,stroke .3s,r .3s}
+    .fly-node text{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;fill:var(--text-light);text-anchor:middle;dominant-baseline:central;transition:fill .3s}
+    .fly-node{cursor:pointer}
+    .fly-node:hover circle{stroke:var(--peach)}
+    .fly-node.on circle{fill:var(--peach);stroke:var(--peach);r:24}
+    .fly-node.on text{fill:#fff}
+    .fly-node.ph-b.on circle{fill:var(--aqua-dark);stroke:var(--aqua-dark)}
+    .fly-node.ph-b:hover circle{stroke:var(--aqua-dark)}
+    .fly-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:600;fill:var(--text-mid);transition:fill .3s}
+    .fly-node.on .fly-label{fill:var(--text)}
+    .fly-centre-n{font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;fill:var(--peach);letter-spacing:-0.03em}
+    .fly-centre-l{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;fill:var(--text-light)}
+    @media(max-width:900px){.fly-wrap{grid-template-columns:1fr;gap:26px}.fly-copy p{min-height:0}#flywheel{max-width:320px}}
+    /* process, sticky phase bars and a stepped timeline */
+    .process{padding:clamp(58px,6vw,84px) 0 0;background:var(--white)}
+    .process-head{max-width:1100px;margin:0 auto clamp(26px,3vw,38px);padding:0 clamp(24px,4vw,56px)}
+    .phase{margin-bottom:8px}
+    .phase-bar{position:sticky;top:var(--sticky-top,112px);z-index:6;padding:0 clamp(24px,4vw,56px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+    .phase-a .phase-bar{background:rgba(252,238,231,.94)}
+    .phase-b .phase-bar{background:rgba(227,239,236,.94)}
+    .phase-c .phase-bar{background:rgba(253,245,220,.94)}
+    .phase-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:13px 0 12px;position:relative}
     .phase-n{font-family:'Space Grotesk',sans-serif;font-size:.86rem;font-weight:700;color:var(--peach-text)}
-    .phase-b .phase-n{color:var(--aqua-text)}
-    .phase-title h3{font-size:clamp(1.5rem,2.8vw,2rem);font-weight:700;letter-spacing:-0.03em}
-    .phase-out{color:var(--text-mid);font-size:.97rem;max-width:62ch;padding-top:4px}
-    .pgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
-    .pgrid .pstep{grid-column:span 3}
-    .pgrid .pstep:first-child{grid-column:span 6}
-    .pgrid .pstep:first-child h4{font-size:1.5rem}
-    .pstep{background:var(--white);border:1px solid rgba(0,0,0,.05);border-radius:18px;padding:26px 26px 24px;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.04);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .3s}
-    .pstep:hover{transform:translateY(-4px);box-shadow:0 20px 46px rgba(0,0,0,.09)}
-    .pstep-n{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:var(--peach-text);letter-spacing:.03em}
-    .phase-b .pstep-n{color:var(--aqua-text)}
-    .pstep h4{font-family:'Space Grotesk',sans-serif;font-size:1.22rem;font-weight:700;letter-spacing:-0.02em;margin:2px 0 10px}
-    .pstep p{color:var(--text-mid);font-size:.93rem;line-height:1.65;margin-bottom:16px}
-    .pstep ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px}
-    .pstep li{display:inline-flex;gap:7px;align-items:center;font-size:.82rem;line-height:1.35;border-radius:100px;padding:6px 13px 6px 11px;color:var(--text-mid)}
-    .phase-a .pstep li{background:var(--peach-soft)}
-    .phase-b .pstep li{background:var(--aqua-soft)}
-    .pstep li svg{flex-shrink:0;width:12px;height:12px;stroke:var(--peach-dark);stroke-width:2.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
-    .phase-b .pstep li svg{stroke:var(--aqua-dark)}
-    @media(max-width:820px){.phase-bar{grid-template-columns:1fr;gap:14px}.pgrid{grid-template-columns:1fr}.pgrid .pstep,.pgrid .pstep:first-child{grid-column:auto}.pgrid .pstep:first-child h4{font-size:1.22rem}}
+    .phase-b .phase-n{color:var(--aqua-text)}.phase-c .phase-n{color:#7A5C0E}
+    .phase-bar h3{font-family:'Space Grotesk',sans-serif;font-size:1.12rem;font-weight:700;letter-spacing:-0.02em;white-space:nowrap}
+    .phase-line{flex:1;height:2px;border-radius:2px;background:rgba(0,0,0,.08);overflow:hidden;margin-left:6px}
+    .phase-line i{display:block;height:100%;width:100%;transform:scaleX(var(--p,0));transform-origin:0 50%;background:var(--peach-dark)}
+    .phase-b .phase-line i{background:var(--aqua-text)}.phase-c .phase-line i{background:var(--yellow-dark)}
+    .phase-inner{max-width:1100px;margin:0 auto;padding:26px clamp(24px,4vw,56px) clamp(30px,4vw,48px)}
+    .phase-lead{color:var(--text-mid);font-size:1.02rem;max-width:64ch;margin-bottom:30px}
+    .steps{position:relative;padding-left:30px}
+    .steps::before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:2px;background:var(--border-light)}
+    .step{display:grid;grid-template-columns:290px 1fr;gap:40px;align-items:start;padding-bottom:34px;position:relative}
+    .step:last-child{padding-bottom:0}
+    .step::before{content:'';position:absolute;left:-30px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--peach);box-shadow:0 0 0 4px var(--white)}
+    .phase-b .step::before{background:var(--aqua-dark)}.phase-c .step::before{background:var(--yellow)}
+    .phase-c .step-label{display:none}
+    .step-label{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:600;color:var(--text-light);display:block;margin-bottom:8px}
+    .step-side h4{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.25rem,2.1vw,1.6rem);font-weight:700;letter-spacing:-0.03em;line-height:1.12}
+    .step-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:26px 28px;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.04);transition:border-color .25s,box-shadow .3s,transform .4s cubic-bezier(.16,1,.3,1)}
+    .step-card:hover{border-color:var(--peach);box-shadow:0 18px 44px rgba(224,145,111,.10);transform:translateY(-2px)}
+    .phase-b .step-card:hover{border-color:var(--aqua-dark);box-shadow:0 18px 44px rgba(157,191,181,.16)}
+    .step-card>p{color:var(--text-mid);font-size:.96rem;line-height:1.7;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--border-light)}
+    .step-card ul{list-style:none;display:grid;gap:9px}
+    .step-card li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;line-height:1.55;color:var(--text)}
+    .step-card li svg{flex-shrink:0;width:15px;height:15px;margin-top:4px;stroke:var(--peach-dark);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .phase-b .step-card li svg{stroke:var(--aqua-text)}.phase-c .step-card li svg{stroke:var(--yellow-dark)}
+    .step-out{margin-top:16px;background:var(--peach-soft);border-radius:10px;padding:12px 16px;font-size:.9rem}
+    .phase-b .step-out{background:var(--aqua-soft)}
+    .step-out b{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--peach-text)}
+    .phase-b .step-out b{color:var(--aqua-text)}
+    @media(max-width:860px){
+      .phase-bar h3{white-space:normal;font-size:1rem}
+      .step{grid-template-columns:1fr;gap:14px;padding-bottom:28px}
+      .steps{padding-left:22px}.step::before{left:-22px}
+      .step-side h4{font-size:1.15rem}
+    }
     /* service options */
     .opts{display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .opt{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:34px 30px 30px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s,transform .3s cubic-bezier(.16,1,.3,1)}
@@ -158,17 +191,18 @@
     .opts .opt:nth-child(2) .opt-num{color:var(--blue-soft)}
     .opt-label,.opt h3,.opt>p,.opt ul{position:relative;z-index:1}
     .opt:hover{border-color:var(--peach);box-shadow:0 12px 40px rgba(224,145,111,.08);transform:translateY(-3px)}
-    .opt-label{font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:600;color:var(--blue-text);background:var(--blue-soft);display:inline-block;padding:5px 13px;border-radius:100px;margin-bottom:14px}
+    .opt-label{font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:600;color:var(--blue-text);background:var(--blue-soft);display:inline-block;padding:5px 13px;border-radius:100px;margin-bottom:14px;align-self:flex-start}
     .opt h3{font-size:var(--h3);font-weight:700;margin-bottom:10px}
     .opt>p{color:var(--text-mid);font-size:.95rem;margin-bottom:18px}
     .opt ul{list-style:none;display:grid;gap:9px;margin-bottom:0}
     .opt li{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;line-height:1.6}
     .opt li svg{flex-shrink:0;width:16px;height:16px;margin-top:4px;stroke:var(--blue-dark);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
-        /* tools strip */
-    .tools{background:var(--navy);color:#fff;padding:38px clamp(24px,4vw,56px) 34px}
-    .tools-inner{max-width:900px;margin:0 auto}
-    .tools h2{font-size:1.35rem;font-weight:700;margin-bottom:0;color:#fff;text-align:center;letter-spacing:-0.02em}
-    .tools-marquee-wrap{margin-top:16px;overflow:hidden;position:relative;padding:2px 0}
+        .opts-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:clamp(28px,3vw,38px)}
+    /* tools strip */
+    .tools{background:var(--navy);color:#fff;padding:26px clamp(24px,4vw,56px) 24px}
+    .tools-inner{max-width:900px;margin:0 auto;text-align:center}
+    .tools h2{font-size:1.2rem;font-weight:700;margin:0 auto;color:#fff;text-align:center;letter-spacing:-0.02em}
+    .tools-marquee-wrap{margin-top:14px;overflow:hidden;position:relative;padding:0}
     .tools-marquee-wrap::before,.tools-marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
     .tools-marquee-wrap::before{left:0;background:linear-gradient(to right,var(--navy),transparent)}
     .tools-marquee-wrap::after{right:0;background:linear-gradient(to left,var(--navy),transparent)}
@@ -179,10 +213,10 @@
     .tool-dot{width:7px;height:7px;border-radius:50%;background:var(--peach);opacity:.85;flex-shrink:0}
     .tool-item span{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:#fff;letter-spacing:-0.01em;white-space:nowrap}
     @media (hover:hover) and (pointer:fine){
-      .opt::after,.pstep::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(224,145,111,.10),transparent 62%);z-index:0}
-      .phase-b .pstep::after{background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(157,191,181,.18),transparent 62%)}
-      .opt:hover::after,.pstep:hover::after{opacity:1}
-      .pstep-n,.pstep h4,.pstep p,.pstep ul{position:relative;z-index:1}
+      .opt::after,.step-card::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s ease;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(224,145,111,.10),transparent 62%);z-index:0}
+      .phase-b .step-card::after{background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),rgba(157,191,181,.18),transparent 62%)}
+      .opt:hover::after,.step-card:hover::after{opacity:1}
+      .step-card>p,.step-card ul,.step-out{position:relative;z-index:1}
     }
     /* about */
     .about-grid{display:grid;grid-template-columns:260px 1fr;gap:46px;align-items:start}
@@ -194,7 +228,7 @@
     .tag{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:600;color:var(--peach-text);background:var(--peach-soft);padding:6px 14px;border-radius:100px}
     .li-link{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--blue-text);text-decoration:none;margin-top:16px;padding:12px 18px;border-radius:8px;background:var(--blue-soft)}.li-link:hover{background:#D6E8F5}
     /* contact */
-    .contact{background:var(--off-white);border-top:1px solid var(--border);padding:clamp(80px,8.5vw,120px) clamp(24px,4vw,56px);text-align:center}
+    .contact{background:var(--off-white);border-top:1px solid var(--border);padding:clamp(58px,6vw,88px) clamp(24px,4vw,56px);text-align:center}
     
     .contact p{color:var(--text-mid);max-width:540px;margin:0 auto 14px}
     .contact-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
@@ -332,8 +366,8 @@
 
   <section class="sec" id="services">
     <div class="sec-inner">
-      <div class="sec-head reveal">
-        <h2>Two ways I can support you, as a GTM engineer or <em>AI growth systems builder</em></h2>
+      <div class="sec-head wide reveal">
+        <h2>Two ways I can support you, as a GTM engineer <em>/ AI growth systems builder</em></h2>
       </div>
       <div class="opts">
         <div class="opt reveal">
@@ -359,6 +393,10 @@
           </ul>
         </div>
       </div>
+      <div class="opts-cta reveal">
+        <a href="#process" class="btn btn-primary">What this looks like in practice</a>
+        <a href="#contact" class="btn btn-ghost">Contact me</a>
+      </div>
     </div>
   </section>
 
@@ -376,109 +414,206 @@
       <h2>What this looks like in <em>practice</em></h2>
     </div>
 
+    <div class="fly-wrap reveal">
+      <div class="fly-copy">
+        <span class="fly-eyebrow">The loop</span>
+        <h3 id="flyTitle">Targeting</h3>
+        <p id="flyBody">The roles and company types that make a qualified prospect, the market that fits, and the signals that show a company is ready to talk now.</p>
+        <a class="fly-jump" id="flyJump" href="#step-1">Read this step</a>
+      </div>
+      <div class="fly-stage">
+        <svg id="flywheel" viewBox="0 0 440 440" role="img" aria-label="The eight stages of the go to market engine, running as a loop">
+          <defs>
+            <marker id="flyArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--border)"></path>
+            </marker>
+          </defs>
+          <circle class="fly-ring" cx="220" cy="220" r="150"></circle>
+          <g id="flyNodes"></g>
+          <text class="fly-centre-n" id="flyCentreN" x="220" y="212" text-anchor="middle">01</text>
+          <text class="fly-centre-l" id="flyCentreL" x="220" y="238" text-anchor="middle">of eight</text>
+        </svg>
+      </div>
+    </div>
     <div class="phase phase-a">
-      <div class="phase-inner">
-        <div class="phase-bar reveal">
-          <div class="phase-title"><span class="phase-n">Phase 01</span><h3>Build and launch</h3></div>
-          <p class="phase-out">You come out of this phase with a documented targeting blueprint, warmed sending infrastructure on your own domains, a full copy library and campaigns running.</p>
-          <span class="phase-rule"><i></i></span>
+      <div class="phase-bar">
+        <div class="phase-bar-inner">
+          <span class="phase-n">01</span>
+          <h3>Build the engine</h3>
+          <span class="phase-line"><i></i></span>
         </div>
-        <div class="pgrid">
-        <article class="pstep reveal">
-          <span class="pstep-n">01</span>
-          <h4>Targeting</h4>
-          <p>One deep dive sets the foundation: the roles and company types that make a qualified prospect, the market that fits, and the signals that show a company is ready to talk now.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ideal client profile by industry, size and role</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Total addressable market mapped and sized</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Buying signal library built for your market</li>
-          </ul>
+      </div>
+      <div class="phase-inner">
+        <p class="phase-lead reveal">The complete outbound infrastructure, strategy, systems and live campaigns, built inside your business.</p>
+        <div class="steps">
+        <article class="step reveal" id="step-1">
+          <div class="step-side">
+            <span class="step-label">Step 01</span>
+            <h4>Define your ideal buyers, markets and buying signals</h4>
+          </div>
+          <div class="step-card">
+            <p>A deep dive workshop defines the foundation of your outbound: the exact roles and company types that make a qualified prospect, the full addressable market that fits, and the buying signals that show a company is ready for a conversation now, from job postings and funding to leadership changes. That targeting layer sets when outreach goes out, so a prospect hears from you at the point they have a reason to care.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ideal client profile defined by industry, size and role</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Total addressable market mapped and sized</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Buying signal library built for your market</li>
+            </ul>
+            <p class="step-out"><b>What you receive:</b> a complete targeting blueprint, documented and yours.</p>
+          </div>
         </article>
-        <article class="pstep reveal">
-          <span class="pstep-n">02</span>
-          <h4>Infrastructure</h4>
-          <p>Dedicated sending domains and mailboxes under your control, authenticated and warmed before a single campaign launches, so your main business domain stays protected.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Separate domains and inboxes, registered in your name</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SPF, DKIM and DMARC authentication in place</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Structured warmup before any outreach begins</li>
-          </ul>
+        <article class="step reveal" id="step-2">
+          <div class="step-side">
+            <span class="step-label">Step 02</span>
+            <h4>Build sending infrastructure you own</h4>
+          </div>
+          <div class="step-card">
+            <p>In parallel with strategy, we provision dedicated sending domains and mailboxes under your control, fully authenticated with SPF, DKIM and DMARC, and warmed before a single campaign launches. Your primary business domain is never used for cold outreach, so it stays protected throughout.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Separate sending domains and inboxes, registered in your name</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SPF, DKIM and DMARC authentication in place</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Structured warmup before any outreach begins</li>
+            </ul>
+            <p class="step-out"><b>What you receive:</b> warmed, documented sending infrastructure on your domains.</p>
+          </div>
         </article>
-        <article class="pstep reveal">
-          <span class="pstep-n">03</span>
-          <h4>Copy</h4>
-          <p>Your market gets segmented by industry, role and signal, with copy written for each combination. Where a segment has a live signal, the email opens with that trigger.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Market segmented by industry, role and signal</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copy variants written per segment</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Everything approved by you before it sends</li>
-          </ul>
+        <article class="step reveal" id="step-3">
+          <div class="step-side">
+            <span class="step-label">Step 03</span>
+            <h4>Every prospect gets a message built for them</h4>
+          </div>
+          <div class="step-card">
+            <p>We segment your market across industry, role and buying signal, and write copy for each meaningful combination. Where a segment has a live signal, the email opens with the trigger that makes the timing obvious, and the rest open with the core value proposition for their industry and role. The result is a complete copy library covering every segment.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Market segmented by industry, role and signal</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copy variants written and tailored per segment</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Messaging reviewed and approved by you before anything sends</li>
+            </ul>
+            <p class="step-out"><b>What you receive:</b> a full copy library plus the framework behind it.</p>
+          </div>
         </article>
-        <article class="pstep reveal">
-          <span class="pstep-n">04</span>
-          <h4>Launch</h4>
-          <p>Signal tracking watches your market, and a prospect who shows intent gets routed into the sequence built for their segment.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Signal tracking live across your triggers</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Verified, enriched contacts in the right sequences</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Email and LinkedIn campaigns running</li>
-          </ul>
+        <article class="step reveal" id="step-4">
+          <div class="step-side">
+            <span class="step-label">Step 04</span>
+            <h4>Signal tracking goes live, and campaigns launch</h4>
+          </div>
+          <div class="step-card">
+            <p>The signal tracking system monitors your market continuously, and when a prospect shows intent they are routed automatically into the sequence built for their segment. Everything connects to the warmed infrastructure, we run final quality checks, and campaigns go live, syncing replies and meetings to your CRM as they happen.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Signal tracking live across your defined triggers</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Verified, enriched contacts routed into the right sequences</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Campaigns launched across email and LinkedIn, monitored from the first send</li>
+            </ul>
+            <p class="step-out"><b>What you receive:</b> a live, running outbound operation connected to your CRM.</p>
+          </div>
         </article>
         </div>
       </div>
     </div>
 
     <div class="phase phase-b">
-      <div class="phase-inner">
-        <div class="phase-bar reveal">
-          <div class="phase-title"><span class="phase-n">Phase 02</span><h3>Refine and scale</h3></div>
-          <p class="phase-out">You come out of this phase with an engine that sharpens every week, a pipeline system your team works from and a sales intelligence layer feeding every call.</p>
-          <span class="phase-rule"><i></i></span>
+      <div class="phase-bar">
+        <div class="phase-bar-inner">
+          <span class="phase-n">02</span>
+          <h3>Scale and refine</h3>
+          <span class="phase-line"><i></i></span>
         </div>
-        <div class="pgrid">
-        <article class="pstep reveal">
-          <span class="pstep-n">05</span>
-          <h4>Refinement</h4>
-          <p>Every campaign generates data on which segments reply and which angles work. Messaging, segments and signals get adjusted, and copy that underperforms gets replaced.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Messaging and targeting refined continuously</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copy that stops getting replies is pulled</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Documented benchmarks per segment</li>
-          </ul>
+      </div>
+      <div class="phase-inner">
+        <p class="phase-lead reveal">With campaigns live, we refine against real data and build out the full pipeline management and sales intelligence layer.</p>
+        <div class="steps">
+        <article class="step reveal" id="step-5">
+          <div class="step-side">
+            <span class="step-label">Step 01</span>
+            <h4>Refine outbound against real data</h4>
+          </div>
+          <div class="step-card">
+            <p>Every campaign generates data: which segments respond, which signals produce the best conversations and which angles get replies. We refine messaging, adjust segments, add or retire signals, and replace copy that underperforms. The system sharpens week by week.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Messaging and targeting refined on a continuous basis</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copy that stops getting replies is pulled and the winners get more volume</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Documented performance benchmarks per segment</li>
+            </ul>
+          </div>
         </article>
-        <article class="pstep reveal">
-          <span class="pstep-n">06</span>
-          <h4>Pipeline</h4>
-          <p>CRM workflows carry a prospect from first reply to signed engagement, so every opportunity has a status, a next step and full context.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Clear stages and next steps in your CRM</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Replies and meetings sync as they happen</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Handoffs defined so nothing gets dropped</li>
-          </ul>
+        <article class="step reveal" id="step-6">
+          <div class="step-side">
+            <span class="step-label">Step 02</span>
+            <h4>Manage the pipeline from reply to closed deal</h4>
+          </div>
+          <div class="step-card">
+            <p>The infrastructure that carries a prospect from first reply to a signed engagement takes shape. CRM workflows are configured so every opportunity has a clear status, a defined next step and full context. Nothing sits in an inbox, and nothing falls between handoffs.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> CRM workflows with clear stages and next steps</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Replies and meetings sync to the CRM as they happen</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Handoff procedures so no opportunity is dropped</li>
+            </ul>
+          </div>
         </article>
-        <article class="pstep reveal">
-          <span class="pstep-n">07</span>
-          <h4>Sales intelligence</h4>
-          <p>A brief is prepared before every meeting, and calls are recorded, transcribed and logged against the prospect record.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> A brief before every meeting</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Calls transcribed onto the prospect record</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Full context available to your team later</li>
-          </ul>
+        <article class="step reveal" id="step-7">
+          <div class="step-side">
+            <span class="step-label">Step 03</span>
+            <h4>Turn every touchpoint into sales intelligence</h4>
+          </div>
+          <div class="step-card">
+            <p>Your outbound operation starts generating insight at every step. A brief is prepared before every meeting, covering background, company context, relevant signals and prior interactions. Calls are recorded, transcribed and logged against the prospect record, so context is always available.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> A brief prepared before every meeting</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Calls recorded, transcribed and logged to the prospect record</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Full context available to your team long after the call</li>
+            </ul>
+          </div>
         </article>
-        <article class="pstep reveal">
-          <span class="pstep-n">08</span>
-          <h4>Reporting</h4>
-          <p>Weekly reporting on open rates, replies, meetings booked and pipeline generated, plus the status of every campaign.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Weekly performance reporting</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pipeline visibility for every campaign</li>
-            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> You always see what changed and why</li>
-          </ul>
+        <article class="step reveal" id="step-8">
+          <div class="step-side">
+            <span class="step-label">Step 04</span>
+            <h4>See the full picture every week</h4>
+          </div>
+          <div class="step-card">
+            <p>Weekly reports cover open rates, reply rates, positive replies, meetings booked, pipeline generated and the status of every campaign. You always see what is working, what is changing and what we are doing about it.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Weekly performance reports on the metrics that matter</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pipeline visibility for every campaign</li>
+            </ul>
+            <p class="step-out"><b>What you receive:</b> a refined engine, a configured pipeline system and a live sales intelligence layer.</p>
+          </div>
         </article>
         </div>
       </div>
     </div>
+
+    <div class="phase phase-c">
+      <div class="phase-bar">
+        <div class="phase-bar-inner">
+          <span class="phase-n">03</span>
+          <h3>Handover</h3>
+          <span class="phase-line"><i></i></span>
+        </div>
+      </div>
+      <div class="phase-inner">
+        <p class="phase-lead reveal">Everything documented, everything yours. Then you decide what is next.</p>
+        <div class="steps">
+        <article class="step reveal" id="step-9">
+          <div class="step-side">
+            <span class="step-label">Step 01</span>
+            <h4>The whole system, handed over</h4>
+          </div>
+          <div class="step-card">
+            <p>You receive the complete system, built on your infrastructure, running on your accounts, with every process documented.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Targeting blueprint: ICP, TAM map, segment architecture and signal library</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copy library: every sequence and variant, plus the framework behind them</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Infrastructure documentation: domains, DNS, mailboxes, warmup and compliance</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Signal tracking system, fully configured and documented</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pipeline management system: CRM workflows, lead stages and reporting templates</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Performance playbook: every benchmark the campaigns produced and what to scale</li>
+              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Standard operating procedures for every recurring process</li>
+            </ul>
+          </div>
+        </article>
+        </div>
+      </div>
+    </div>
+
   </section>
 
   <section class="sec" id="about">
@@ -608,9 +743,8 @@
       let t=false;
       function upd(){
         t=false;
-        if(innerWidth<=900)return;
         phases.forEach(function(ph){
-          const i=ph.querySelector('.phase-rule i');if(!i)return;
+          const i=ph.querySelector('.phase-line i');if(!i)return;
           const r=ph.getBoundingClientRect(),mid=innerHeight*.62;
           const p=Math.min(Math.max((mid-r.top)/r.height,0),1);
           i.style.setProperty('--p',p.toFixed(3));
@@ -635,7 +769,7 @@
       addEventListener('resize',upd);upd();
     })();
     (function(){
-      document.querySelectorAll('.proof-grid,.opts,.pgrid').forEach(function(g){
+      document.querySelectorAll('.proof-grid,.opts').forEach(function(g){
         Array.prototype.forEach.call(g.children,function(c,i){c.style.setProperty('--i',i);});
       });
     })();
@@ -644,10 +778,73 @@
       let queued=false,card=null,px=0,py=0;
       function paint(){queued=false;if(!card)return;const r=card.getBoundingClientRect();card.style.setProperty('--mx',(px-r.left)+'px');card.style.setProperty('--my',(py-r.top)+'px');}
       document.addEventListener('pointermove',function(e){
-        const c=e.target.closest?e.target.closest('.opt,.pstep'):null;
+        const c=e.target.closest?e.target.closest('.opt,.step-card'):null;
         if(!c)return;card=c;px=e.clientX;py=e.clientY;
         if(!queued){queued=true;requestAnimationFrame(paint);}
       },{passive:true});
+    })();
+    (function(){
+      const svg=document.getElementById('flywheel');
+      if(!svg)return;
+      const steps=[
+        {n:'01',k:'a',t:'Targeting',b:'The roles and company types that make a qualified prospect, the market that fits, and the signals that show a company is ready to talk now.'},
+        {n:'02',k:'a',t:'Infrastructure',b:'Sending domains and mailboxes in your name, authenticated and warmed, so your main business domain never touches cold outreach.'},
+        {n:'03',k:'a',t:'Copy',b:'Your market segmented by industry, role and signal, with copy written for every meaningful combination and approved by you.'},
+        {n:'04',k:'a',t:'Launch',b:'Signal tracking watches your market, and a prospect showing intent is routed into the sequence built for their segment.'},
+        {n:'05',k:'b',t:'Refinement',b:'Real reply data decides what changes. Messaging, segments and signals get adjusted, and copy that stops working gets replaced.'},
+        {n:'06',k:'b',t:'Pipeline',b:'CRM workflows carry a prospect from first reply to signed engagement, so every opportunity has a status and a next step.'},
+        {n:'07',k:'b',t:'Intelligence',b:'A brief before every meeting, and every call transcribed onto the prospect record, so the context is there when you need it.'},
+        {n:'08',k:'b',t:'Reporting',b:'Open rates, replies, meetings booked and pipeline generated, reported weekly, campaign by campaign.'}
+      ];
+      const nodes=document.getElementById('flyNodes');
+      const title=document.getElementById('flyTitle'),body=document.getElementById('flyBody'),jump=document.getElementById('flyJump');
+      const cN=document.getElementById('flyCentreN'),cL=document.getElementById('flyCentreL');
+      const R=150,cx=220,cy=220,NS='http://www.w3.org/2000/svg';
+      steps.forEach(function(st,i){
+        const a=(-90+i*(360/steps.length))*Math.PI/180;
+        const x=cx+R*Math.cos(a),y=cy+R*Math.sin(a);
+        const g=document.createElementNS(NS,'g');
+        g.setAttribute('class','fly-node ph-'+st.k);
+        g.setAttribute('tabindex','0');
+        g.setAttribute('role','button');
+        g.setAttribute('aria-label',st.n+' '+st.t);
+        const c=document.createElementNS(NS,'circle');
+        c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',21);
+        const t=document.createElementNS(NS,'text');
+        t.setAttribute('x',x);t.setAttribute('y',y);t.textContent=st.n;
+        const lr=R+46,lx=cx+lr*Math.cos(a),ly=cy+lr*Math.sin(a);
+        const l=document.createElementNS(NS,'text');
+        l.setAttribute('class','fly-label');l.setAttribute('x',lx);l.setAttribute('y',ly);
+        l.setAttribute('text-anchor',Math.abs(Math.cos(a))<0.3?'middle':(Math.cos(a)>0?'start':'end'));
+        l.setAttribute('dx',Math.abs(Math.cos(a))<0.3?0:(Math.cos(a)>0?6:-6));
+        l.setAttribute('dominant-baseline','central');l.textContent=st.t;
+        g.appendChild(c);g.appendChild(t);g.appendChild(l);
+        g.addEventListener('mouseenter',function(){hold=true;set(i);});
+        g.addEventListener('focus',function(){hold=true;set(i);});
+        g.addEventListener('mouseleave',function(){hold=false;});
+        g.addEventListener('blur',function(){hold=false;});
+        g.addEventListener('click',function(){const el=document.getElementById('step-'+(i+1));if(el)el.scrollIntoView({behavior:'smooth',block:'center'});});
+        g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();g.dispatchEvent(new Event('click'));}});
+        nodes.appendChild(g);
+      });
+      let cur=-1,hold=false,timer=null;
+      function set(i){
+        if(i===cur)return;cur=i;
+        const st=steps[i];
+        Array.prototype.forEach.call(nodes.children,function(g,j){g.classList.toggle('on',j===i);});
+        title.textContent=st.t;body.textContent=st.b;
+        cN.textContent=st.n;cL.textContent='of eight';
+        cN.style.fill=st.k==='a'?'var(--peach)':'var(--aqua-dark)';
+        jump.setAttribute('href','#step-'+(i+1));
+      }
+      set(0);
+      if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        const io=new IntersectionObserver(function(es){
+          if(es[0].isIntersecting){if(!timer)timer=setInterval(function(){if(!hold)set((cur+1)%steps.length);},2900);}
+          else if(timer){clearInterval(timer);timer=null;}
+        },{threshold:.25});
+        io.observe(svg);
+      }
     })();
     (function(){
       const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
