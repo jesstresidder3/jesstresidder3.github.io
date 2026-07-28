@@ -238,8 +238,9 @@
     .contact{background:var(--off-white);border-top:1px solid var(--border);padding:clamp(58px,6vw,88px) clamp(24px,4vw,56px);text-align:center}
     
     .contact h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700;letter-spacing:-0.035em;line-height:1.08;max-width:20ch;margin:0 auto 30px}
-    .contact-big{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
-    .cbig{display:inline-flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:clamp(.94rem,1.3vw,1.05rem);font-weight:600;text-decoration:none;padding:14px 24px;border-radius:10px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+    .contact-big{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:24px}
+    .contact-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--white);box-shadow:0 4px 14px rgba(0,0,0,.10);flex-shrink:0;margin-right:2px}
+    .cbig{display:inline-flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:600;text-decoration:none;padding:12px 20px;border-radius:9px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
     .cbig.mail{background:var(--peach);color:#fff;box-shadow:0 10px 30px rgba(224,145,111,.28)}
     .cbig.mail:hover{background:var(--peach-dark);transform:translateY(-2px)}
     .cbig.li{background:var(--white);color:var(--blue-text);border:1px solid var(--border)}
@@ -659,6 +660,7 @@
     <div class="sec-inner">
       <h2 class="reveal">Looking for go to market engineering <em>/ AI support?</em></h2>
       <div class="contact-big reveal">
+        <img class="contact-avatar" src="/jess-avatar.jpg" alt="Jess Tresidder" width="160" height="160" loading="lazy" decoding="async">
         <a href="mailto:hello@jesstresidder.com" class="cbig mail">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
           hello@jesstresidder.com

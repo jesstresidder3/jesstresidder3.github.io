@@ -212,8 +212,8 @@
     .cta::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(224,145,111,.08) 0%,transparent 70%);animation:meshDrift 18s ease-in-out infinite alternate}
     .cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;position:relative;z-index:1}
     .cta-text h2{font-size:2rem;font-weight:700;margin-bottom:16px}.cta-text p{color:var(--text-mid);font-size:.95rem;line-height:1.8;margin-bottom:14px}
-    .cta-links{display:flex;flex-direction:column;gap:8px;margin-top:18px}
-    .cta-link{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:500;color:var(--blue-dark);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .15s,transform .15s}.cta-link:hover{color:var(--peach-dark);transform:translateX(3px)}
+    .cta-links{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+    .cta-link{font-family:'Space Grotesk',sans-serif;font-size:1.02rem;font-weight:600;color:var(--blue-text);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color .15s,transform .15s}.cta-link:hover{color:var(--peach-dark);transform:translateX(3px)}
     .cta-form-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:36px;box-shadow:0 14px 50px rgba(0,0,0,.04)}
     .form-group{margin-bottom:20px}
     .form-group label{display:block;font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:600;color:var(--text);margin-bottom:6px}
@@ -233,6 +233,9 @@
     .back-top:hover{background:var(--peach-dark);transform:translateY(-2px)}
     .back-top svg{width:18px;height:18px;stroke:var(--white);stroke-width:2.5;fill:none}
 
+    .book-row{display:flex;align-items:center;gap:14px;margin-top:24px}
+    .book-row .btn-primary{font-size:1.05rem;padding:18px 34px;border-radius:10px}
+    .book-avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--white);box-shadow:0 4px 14px rgba(0,0,0,.10);flex-shrink:0}
     footer{padding:28px clamp(24px,4vw,56px);text-align:center;font-size:.78rem;color:var(--text-light);background:var(--white);border-top:1px solid var(--border-light)}footer a{color:var(--text-mid);text-decoration:none;transition:color .15s}footer a:hover{color:var(--peach-dark)}
 
     /* ===== RESPONSIVE ===== */
@@ -878,7 +881,10 @@
         <h2>Whether you want to build AI growth systems, implement AI in your business, or upskill your <em>team</em></h2>
         <p>Please don't hesitate to reach out. Tell me a bit about what you're working on and what's been taking up too much of your week. I'll get back to you within a day.</p>
         <p style="margin-top:12px">Based in South Australia, working with government and organisations across Australia, Singapore and Hong Kong.</p>
-        <a href="https://book.jesstresidder.com" class="btn btn-primary" style="margin-top:20px">Book a 30 min call</a>
+        <div class="book-row">
+          <img class="book-avatar" src="jess-avatar.jpg" alt="Jess Tresidder" width="160" height="160" loading="lazy" decoding="async">
+          <a href="https://book.jesstresidder.com" class="btn btn-primary">Book a 30 min call</a>
+        </div>
         <div class="cta-links">
           <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer" class="cta-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:var(--blue-dark)"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
