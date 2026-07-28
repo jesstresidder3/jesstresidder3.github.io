@@ -95,51 +95,39 @@
     .clarify-mark svg{width:22px;height:22px;stroke:var(--aqua-dark);stroke-width:2;fill:none}
     .clarify p{color:var(--text);font-size:1.02rem;margin:0}
     .clarify strong{color:var(--aqua-dark);font-family:'Space Grotesk',sans-serif;font-weight:600}
-    /* feature cards */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .fcard{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 26px;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s,transform .3s cubic-bezier(.16,1,.3,1)}
-    .fcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1)}
-    .fcard:hover{border-color:var(--peach);box-shadow:0 12px 40px rgba(224,145,111,.08);transform:translateY(-3px)}
-    .fcard:hover::before{transform:scaleX(1)}
-    .fcard:nth-child(5n+1)::before{background:var(--peach)}.fcard:nth-child(5n+2)::before{background:var(--blue)}.fcard:nth-child(5n+3)::before{background:var(--yellow)}.fcard:nth-child(5n+4)::before{background:var(--aqua)}.fcard:nth-child(5n+5)::before{background:var(--peach-dark)}
-    .ficon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-    .ficon svg{width:23px;height:23px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
-    .ic-peach{background:var(--peach-soft)}.ic-peach svg{stroke:var(--peach-dark)}.ic-blue{background:var(--blue-soft)}.ic-blue svg{stroke:var(--blue-dark)}.ic-yellow{background:var(--yellow-soft)}.ic-yellow svg{stroke:var(--yellow-dark)}.ic-aqua{background:var(--aqua-soft)}.ic-aqua svg{stroke:var(--aqua-dark)}
-    .fcard h3{font-size:1.08rem;font-weight:700;margin-bottom:8px}
-    .fcard p{color:var(--text-mid);font-size:.92rem;line-height:1.7}
-    /* process, scroll pinned */
-    .process{padding:54px clamp(24px,4vw,56px) 20px;background:var(--cream);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
-    .process-head{max-width:1100px;margin:0 auto 26px}
-    .process-track{max-width:1100px;margin:0 auto;position:relative}
-    .process-sticky{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
-    .process-rail{display:none}
-    .rail-phase{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--text);margin:0 0 3px}
-    .rail-days{font-size:.8rem;color:var(--text-light);margin-bottom:12px}
-    .rail-list{list-style:none;border-left:2px solid var(--border);margin-bottom:26px}
-    .rail-item{display:flex;gap:11px;align-items:baseline;padding:8px 0 8px 16px;margin-left:-2px;border-left:2px solid transparent;color:var(--text-light);font-size:.9rem;transition:color .3s,border-color .3s}
-    .rail-item .rn{font-family:'Space Grotesk',sans-serif;font-size:.72rem;font-weight:600;min-width:17px}
-    .rail-item.on{color:var(--text);border-left-color:var(--peach);font-weight:600}
-    .rail-item.on .rn{color:var(--peach-dark)}
-    .process-stage{position:relative}
-    .pstep{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:32px clamp(22px,3vw,38px);box-shadow:0 16px 46px rgba(0,0,0,.05);margin-bottom:18px;position:relative;overflow:hidden}
-    .pstep-tag{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:600;color:var(--peach-dark);margin-bottom:10px}
+    /* testimonials */
+    .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);padding:52px clamp(24px,4vw,56px);position:relative;overflow:hidden}
+    .proof::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 15% 20%,rgba(157,191,181,.12),transparent 42%),radial-gradient(circle at 85% 78%,rgba(224,145,111,.10),transparent 44%);pointer-events:none;z-index:0}
+    .proof-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
+    .proof-head{text-align:center;margin-bottom:36px}
+    .proof-head h2{font-size:1.7rem;font-weight:700;margin-bottom:6px}
+    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+    .tcard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.04);transition:border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1)}
+    .tcard:hover{border-color:var(--peach);box-shadow:0 16px 48px rgba(224,145,111,.10);transform:translateY(-3px)}
+    .tshot{border:1px solid var(--border-light);border-radius:10px;overflow:hidden;background:var(--white)}
+    .tshot img{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+    .tcard:hover .tshot img{transform:scale(1.04)}
+    .tcard-foot{margin-top:auto;padding-top:16px;text-align:center}
+    .tstars{color:var(--yellow-dark);font-size:.95rem;letter-spacing:2px}
+    .trole{font-size:.76rem;color:var(--text-light);margin-top:6px}
+    /* process, scroll flow */
+    .process{padding:54px clamp(24px,4vw,56px) 62px;background:var(--cream);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
+    .process-head{max-width:1100px;margin:0 auto 34px}
+    .process-flow{max-width:860px;margin:0 auto;position:relative}
+    .phase-head{display:flex;align-items:baseline;gap:14px;margin:44px 0 20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+    .phase-head:first-child{margin-top:0}
+    .phase-n{font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:700;color:var(--peach-dark)}
+    .phase-head h3{font-size:1.25rem;font-weight:700;color:var(--text)}
+    .pstep{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:32px clamp(22px,3vw,38px);box-shadow:0 14px 40px rgba(0,0,0,.045);margin-bottom:20px;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .3s}
+    .pstep:hover{border-color:var(--peach);box-shadow:0 18px 50px rgba(224,145,111,.10)}
     .pstep-ghost{position:absolute;top:14px;right:26px;font-family:'Space Grotesk',sans-serif;font-size:3.6rem;font-weight:700;line-height:1;color:var(--peach-soft);letter-spacing:-0.04em;pointer-events:none}
-    .pstep h3{font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:700;margin-bottom:12px;max-width:30ch;position:relative}
-    .pstep>p{color:var(--text-mid);font-size:.98rem;margin-bottom:20px;max-width:64ch}
+    .pstep h3{font-size:clamp(1.2rem,2.2vw,1.5rem);font-weight:700;margin-bottom:12px;max-width:28ch;position:relative}
+    .pstep>p{color:var(--text-mid);font-size:.98rem;margin-bottom:20px}
     .pstep ul{list-style:none;display:grid;gap:11px;margin-bottom:20px}
     .pstep li{display:flex;gap:11px;align-items:flex-start;font-size:.94rem;color:var(--text);line-height:1.6}
     .pstep li svg{flex-shrink:0;width:17px;height:17px;margin-top:4px;stroke:var(--peach-dark);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
     .pstep-out{background:var(--peach-soft);border-radius:12px;padding:14px 18px;font-size:.93rem;color:var(--text)}
     .pstep-out b{font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--peach-text)}
-    .process-hint{display:none;font-size:.8rem;color:var(--text-light);margin-top:8px}
-    @media(min-width:901px){
-      .process-track.pinned .process-sticky{position:sticky;top:78px;min-height:calc(100vh - 96px);grid-template-columns:248px 1fr;gap:52px;align-content:center;padding:20px 0 34px}
-      .process-track.pinned .process-rail{display:block}
-      .process-track.pinned .process-stage{min-height:470px}
-      .process-track.pinned .pstep{position:absolute;top:0;left:0;right:0;opacity:0;transform:translateY(20px) scale(.99);transition:opacity .45s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1);pointer-events:none;margin:0;z-index:1}
-      .process-track.pinned .pstep.on{opacity:1;transform:none;pointer-events:auto;z-index:2}
-      .process-track.pinned .process-hint{display:block}
-    }
     /* service options */
     .opts{display:grid;grid-template-columns:1fr 1fr;gap:22px}
     .opt{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:32px 30px;display:flex;flex-direction:column;transition:border-color .25s,box-shadow .25s,transform .3s cubic-bezier(.16,1,.3,1)}
@@ -157,12 +145,16 @@
     .tools-inner{max-width:900px;margin:0 auto}
     .tools h2{font-size:1.4rem;font-weight:700;margin-bottom:12px;color:#fff}
     .tools p{color:rgba(255,255,255,.82);font-size:1.02rem;max-width:760px}
-    .tools .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-    .chip{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:500;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 16px;border-radius:100px}
-    /* proof */
-    .proof-strip{background:var(--peach-soft);border-radius:18px;padding:32px 34px;border:1px solid var(--border)}
-    .proof-strip h3{font-size:1.15rem;font-weight:700;margin-bottom:10px}
-    .proof-strip p{color:var(--text-mid);margin:0;max-width:760px}
+    .tools-marquee-wrap{margin-top:26px;overflow:hidden;position:relative;padding:6px 0}
+    .tools-marquee-wrap::before,.tools-marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+    .tools-marquee-wrap::before{left:0;background:linear-gradient(to right,var(--navy),transparent)}
+    .tools-marquee-wrap::after{right:0;background:linear-gradient(to left,var(--navy),transparent)}
+    .tools-marquee{display:flex;width:max-content;align-items:center}
+    .tool-item{display:flex;align-items:center;gap:10px;padding:0 30px;flex-shrink:0;opacity:.78;transition:opacity .3s}
+    .tool-item:hover{opacity:1}
+    .tool-item img{height:21px;width:21px;object-fit:contain}
+    .tool-dot{width:7px;height:7px;border-radius:50%;background:var(--peach);opacity:.85;flex-shrink:0}
+    .tool-item span{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;color:#fff;letter-spacing:-0.01em;white-space:nowrap}
     /* about */
     .about-grid{display:grid;grid-template-columns:260px 1fr;gap:46px;align-items:start}
     .about-photo{width:260px;height:320px;border-radius:16px;overflow:hidden;border:3px solid rgba(107,174,214,.16);box-shadow:0 18px 50px rgba(0,0,0,.10)}
@@ -183,8 +175,9 @@
     .related{font-size:.9rem;color:var(--text-mid);margin-top:24px}
     footer{padding:26px clamp(24px,4vw,56px);text-align:center;font-size:.78rem;color:var(--text-light);background:var(--white);border-top:1px solid var(--border-light)}
     footer a{color:var(--text-mid);text-decoration:none}footer a:hover{color:var(--peach-dark)}
-    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:18px}.hero-photo{width:180px;height:228px;order:-1}.cards{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr}.about-photo{width:200px;height:250px}.opts{grid-template-columns:1fr}}
-    @media(max-width:600px){.nav-right .hide-m{display:none}.nav-toggle{display:flex}.nav-right{gap:10px}.nav-right a.nav-btn{display:none}.hero h1{font-size:1.15rem}.hero-eyebrow{font-size:2.4rem}.pstep-ghost{font-size:2.6rem;top:10px;right:18px}.cards{grid-template-columns:1fr}.hero-btns{flex-direction:column;align-items:stretch}.hero-btns .btn{text-align:center}.clarify-inner{flex-direction:column;gap:14px}}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:18px}.hero-photo{width:180px;height:228px;order:-1}.about-grid{grid-template-columns:1fr}.about-photo{width:200px;height:250px}.opts{grid-template-columns:1fr}}
+    @media(max-width:760px){.proof-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto;gap:18px}.tools-marquee-wrap::before,.tools-marquee-wrap::after{width:44px}}
+    @media(max-width:600px){.nav-right .hide-m{display:none}.nav-toggle{display:flex}.nav-right{gap:10px}.nav-right a.nav-btn{display:none}.hero h1{font-size:1.15rem}.hero-eyebrow{font-size:2.4rem}.pstep-ghost{font-size:2.6rem;top:10px;right:18px}.hero-btns{flex-direction:column;align-items:stretch}.hero-btns .btn{text-align:center}.clarify-inner{flex-direction:column;gap:14px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important}}
   </style>
   <script type="application/ld+json">
@@ -213,7 +206,7 @@
           "@type": "OfferCatalog",
           "name": "Ways to work together",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fractional GTM engineer", "description": "One to four days a week embedded with your team, owning the go-to-market build end to end, from targeting and sending infrastructure through to campaigns, CRM workflows and weekly reporting." } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fractional GTM engineer", "description": "One to four days a week embedded with your team, owning the GTM build end to end, from targeting and sending infrastructure through to campaigns, CRM workflows and weekly reporting." } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Focused GTM project", "description": "A single scoped system built and handed over documented, such as an enrichment pipeline, a buying-signal tracker, a sequencing setup or the CRM workflows behind your pipeline." } }
           ]
         }
@@ -234,7 +227,6 @@
   <nav>
     <a href="/" class="nav-logo"><span class="logo-mark"></span> Jess Tresidder</a>
     <div class="nav-right">
-      <a href="#build" class="hide-m">What I build</a>
       <a href="#process" class="hide-m">How I help</a>
       <a href="#services" class="hide-m">Ways to work</a>
       <a href="#contact" class="nav-btn">Get in touch</a>
@@ -242,7 +234,6 @@
     </div>
   </nav>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#build">What I build</a>
     <a href="#process">How I help</a>
     <a href="#services">Ways to work</a>
     <a href="#about">About me</a>
@@ -266,11 +257,47 @@
         <p class="hero-sub">I build the AI systems that take the repetitive research, list building and admin off a founder or salesperson's plate, so your hours go back into the conversations that actually need a human.</p>
         <div class="hero-btns">
           <a href="#contact" class="btn btn-primary">Get in touch</a>
-          <a href="#build" class="btn btn-ghost">See what I build</a>
+          <a href="#process" class="btn btn-ghost">See how I help</a>
         </div>
       </div>
       <div class="hero-photo">
         <img src="/jess-speaking-blue.jpg" alt="Jess Tresidder, GTM engineer in Adelaide, speaking at an event" width="711" height="900" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="proof" id="testimonials">
+    <div class="proof-inner">
+      <div class="proof-head reveal">
+        <span class="pill pill-aqua"><span class="pill-dot"></span> Testimonials</span>
+        <h2>What organisations are saying <em>after</em> working with me</h2>
+      </div>
+      <div class="proof-grid">
+        <div class="tcard reveal">
+          <div class="tshot"><img src="/testimonials/testimonial-presentation.jpg" alt="Message: Hey Jess, dare I say, the best presentation I've ever had work wise. Thank you, I really appreciated your training, it was very helpful." loading="lazy" width="1266" height="299"></div>
+          <blockquote class="sr-only">&ldquo;Hey Jess, dare I say, the best presentation I&rsquo;ve ever had work wise. Thank you, I really appreciated your training, it was very helpful.&rdquo; <cite>From an AI workshop attendee</cite></blockquote>
+          <div class="tcard-foot">
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="trole">From an AI workshop attendee</div>
+          </div>
+        </div>
+        <div class="tcard reveal d1">
+          <div class="tshot"><img src="/testimonials/testimonial-maryan.jpg" alt="Message: Love your approach to AI, it's refreshing. I'm feeling much more positive about AI and less overwhelmed. Whatever you charge, charge double. That was great." loading="lazy" width="1138" height="424"></div>
+          <blockquote class="sr-only">&ldquo;Love your approach to AI, it&rsquo;s refreshing. I&rsquo;m feeling much more positive about AI and less overwhelmed. Whatever you charge, charge double. That was great.&rdquo; <cite>From an organisation Jess Tresidder worked with on AI</cite></blockquote>
+          <div class="tcard-foot">
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="trole">From an organisation I worked with on AI</div>
+          </div>
+        </div>
+        <div class="tcard reveal d2">
+          <div class="tshot"><img src="/testimonials/testimonial-janelle.jpg" alt="Message: Thanks for your time and training this morning on AI with the team. Super keen to see how my tasks can be done at a whole new level." loading="lazy" width="1266" height="353"></div>
+          <blockquote class="sr-only">&ldquo;Thanks for your time and training this morning on AI with the team. Super keen to see how my tasks can be done at a whole new level.&rdquo; <cite>From an AI presentation client</cite></blockquote>
+          <div class="tcard-foot">
+            <div class="tstars" aria-label="Five out of five">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="trole">From an AI presentation client</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -282,174 +309,113 @@
     </div>
   </section>
 
-  <section class="sec" id="build">
-    <div class="sec-inner">
-      <div class="sec-head reveal">
-        <span class="pill pill-blue"><span class="pill-dot"></span> What I build</span>
-        <h2>Five layers of a go-to-market <em>system</em></h2>
-        <p>Each one takes a chunk of repetitive work off your plate. You can start with the one that hurts most, or build the full stack over time.</p>
-      </div>
-      <div class="cards">
-        <div class="fcard reveal">
-          <div class="ficon ic-peach"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="16 8 10 10 8 16 14 14 16 8"/></svg></div>
-          <h3>GTM strategy</h3>
-          <p>Deep research on your ICP and market, your positioning, and the channels actually worth your time, so you aim before you fire.</p>
-        </div>
-        <div class="fcard reveal d1">
-          <div class="ficon ic-blue"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.3 8.5 8.5 0 0 1-3.8-.9L3 20l1.1-4.2A8.38 8.38 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"/></svg></div>
-          <h3>Sales execution</h3>
-          <p>Playbook generation, messaging, and lead qualification, so the team works from one sharp script instead of rewriting the same email from scratch every morning.</p>
-        </div>
-        <div class="fcard reveal d2">
-          <div class="ficon ic-yellow"><svg viewBox="0 0 24 24"><polygon points="3 4 21 4 14 12 14 19 10 21 10 12 3 4"/></svg></div>
-          <h3>Pipeline generation</h3>
-          <p>List building, enrichment and intent signals, and automated prospect research that briefs you on an account before you ever pick up the phone.</p>
-        </div>
-        <div class="fcard reveal d1">
-          <div class="ficon ic-aqua"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></svg></div>
-          <h3>Sales ops</h3>
-          <p>Automated CRM updates, pipeline, forecasting and reporting, so the admin keeps itself current in the background while you sell.</p>
-        </div>
-        <div class="fcard reveal d2">
-          <div class="ficon ic-peach"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-          <h3>The AI layer</h3>
-          <p>Workflows, agents and systems trained on your own playbook, so the output sounds like your business and follows your process, not a generic template.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="process" id="process">
     <div class="process-head reveal">
       <span class="pill pill-yellow"><span class="pill-dot"></span> How I help</span>
-      <h2 style="font-size:1.85rem;font-weight:700;margin-bottom:10px">The first 90 days, one step at a <em>time</em></h2>
-      <p style="color:var(--text-mid);max-width:640px">Two phases. The first 30 days build the outbound engine and take it live, then 60 more sharpen it and wire up everything that happens after a reply.</p>
+      <h2 style="font-size:1.85rem;font-weight:700;margin-bottom:10px">How the build <em>runs</em></h2>
+      <p style="color:var(--text-mid);max-width:640px">Two phases. The first builds the outbound engine and takes it live, the second sharpens it and wires up everything that happens after a reply.</p>
     </div>
 
-    <div class="process-track" id="processTrack">
-      <div class="process-sticky">
-        <aside class="process-rail" id="processRail">
-          <p class="rail-phase">Phase 01, build and launch</p>
-          <p class="rail-days">Days 0 to 30</p>
-          <ul class="rail-list">
-            <li class="rail-item on"><span class="rn">01</span> Targeting</li>
-            <li class="rail-item"><span class="rn">02</span> Infrastructure</li>
-            <li class="rail-item"><span class="rn">03</span> Copy</li>
-            <li class="rail-item"><span class="rn">04</span> Launch</li>
-          </ul>
-          <p class="rail-phase">Phase 02, scale and optimise</p>
-          <p class="rail-days">Days 30 to 90</p>
-          <ul class="rail-list" style="margin-bottom:0">
-            <li class="rail-item"><span class="rn">05</span> Optimisation</li>
-            <li class="rail-item"><span class="rn">06</span> Pipeline</li>
-            <li class="rail-item"><span class="rn">07</span> Sales intelligence</li>
-            <li class="rail-item"><span class="rn">08</span> Reporting</li>
-          </ul>
-          <p class="process-hint">Keep scrolling to move through the steps.</p>
-        </aside>
-
-        <div class="process-stage">
-          <article class="pstep on">
-            <span class="pstep-ghost">01</span>
-            <p class="pstep-tag">Phase 01, build and launch</p>
-            <h3>Define your ideal buyers, markets and buying signals</h3>
-            <p>A deep-dive workshop defines the foundation of your outbound: the exact roles and company types that make a qualified prospect, the full addressable market that fits and the buying signals that show a company is ready for a conversation now, from job postings and funding to leadership changes. That targeting layer sets when outreach goes out, so a prospect hears from you at the point they have a reason to care.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ideal client profile defined by industry, size and role</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Total addressable market mapped and sized</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Buying-signal library built for your market</li>
-            </ul>
-            <p class="pstep-out"><b>What you receive:</b> a complete targeting blueprint, documented and yours.</p>
-          </article>
-
-          <article class="pstep">
-            <span class="pstep-ghost">02</span>
-            <p class="pstep-tag">Phase 01, build and launch</p>
-            <h3>Build sending infrastructure you own</h3>
-            <p>In parallel with strategy, we provision dedicated sending domains and mailboxes under your control, fully authenticated with SPF, DKIM and DMARC, and warmed before a single campaign launches. Your primary business domain is never used for cold outreach, so it stays protected throughout.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Separate sending domains and inboxes, registered in your name</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SPF, DKIM and DMARC authentication in place</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Structured warmup before any outreach begins</li>
-            </ul>
-            <p class="pstep-out"><b>What you receive:</b> warmed, documented sending infrastructure on your domains.</p>
-          </article>
-
-          <article class="pstep">
-            <span class="pstep-ghost">03</span>
-            <p class="pstep-tag">Phase 01, build and launch</p>
-            <h3>Every prospect gets a message built for them</h3>
-            <p>We segment your market across industry, role and buying signal, and write copy for each meaningful combination. Segments with an active signal lead with the trigger that makes outreach timely, and the rest lead with the core value proposition for their industry and role. The result is a complete copy library covering every segment.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Market segmented by industry, role and signal</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copy variants written and tailored per segment</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Messaging reviewed and approved by you before anything sends</li>
-            </ul>
-            <p class="pstep-out"><b>What you receive:</b> a full copy library plus the framework behind it.</p>
-          </article>
-
-          <article class="pstep">
-            <span class="pstep-ghost">04</span>
-            <p class="pstep-tag">Phase 01, build and launch</p>
-            <h3>Signal tracking goes live, and campaigns launch</h3>
-            <p>The signal tracking system monitors your market continuously, and when a prospect shows intent they are routed automatically into the sequence built for their segment. Everything connects to the warmed infrastructure, we run final quality checks, and campaigns go live, typically within three to five weeks of kickoff, syncing replies and meetings to your CRM in real time.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Signal tracking live across your defined triggers</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Verified, enriched contacts routed into the right sequences</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Campaigns launched across email and LinkedIn, monitored from day one</li>
-            </ul>
-            <p class="pstep-out"><b>What you receive:</b> a live, running outbound operation connected to your CRM.</p>
-          </article>
-
-          <article class="pstep">
-            <span class="pstep-ghost">05</span>
-            <p class="pstep-tag">Phase 02, scale and optimise</p>
-            <h3>Optimise outbound against real data</h3>
-            <p>Every campaign generates data: which segments respond, which signals produce the best conversations and which angles get replies. We refine messaging, adjust segments, add or retire signals and replace copy that underperforms. The system sharpens week by week.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Messaging and targeting refined on a continuous basis</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Underperforming segments and copy cut, winners scaled</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Documented performance benchmarks per segment</li>
-            </ul>
-          </article>
-
-          <article class="pstep">
-            <span class="pstep-ghost">06</span>
-            <p class="pstep-tag">Phase 02, scale and optimise</p>
-            <h3>Manage the pipeline from reply to closed deal</h3>
-            <p>The infrastructure that carries a prospect from first reply to a signed engagement takes shape. CRM workflows are configured so every opportunity has a clear status, a defined next step and full context. Nothing sits in an inbox, and nothing falls between handoffs.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> CRM workflows with clear stages and next steps</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Real-time reply and meeting sync</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Handoff procedures so no opportunity is dropped</li>
-            </ul>
-          </article>
-
-          <article class="pstep">
-            <span class="pstep-ghost">07</span>
-            <p class="pstep-tag">Phase 02, scale and optimise</p>
-            <h3>Turn every touchpoint into sales intelligence</h3>
-            <p>Your outbound operation starts generating insight at every step. Pre-call briefs are prepared before every meeting, covering background, company context, relevant signals and prior interactions. Calls are recorded, transcribed and logged against the prospect record, so context is always available.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pre-call briefs prepared before every meeting</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Calls recorded, transcribed and logged to the prospect record</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Full context available to your team weeks later</li>
-            </ul>
-          </article>
-
-          <article class="pstep">
-            <span class="pstep-ghost">08</span>
-            <p class="pstep-tag">Phase 02, scale and optimise</p>
-            <h3>See the full picture every week</h3>
-            <p>Weekly reports cover open rates, reply rates, positive replies, meetings booked, pipeline generated and campaign-by-campaign status. You always see what is working, what is changing and what we are doing about it.</p>
-            <ul>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Weekly performance reports on the metrics that matter</li>
-              <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Campaign-by-campaign pipeline visibility</li>
-            </ul>
-            <p class="pstep-out"><b>What you receive by day 90:</b> an optimised engine, a configured pipeline system and a live sales intelligence layer.</p>
-          </article>
-        </div>
+    <div class="process-flow">
+      <div class="phase-head reveal">
+        <span class="phase-n">Phase 01</span>
+        <h3>Build and launch</h3>
       </div>
+      <article class="pstep reveal">
+        <span class="pstep-ghost">01</span>
+        <h3>Define your ideal buyers, markets and buying signals</h3>
+        <p>A deep dive workshop defines the foundation of your outbound: the exact roles and company types that make a qualified prospect, the full addressable market that fits and the buying signals that show a company is ready for a conversation now, from job postings and funding to leadership changes. That targeting layer sets when outreach goes out, so a prospect hears from you at the point they have a reason to care.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Ideal client profile defined by industry, size and role</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Total addressable market mapped and sized</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Buying signal library built for your market</li>
+        </ul>
+        <p class="pstep-out"><b>What you receive:</b> a complete targeting blueprint, documented and yours.</p>
+      </article>
+
+      <article class="pstep reveal">
+        <span class="pstep-ghost">02</span>
+        <h3>Build sending infrastructure you own</h3>
+        <p>In parallel with strategy, we provision dedicated sending domains and mailboxes under your control, fully authenticated with SPF, DKIM and DMARC, and warmed before a single campaign launches. Your primary business domain is never used for cold outreach, so it stays protected throughout.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Separate sending domains and inboxes, registered in your name</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> SPF, DKIM and DMARC authentication in place</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Structured warmup before any outreach begins</li>
+        </ul>
+        <p class="pstep-out"><b>What you receive:</b> warmed, documented sending infrastructure on your domains.</p>
+      </article>
+
+      <article class="pstep reveal">
+        <span class="pstep-ghost">03</span>
+        <h3>Every prospect gets a message built for them</h3>
+        <p>We segment your market across industry, role and buying signal, and write copy for each meaningful combination. Segments with an active signal lead with the trigger that makes outreach timely, and the rest lead with the core value proposition for their industry and role. The result is a complete copy library covering every segment.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Market segmented by industry, role and signal</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copy variants written and tailored per segment</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Messaging reviewed and approved by you before anything sends</li>
+        </ul>
+        <p class="pstep-out"><b>What you receive:</b> a full copy library plus the framework behind it.</p>
+      </article>
+
+      <article class="pstep reveal">
+        <span class="pstep-ghost">04</span>
+        <h3>Signal tracking goes live, and campaigns launch</h3>
+        <p>The signal tracking system monitors your market continuously, and when a prospect shows intent they are routed automatically into the sequence built for their segment. Everything connects to the warmed infrastructure, we run final quality checks, and campaigns go live, syncing replies and meetings to your CRM as they happen.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Signal tracking live across your defined triggers</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Verified, enriched contacts routed into the right sequences</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Campaigns launched across email and LinkedIn, monitored from the first send</li>
+        </ul>
+        <p class="pstep-out"><b>What you receive:</b> a live, running outbound operation connected to your CRM.</p>
+      </article>
+
+      <div class="phase-head reveal">
+        <span class="phase-n">Phase 02</span>
+        <h3>Scale and optimise</h3>
+      </div>
+      <article class="pstep reveal">
+        <span class="pstep-ghost">05</span>
+        <h3>Optimise outbound against real data</h3>
+        <p>Every campaign generates data: which segments respond, which signals produce the best conversations and which angles get replies. We refine messaging, adjust segments, add or retire signals and replace copy that underperforms. The system sharpens week by week.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Messaging and targeting refined on a continuous basis</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Underperforming segments and copy cut, winners scaled</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Documented performance benchmarks per segment</li>
+        </ul>
+      </article>
+
+      <article class="pstep reveal">
+        <span class="pstep-ghost">06</span>
+        <h3>Manage the pipeline from reply to closed deal</h3>
+        <p>The infrastructure that carries a prospect from first reply to a signed engagement takes shape. CRM workflows are configured so every opportunity has a clear status, a defined next step and full context. Nothing sits in an inbox, and nothing falls between handoffs.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> CRM workflows with clear stages and next steps</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Replies and meetings sync to the CRM as they happen</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Handoff procedures so no opportunity is dropped</li>
+        </ul>
+      </article>
+
+      <article class="pstep reveal">
+        <span class="pstep-ghost">07</span>
+        <h3>Turn every touchpoint into sales intelligence</h3>
+        <p>Your outbound operation starts generating insight at every step. A brief is prepared before every meeting, covering background, company context, relevant signals and prior interactions. Calls are recorded, transcribed and logged against the prospect record, so context is always available.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> A brief prepared before every meeting</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Calls recorded, transcribed and logged to the prospect record</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Full context available to your team weeks later</li>
+        </ul>
+      </article>
+
+      <article class="pstep reveal">
+        <span class="pstep-ghost">08</span>
+        <h3>See the full picture every week</h3>
+        <p>Weekly reports cover open rates, reply rates, positive replies, meetings booked, pipeline generated and the status of every campaign. You always see what is working, what is changing and what we are doing about it.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Weekly performance reports on the metrics that matter</li>
+          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Pipeline visibility for every campaign</li>
+        </ul>
+        <p class="pstep-out"><b>What you receive:</b> an optimised engine, a configured pipeline system and a live sales intelligence layer.</p>
+      </article>
     </div>
   </section>
 
@@ -464,7 +430,7 @@
         <div class="opt reveal">
           <p class="opt-label">Option one</p>
           <h3>Fractional GTM engineer</h3>
-          <p>One to four days a week, embedded with your team, owning the go-to-market build end to end. Everything in the 90 days above, from targeting through to the weekly reporting, plus the ongoing refinement once it is running.</p>
+          <p>One to four days a week, embedded with your team, owning the GTM build end to end. Everything above, from targeting through to the reporting, plus the ongoing refinement once it is running.</p>
           <ul>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> One to four days a week on a retainer</li>
             <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> The full stack, targeting through to reporting</li>
@@ -490,19 +456,10 @@
   <section class="tools">
     <div class="tools-inner reveal">
       <h2>What's under the hood</h2>
-      <p>This usually means wiring together tools you might already recognise. Claude for the thinking, Clay or Apollo for enrichment, HubSpot for the CRM, Zapier or n8n for the plumbing, and Instantly for sequencing. You don't need to know any of them. That part is my job.</p>
-      <div class="chips">
-        <span class="chip">Claude</span><span class="chip">Clay</span><span class="chip">Apollo</span><span class="chip">HubSpot</span><span class="chip">Zapier</span><span class="chip">n8n</span><span class="chip">Instantly</span>
-      </div>
+      <p>Your system gets wired together from tools you might already recognise, and a few you probably have not met. You do not need to know any of them. That part is my job.</p>
     </div>
-  </section>
-
-  <section class="sec cream">
-    <div class="sec-inner">
-      <div class="proof-strip reveal">
-        <h3>I've built this from nothing before</h3>
-        <p>I built the entire go-to-market and sales system at ReubenAI from scratch. Prospect research, list building, enrichment, outreach sequencing, CRM automation, and the content pipeline behind it. So when I set this up for you, it comes from someone who has run the whole function end to end.</p>
-      </div>
+    <div class="tools-marquee-wrap">
+      <div class="tools-marquee" id="toolsMarquee"></div>
     </div>
   </section>
 
@@ -535,7 +492,6 @@
     <div class="sec-inner">
       <span class="pill pill-peach"><span class="pill-dot"></span> Get in touch</span>
       <h2>Building out your go-to-market?</h2>
-      <p>Tell me where your pipeline eats your time today, and I'll tell you what I'd take off your plate first. We can work as a one-off audit, a full build, or an ongoing retainer.</p>
       <p>Based in Adelaide, working with founders and teams across Australia.</p>
       <div class="contact-links">
         <a href="mailto:hello@jesstresidder.com" class="clink mail">
@@ -585,36 +541,31 @@
       document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
     })();
     (function(){
-      const track=document.getElementById('processTrack');
-      if(!track)return;
-      const steps=Array.prototype.slice.call(track.querySelectorAll('.pstep'));
-      const rails=Array.prototype.slice.call(track.querySelectorAll('.rail-item'));
-      const N=steps.length;
-      const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-      let cur=0,pinned=false,ticking=false;
-      function show(i){
-        if(i===cur)return;cur=i;
-        steps.forEach(function(s,j){s.classList.toggle('on',j===i);});
-        rails.forEach(function(r,j){r.classList.toggle('on',j===i);});
-      }
-      function layout(){
-        pinned=window.innerWidth>900&&!reduced.matches;
-        if(pinned){track.classList.add('pinned');track.style.height=(N*78)+'vh';}
-        else{track.classList.remove('pinned');track.style.height='';steps.forEach(function(s){s.classList.add('on');});rails.forEach(function(r){r.classList.add('on');});cur=-1;}
-        if(pinned){cur=-1;show(0);}
-      }
-      function update(){
-        ticking=false;
-        if(!pinned)return;
-        const r=track.getBoundingClientRect();
-        const span=r.height-window.innerHeight;
-        if(span<=0)return;
-        const p=Math.min(Math.max(-r.top/span,0),0.9999);
-        show(Math.floor(p*N));
-      }
-      window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
-      window.addEventListener('resize',function(){layout();update();});
-      layout();update();
+      const tools=[
+        {n:'Claude',i:'/tool-logos/claude.svg'},
+        {n:'ChatGPT'},
+        {n:'Cursor',i:'/tool-logos/cursor.svg'},
+        {n:'Clay'},
+        {n:'Apollo'},
+        {n:'HubSpot',i:'/tool-logos/hubspot.svg'},
+        {n:'Zapier'},
+        {n:'n8n',i:'/tool-logos/n8n.svg'},
+        {n:'Instantly'}
+      ];
+      const el=document.getElementById('toolsMarquee');
+      if(!el)return;
+      function makeSet(){return tools.map(function(t){
+        const mark=t.i?'<img src="'+t.i+'" alt="" aria-hidden="true" width="21" height="21" loading="lazy">':'<span class="tool-dot" aria-hidden="true"></span>';
+        return '<span class="tool-item">'+mark+'<span>'+t.n+'</span></span>';
+      }).join('');}
+      const oneSet=makeSet();
+      const tmp=document.createElement('div');tmp.style.cssText='position:absolute;visibility:hidden;display:flex;';tmp.innerHTML=oneSet;document.body.appendChild(tmp);
+      const setW=tmp.scrollWidth;document.body.removeChild(tmp);
+      const copies=Math.ceil((window.innerWidth*3)/setW)+1;el.innerHTML=oneSet.repeat(copies);
+      const st=document.createElement('style');st.textContent='@keyframes tMarq{0%{transform:translateX(0)}100%{transform:translateX(-'+setW+'px)}}';document.head.appendChild(st);
+      el.style.animation='tMarq '+(setW/34)+'s linear infinite';
+      el.addEventListener('mouseenter',()=>{el.style.animationPlayState='paused'});
+      el.addEventListener('mouseleave',()=>{el.style.animationPlayState='running'});
     })();
     (function(){
       const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
