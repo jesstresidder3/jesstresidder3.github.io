@@ -97,22 +97,23 @@
     .sec-head{margin-bottom:clamp(30px,3.4vw,44px);max-width:30ch}
     .sec-head.wide{max-width:none}
     .sec-head.wide h2{font-size:clamp(1.6rem,2.9vw,2.15rem);max-width:none}
-    .sec-head h2,.proof-head h2,.contact h2,.process-head h2{font-size:var(--h2);font-weight:700;line-height:1.08;letter-spacing:-0.035em;margin-bottom:12px}
+    .sec-head h2,.process-head h2{font-size:var(--h2);font-weight:700;line-height:1.08;letter-spacing:-0.035em;margin-bottom:12px}
     .sec-head p{color:var(--text-mid)}
     /* testimonials */
-    .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);padding:clamp(52px,5.4vw,78px) clamp(24px,4vw,56px);position:relative;overflow:hidden}
+    .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);padding:clamp(38px,4vw,58px) clamp(24px,4vw,56px);position:relative;overflow:hidden}
     .proof::before{content:'';position:absolute;inset:-20%;background:radial-gradient(circle at 15% 20%,rgba(157,191,181,.12),transparent 42%),radial-gradient(circle at 85% 78%,rgba(224,145,111,.10),transparent 44%);pointer-events:none;z-index:0}
     .proof-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
-    .proof-head{text-align:center;margin-bottom:clamp(28px,3.2vw,40px)}
+    .proof-head{text-align:center;margin-bottom:clamp(22px,2.6vw,32px)}
+    .proof-head h2{font-size:clamp(1.3rem,2.1vw,1.7rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:6px}
     
     .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
-    .tcard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:18px 18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.04);transition:border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1)}
+    .tcard{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:14px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.04);transition:border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1)}
     .tcard:hover{border-color:var(--peach);box-shadow:0 16px 48px rgba(224,145,111,.10);transform:translateY(-3px)}
     .tshot{border:1px solid var(--border-light);border-radius:10px;overflow:hidden;background:var(--white)}
     .tshot img{display:block;width:100%;height:auto;transition:transform .6s cubic-bezier(.16,1,.3,1)}
     .tcard:hover .tshot img{transform:scale(1.04)}
-    .tcard-foot{margin-top:auto;padding-top:16px;text-align:center}
-    .tstars{color:var(--yellow-dark);font-size:.95rem;letter-spacing:2px}
+    .tcard-foot{margin-top:auto;padding-top:10px;text-align:center}
+    .tstars{color:var(--yellow-dark);font-size:.85rem;letter-spacing:2px}
     /* flywheel */
     .fly-wrap{max-width:1100px;margin:0 auto clamp(34px,4vw,54px);padding:0 clamp(24px,4vw,56px);display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center}
     .fly-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:.8rem;font-weight:600;color:var(--peach-text);display:block;margin-bottom:10px}
@@ -132,7 +133,7 @@
     .fly-node.on text{fill:#fff}
     .fly-node.ph-b.on circle{fill:var(--aqua-dark);stroke:var(--aqua-dark)}
     .fly-node.ph-b:hover circle{stroke:var(--aqua-dark)}
-    .fly-label{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:600;fill:var(--text-mid);transition:fill .3s}
+    .fly-label{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;fill:var(--text-mid);transition:fill .3s}
     .fly-node.on .fly-label{fill:var(--text)}
     .fly-centre-n{font-family:'Space Grotesk',sans-serif;font-size:34px;font-weight:700;fill:var(--peach);letter-spacing:-0.03em}
     .fly-centre-l{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;fill:var(--text-light)}
@@ -140,28 +141,34 @@
     /* process, sticky phase bars and a stepped timeline */
     .process{padding:clamp(58px,6vw,84px) 0 0;background:var(--white)}
     .process-head{max-width:1100px;margin:0 auto clamp(26px,3vw,38px);padding:0 clamp(24px,4vw,56px)}
-    .phase{margin-bottom:8px}
+    .phase{margin-bottom:0;position:relative}
+    .phase-a{background:var(--peach-soft)}
+    .phase-b{background:var(--aqua-soft)}
+    .phase-c{background:var(--yellow-soft)}
+    .phase+.phase{border-top:1px solid rgba(0,0,0,.06)}
     .phase-bar{position:sticky;top:var(--sticky-top,112px);z-index:6;padding:0 clamp(24px,4vw,56px);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-    .phase-a .phase-bar{background:rgba(252,238,231,.94)}
-    .phase-b .phase-bar{background:rgba(227,239,236,.94)}
-    .phase-c .phase-bar{background:rgba(253,245,220,.94)}
-    .phase-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:13px 0 12px;position:relative}
-    .phase-n{font-family:'Space Grotesk',sans-serif;font-size:.86rem;font-weight:700;color:var(--peach-text)}
+    .phase-a .phase-bar{background:#F7E1D6}
+    .phase-b .phase-bar{background:#D5E7E2}
+    .phase-c .phase-bar{background:#F8ECC4}
+    .phase-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:15px 0 14px;position:relative}
+    .phase-n{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--peach-text);background:var(--white);width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .phase-b .phase-n{color:var(--aqua-text)}.phase-c .phase-n{color:#7A5C0E}
-    .phase-bar h3{font-family:'Space Grotesk',sans-serif;font-size:1.12rem;font-weight:700;letter-spacing:-0.02em;white-space:nowrap}
+    .phase-bar h3{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:-0.03em;white-space:nowrap}
     .phase-line{flex:1;height:2px;border-radius:2px;background:rgba(0,0,0,.08);overflow:hidden;margin-left:6px}
     .phase-line i{display:block;height:100%;width:100%;transform:scaleX(var(--p,0));transform-origin:0 50%;background:var(--peach-dark)}
     .phase-b .phase-line i{background:var(--aqua-text)}.phase-c .phase-line i{background:var(--yellow-dark)}
     .phase-inner{max-width:1100px;margin:0 auto;padding:26px clamp(24px,4vw,56px) clamp(30px,4vw,48px)}
     .phase-lead{color:var(--text-mid);font-size:1.02rem;max-width:64ch;margin-bottom:30px}
     .steps{position:relative;padding-left:30px}
-    .steps::before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:2px;background:var(--border-light)}
+    .steps::before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:2px;background:rgba(0,0,0,.08)}
     .step{display:grid;grid-template-columns:290px 1fr;gap:40px;align-items:start;padding-bottom:34px;position:relative}
     .step:last-child{padding-bottom:0}
-    .step::before{content:'';position:absolute;left:-30px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--peach);box-shadow:0 0 0 4px var(--white)}
-    .phase-b .step::before{background:var(--aqua-dark)}.phase-c .step::before{background:var(--yellow)}
+    .step::before{content:'';position:absolute;left:-30px;top:11px;width:11px;height:11px;border-radius:50%;background:var(--peach-dark);box-shadow:0 0 0 4px var(--peach-soft)}
+    .phase-b .step::before{background:var(--aqua-text);box-shadow:0 0 0 4px var(--aqua-soft)}
+    .phase-c .step::before{background:var(--yellow-dark);box-shadow:0 0 0 4px var(--yellow-soft)}
     .phase-c .step-label{display:none}
-    .step-label{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:600;color:var(--text-light);display:block;margin-bottom:8px}
+    .step-label{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;color:var(--peach-text);display:inline-block;margin-bottom:10px;background:var(--white);padding:5px 13px;border-radius:100px}
+    .phase-b .step-label{color:var(--aqua-text)}.phase-c .step-label{color:#7A5C0E}
     .step-side h4{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.25rem,2.1vw,1.6rem);font-weight:700;letter-spacing:-0.03em;line-height:1.12}
     .step-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:26px 28px;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.04);transition:border-color .25s,box-shadow .3s,transform .4s cubic-bezier(.16,1,.3,1)}
     .step-card:hover{border-color:var(--peach);box-shadow:0 18px 44px rgba(224,145,111,.10);transform:translateY(-2px)}
@@ -230,7 +237,14 @@
     /* contact */
     .contact{background:var(--off-white);border-top:1px solid var(--border);padding:clamp(58px,6vw,88px) clamp(24px,4vw,56px);text-align:center}
     
-    .contact p{color:var(--text-mid);max-width:540px;margin:0 auto 14px}
+    .contact h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700;letter-spacing:-0.035em;line-height:1.08;max-width:20ch;margin:0 auto 30px}
+    .contact-big{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+    .cbig{display:inline-flex;align-items:center;gap:12px;font-family:'Space Grotesk',sans-serif;font-size:clamp(1rem,1.7vw,1.2rem);font-weight:600;text-decoration:none;padding:18px 30px;border-radius:12px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
+    .cbig.mail{background:var(--peach);color:#fff;box-shadow:0 10px 30px rgba(224,145,111,.28)}
+    .cbig.mail:hover{background:var(--peach-dark);transform:translateY(-2px)}
+    .cbig.li{background:var(--white);color:var(--blue-text);border:1px solid var(--border)}
+    .cbig.li:hover{border-color:var(--blue);transform:translateY(-2px)}
+    .contact-loc{color:var(--text-mid);font-size:1rem;max-width:56ch;margin:0 auto}
     .contact-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
     .clink{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.86rem;font-weight:600;text-decoration:none;padding:11px 22px;border-radius:8px}
     .clink.mail{background:var(--peach);color:#fff}.clink.mail:hover{background:var(--peach-dark)}
@@ -417,7 +431,7 @@
     <div class="fly-wrap reveal">
       <div class="fly-copy">
         <span class="fly-eyebrow">The loop</span>
-        <h3 id="flyTitle">Targeting</h3>
+        <h3 id="flyTitle">ICP and market</h3>
         <p id="flyBody">The roles and company types that make a qualified prospect, the market that fits, and the signals that show a company is ready to talk now.</p>
         <a class="fly-jump" id="flyJump" href="#step-1">Read this step</a>
       </div>
@@ -428,7 +442,7 @@
               <path d="M0 0 L10 5 L0 10 z" fill="var(--border)"></path>
             </marker>
           </defs>
-          <circle class="fly-ring" cx="220" cy="220" r="150"></circle>
+          <circle class="fly-ring" cx="220" cy="220" r="134"></circle>
           <g id="flyNodes"></g>
           <text class="fly-centre-n" id="flyCentreN" x="220" y="212" text-anchor="middle">01</text>
           <text class="fly-centre-l" id="flyCentreL" x="220" y="238" text-anchor="middle">of eight</text>
@@ -643,19 +657,18 @@
 
   <section class="contact" id="contact">
     <div class="sec-inner">
-      <span class="pill pill-peach"><span class="pill-dot"></span> Get in touch</span>
-      <h2>Building out your go-to-market?</h2>
-      <p>Based in Adelaide, working with founders and teams across Australia.</p>
-      <div class="contact-links">
-        <a href="mailto:hello@jesstresidder.com" class="clink mail">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+      <h2 class="reveal">Looking for go to market engineering <em>/ AI support?</em></h2>
+      <div class="contact-big reveal">
+        <a href="mailto:hello@jesstresidder.com" class="cbig mail">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
           hello@jesstresidder.com
         </a>
-        <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer" class="clink li">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+        <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer" class="cbig li">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
           Connect on LinkedIn
         </a>
       </div>
+      <p class="contact-loc reveal">Based in South Australia, working with government and organisations across Australia, Singapore and Hong Kong.</p>
     </div>
   </section>
 
@@ -787,19 +800,19 @@
       const svg=document.getElementById('flywheel');
       if(!svg)return;
       const steps=[
-        {n:'01',k:'a',t:'Targeting',b:'The roles and company types that make a qualified prospect, the market that fits, and the signals that show a company is ready to talk now.'},
-        {n:'02',k:'a',t:'Infrastructure',b:'Sending domains and mailboxes in your name, authenticated and warmed, so your main business domain never touches cold outreach.'},
-        {n:'03',k:'a',t:'Copy',b:'Your market segmented by industry, role and signal, with copy written for every meaningful combination and approved by you.'},
-        {n:'04',k:'a',t:'Launch',b:'Signal tracking watches your market, and a prospect showing intent is routed into the sequence built for their segment.'},
-        {n:'05',k:'b',t:'Refinement',b:'Real reply data decides what changes. Messaging, segments and signals get adjusted, and copy that stops working gets replaced.'},
-        {n:'06',k:'b',t:'Pipeline',b:'CRM workflows carry a prospect from first reply to signed engagement, so every opportunity has a status and a next step.'},
-        {n:'07',k:'b',t:'Intelligence',b:'A brief before every meeting, and every call transcribed onto the prospect record, so the context is there when you need it.'},
-        {n:'08',k:'b',t:'Reporting',b:'Open rates, replies, meetings booked and pipeline generated, reported weekly, campaign by campaign.'}
+        {n:'01',k:'a',t:'ICP and market',b:'The roles and company types that make a qualified prospect, the market that fits, and the signals that show a company is ready to talk now.'},
+        {n:'02',k:'a',t:'Email infrastructure',b:'Sending domains and mailboxes in your name, authenticated and warmed, so your main business domain never touches cold outreach.'},
+        {n:'03',k:'a',t:'Segmented copy',b:'Your market segmented by industry, role and signal, with copy written for every meaningful combination and approved by you.'},
+        {n:'04',k:'a',t:'Signals and enrichment',b:'Signal tracking watches your market, and a prospect showing intent is routed into the sequence built for their segment.'},
+        {n:'05',k:'b',t:'Campaign refinement',b:'Real reply data decides what changes. Messaging, segments and signals get adjusted, and copy that stops working gets replaced.'},
+        {n:'06',k:'b',t:'Sales pipeline',b:'CRM workflows carry a prospect from first reply to signed engagement, so every opportunity has a status and a next step.'},
+        {n:'07',k:'b',t:'Call intelligence',b:'A brief before every meeting, and every call transcribed onto the prospect record, so the context is there when you need it.'},
+        {n:'08',k:'b',t:'Weekly reporting',b:'Open rates, replies, meetings booked and pipeline generated, reported weekly, campaign by campaign.'}
       ];
       const nodes=document.getElementById('flyNodes');
       const title=document.getElementById('flyTitle'),body=document.getElementById('flyBody'),jump=document.getElementById('flyJump');
       const cN=document.getElementById('flyCentreN'),cL=document.getElementById('flyCentreL');
-      const R=150,cx=220,cy=220,NS='http://www.w3.org/2000/svg';
+      const R=134,cx=220,cy=220,NS='http://www.w3.org/2000/svg';
       steps.forEach(function(st,i){
         const a=(-90+i*(360/steps.length))*Math.PI/180;
         const x=cx+R*Math.cos(a),y=cy+R*Math.sin(a);
@@ -812,11 +825,11 @@
         c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',21);
         const t=document.createElementNS(NS,'text');
         t.setAttribute('x',x);t.setAttribute('y',y);t.textContent=st.n;
-        const lr=R+46,lx=cx+lr*Math.cos(a),ly=cy+lr*Math.sin(a);
+        const lr=R+34+40*Math.abs(Math.cos(a)),lx=cx+lr*Math.cos(a),ly=cy+lr*Math.sin(a);
         const l=document.createElementNS(NS,'text');
         l.setAttribute('class','fly-label');l.setAttribute('x',lx);l.setAttribute('y',ly);
         l.setAttribute('text-anchor',Math.abs(Math.cos(a))<0.3?'middle':(Math.cos(a)>0?'start':'end'));
-        l.setAttribute('dx',Math.abs(Math.cos(a))<0.3?0:(Math.cos(a)>0?6:-6));
+        l.setAttribute('dx',Math.abs(Math.cos(a))<0.3?0:(Math.cos(a)>0?4:-4));
         l.setAttribute('dominant-baseline','central');l.textContent=st.t;
         g.appendChild(c);g.appendChild(t);g.appendChild(l);
         g.addEventListener('mouseenter',function(){hold=true;set(i);});
