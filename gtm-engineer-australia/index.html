@@ -121,6 +121,8 @@
     .fly-copy p{color:var(--text-mid);font-size:1rem;max-width:46ch;min-height:5.4em}
     .fly-jump{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--peach-text);text-decoration:none;margin-top:14px;padding:9px 0}
     .fly-jump::after{content:'';width:14px;height:2px;background:currentColor;transition:width .25s}
+    .fly-hint{font-size:.85rem;color:var(--text-light);margin-top:14px}
+    @media(hover:none){.fly-hint{content:none}}
     .fly-jump:hover::after{width:26px}
     .fly-stage{display:flex;justify-content:center}
     #flywheel{width:100%;max-width:400px;height:auto;overflow:visible}
@@ -239,7 +241,7 @@
     
     .contact h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700;letter-spacing:-0.035em;line-height:1.08;max-width:20ch;margin:0 auto 30px}
     .contact-big{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:24px}
-    .contact-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--white);box-shadow:0 4px 14px rgba(0,0,0,.10);flex-shrink:0;margin-right:2px}
+    .contact-avatar{width:70px;height:70px;border-radius:50%;object-fit:cover;border:2px solid var(--white);box-shadow:0 4px 14px rgba(0,0,0,.10);flex-shrink:0;margin-right:2px}
     .cbig{display:inline-flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:600;text-decoration:none;padding:12px 20px;border-radius:9px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s}
     .cbig.mail{background:var(--peach);color:#fff;box-shadow:0 10px 30px rgba(224,145,111,.28)}
     .cbig.mail:hover{background:var(--peach-dark);transform:translateY(-2px)}
@@ -435,6 +437,7 @@
         <h3 id="flyTitle">ICP and market</h3>
         <p id="flyBody">The roles and company types that make a qualified prospect, the market that fits, and the signals that show a company is ready to talk now.</p>
         <a class="fly-jump" id="flyJump" href="#step-1">Read this step</a>
+        <p class="fly-hint">Hover any stage to read it, or click through to that step.</p>
       </div>
       <div class="fly-stage">
         <svg id="flywheel" viewBox="0 0 440 440" role="img" aria-label="The eight stages of the go to market engine, running as a loop">
@@ -660,7 +663,7 @@
     <div class="sec-inner">
       <h2 class="reveal">Looking for go to market engineering <em>/ AI support?</em></h2>
       <div class="contact-big reveal">
-        <img class="contact-avatar" src="/jess-avatar.jpg" alt="Jess Tresidder" width="160" height="160" loading="lazy" decoding="async">
+        <img class="contact-avatar" src="/jess-avatar.jpg?v=2" alt="Jess Tresidder" width="160" height="160" loading="lazy" decoding="async">
         <a href="mailto:hello@jesstresidder.com" class="cbig mail">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
           hello@jesstresidder.com
@@ -855,7 +858,7 @@
       set(0);
       if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
         const io=new IntersectionObserver(function(es){
-          if(es[0].isIntersecting){if(!timer)timer=setInterval(function(){if(!hold)set((cur+1)%steps.length);},2900);}
+          if(es[0].isIntersecting){if(!timer)timer=setInterval(function(){if(!hold)set((cur+1)%steps.length);},1800);}
           else if(timer){clearInterval(timer);timer=null;}
         },{threshold:.25});
         io.observe(svg);

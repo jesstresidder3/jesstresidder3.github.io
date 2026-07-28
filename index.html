@@ -96,7 +96,7 @@
     .mobile-menu a:active,.mobile-menu a:hover{background:var(--peach-soft);color:var(--peach-dark)}
 
     /* ===== HERO ===== */
-    .hero{padding:32px clamp(24px,4vw,56px) 70px;background:var(--off-white);position:relative;overflow:hidden}
+    .hero{padding:32px clamp(24px,4vw,56px) 44px;background:var(--off-white);position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:-20%;background:
       radial-gradient(circle at 20% 30%, rgba(224,145,111,.10) 0%, transparent 35%),
       radial-gradient(circle at 80% 20%, rgba(107,174,214,.10) 0%, transparent 40%),
@@ -233,9 +233,9 @@
     .back-top:hover{background:var(--peach-dark);transform:translateY(-2px)}
     .back-top svg{width:18px;height:18px;stroke:var(--white);stroke-width:2.5;fill:none}
 
-    .book-row{display:flex;align-items:center;gap:14px;margin-top:24px}
+    .book-row{display:flex;align-items:center;gap:16px;margin-top:24px}
     .book-row .btn-primary{font-size:1.05rem;padding:18px 34px;border-radius:10px}
-    .book-avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--white);box-shadow:0 4px 14px rgba(0,0,0,.10);flex-shrink:0}
+    .book-avatar{width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--white);box-shadow:0 4px 14px rgba(0,0,0,.10);flex-shrink:0}
     footer{padding:28px clamp(24px,4vw,56px);text-align:center;font-size:.78rem;color:var(--text-light);background:var(--white);border-top:1px solid var(--border-light)}footer a{color:var(--text-mid);text-decoration:none;transition:color .15s}footer a:hover{color:var(--peach-dark)}
 
     /* ===== RESPONSIVE ===== */
@@ -243,8 +243,8 @@
     @media(max-width:600px){.hero{padding-top:20px;padding-bottom:44px}.cta{padding-bottom:40px}.hero h1{font-size:1.8rem}.hero-btns{flex-direction:column;align-items:stretch}.hero-btns .btn{text-align:center}.nav-right .hide-m{display:none}.nav-toggle{display:flex}.nav-right{gap:10px}.nav-right a.nav-btn{display:none}.hero-photo-wrap{width:140px;height:175px}}
 
     /* ===== TESTIMONIALS / PROOF ===== */
-    .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
-    .proof .sec-header{text-align:center;margin-bottom:44px}
+    .proof{background:var(--off-white);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);padding-top:38px}
+    .proof .sec-header{text-align:center;margin-bottom:30px}
     .proof .sec-header h2{margin:0 auto}
     .proof .sec-inner{max-width:1340px}
     .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
@@ -882,7 +882,7 @@
         <p>Please don't hesitate to reach out. Tell me a bit about what you're working on and what's been taking up too much of your week. I'll get back to you within a day.</p>
         <p style="margin-top:12px">Based in South Australia, working with government and organisations across Australia, Singapore and Hong Kong.</p>
         <div class="book-row">
-          <img class="book-avatar" src="jess-avatar.jpg" alt="Jess Tresidder" width="160" height="160" loading="lazy" decoding="async">
+          <img class="book-avatar" src="jess-avatar.jpg?v=2" alt="Jess Tresidder" width="160" height="160" loading="lazy" decoding="async">
           <a href="https://book.jesstresidder.com" class="btn btn-primary">Book a 30 min call</a>
         </div>
         <div class="cta-links">
