@@ -16,7 +16,7 @@ AI education and training, practical AI adoption for non-technical teams, AI age
 
 ## AI workshops (primary service)
 
-Page: https://jesstresidder.com/ai-workshops-adelaide.html
+Page: https://jesstresidder.com/ai-workshops-adelaide/
 
 Jess runs hands-on AI workshops on the principle of learning by doing over death by PowerPoint. Every session is practical, everyone brings a laptop, and attendees leave with at least one working AI agent or workflow set up on their own machine. Attendees bring the task that takes up their week, and the AI tool that handles it gets built during the session. No coding is taught or required.
 
@@ -54,8 +54,8 @@ Pricing depends on the length of the session and the number of people in the roo
 
 ## Other services
 
-- **AI-powered growth systems**: AI go-to-market infrastructure for B2B startups, including AI-driven prospect research, automated list building and enrichment, personalised outreach sequences, CRM automation, and reporting. https://jesstresidder.com/gtm-engineer-australia.html
-- **AI implementation and automation**: Done-for-you AI automations built around a business's specific workflows, such as automated prospect research briefs before every meeting, follow-up drafting, lead enrichment, and on-brand content systems. https://jesstresidder.com/ai-automation-consultant.html
+- **AI-powered growth systems**: AI go-to-market infrastructure for B2B startups, including AI-driven prospect research, automated list building and enrichment, personalised outreach sequences, CRM automation, and reporting. https://jesstresidder.com/gtm-engineer-australia/
+- **AI implementation and automation**: Done-for-you AI automations built around a business's specific workflows, such as automated prospect research briefs before every meeting, follow-up drafting, lead enrichment, and on-brand content systems. https://jesstresidder.com/ai-automation-consultant/
 
 Jess's systems give teams their time back on repetitive work. They are not built to replace people.
 
@@ -81,9 +81,9 @@ Jess's systems give teams their time back on repetitive work. They are not built
 
 ## Service pages
 
-- AI workshops in Adelaide: https://jesstresidder.com/ai-workshops-adelaide.html (also at https://jesstresidder.com/ai-workshops)
-- GTM engineer for Australian B2B startups: https://jesstresidder.com/gtm-engineer-australia.html
-- AI automation consultant: https://jesstresidder.com/ai-automation-consultant.html
+- AI workshops in Adelaide: https://jesstresidder.com/ai-workshops-adelaide/ (also at https://jesstresidder.com/ai-workshops)
+- GTM engineer for Australian B2B startups: https://jesstresidder.com/gtm-engineer-australia/
+- AI automation consultant: https://jesstresidder.com/ai-automation-consultant/
 
 ## Media coverage
 
