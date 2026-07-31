@@ -13,18 +13,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root{--off-white:#FFF6F1;--cream:#FEFCFA;--peach:#E0916F;--peach-dark:#C87A5A;--peach-soft:#FCEEE7;--blue-dark:#4A8AB5;--text:#1A1A1A;--text-mid:#555555;--text-light:#767676;--border:#E8E3DD}
+    :root{--cream:#FAF6EC;--paper:#FFFDF6;--mint:#CDE7DA;--mint-soft:#EAF4EE;--butter:#F6E3A1;--butter-soft:#FBF1D3;--apricot-deep:#C2703C;--ink:#241F17;--text:#241F17;--text-mid:#5B5344;--text-light:#6C6353;--border:#E5DECB}
     *{margin:0;padding:0;box-sizing:border-box}
-    body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--off-white);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;padding:24px}
+    body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;padding:24px}
     .card{max-width:520px;text-align:center}
-    .tick{width:64px;height:64px;border-radius:50%;background:var(--peach-soft);display:flex;align-items:center;justify-content:center;margin:0 auto 24px}
-    .tick svg{width:30px;height:30px;stroke:var(--peach-dark);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .tick{width:72px;height:72px;border-radius:999px 999px 20px 20px;background:var(--mint);border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;margin:0 auto 26px;transform:rotate(-2deg)}
+    .tick svg{width:32px;height:32px;stroke:var(--ink);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
     h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,4vw,2.2rem);font-weight:700;letter-spacing:-0.03em;margin-bottom:12px}
     p{color:var(--text-mid);margin-bottom:28px;font-size:1.02rem}
     .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.88rem;padding:13px 26px;border-radius:8px;text-decoration:none;transition:all .2s}
-    .btn-primary{background:var(--peach);color:#fff}.btn-primary:hover{background:var(--peach-dark)}
-    .btn-ghost{color:var(--text);border:1.5px solid rgba(28,43,58,.2)}.btn-ghost:hover{border-color:var(--peach);color:var(--peach-dark)}
+    .btn{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;padding:14px 28px;border-radius:999px;text-decoration:none;transition:all .25s}
+    .btn-primary{background:var(--ink);color:var(--cream)}.btn-primary:hover{background:#3A3327;transform:translateY(-1px)}
+    .btn-ghost{color:var(--ink);border:1.5px solid var(--ink)}.btn-ghost:hover{background:var(--butter-soft)}
   </style>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="12a34e02-1c0b-4785-a7d3-93fec86c04f1"></script>
 </head>
