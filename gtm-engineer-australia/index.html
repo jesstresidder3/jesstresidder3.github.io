@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
-  <meta name="theme-color" content="#FF2E8E">
+  <meta name="theme-color" content="#A62B2B">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="/jess-speaking-blue.jpg">
@@ -28,22 +28,22 @@
        Cream ground, paper cards with ink borders, arched pastel bands, dark ink close.
        All copy is carried over verbatim; this file restyles only. */
     :root{
-      --cream:#FAF6EC;
-      --cream-deep:#F3EDDD;
+      --cream:#FDF3E3;
+      --cream-deep:#F8E8CE;
       --paper:#FFFDF6;
-      --mint:#CDE7DA;
-      --mint-panel:#DFEFE6;
-      --mint-soft:#EAF4EE;
-      --mint-deep:#8FBCA6;
-      --mint-text:#3E6B56;
-      --butter:#F6E3A1;
-      --butter-strong:#F2D16B;
-      --butter-soft:#FBF1D3;
+      --mint:#F2B84B;
+      --mint-panel:#FBE3CC;
+      --mint-soft:#FBEED2;
+      --mint-deep:#E8622C;
+      --mint-text:#8E2430;
+      --butter:#F2B84B;
+      --butter-strong:#F2B84B;
+      --butter-soft:#FBEED2;
       --butter-text:#7A5C10;
-      --apricot:#F4BC8F;
-      --apricot-soft:#FBE9DA;
-      --apricot-deep:#C2703C;
-      --apricot-text:#9A5526;
+      --apricot:#F0A868;
+      --apricot-soft:#FBE3CC;
+      --apricot-deep:#A62B2B;
+      --apricot-text:#8E2430;
       --ink:#241F17;
       --text:#2A2419;
       --text-mid:#5B5344;
@@ -64,7 +64,7 @@
     ::selection{background:var(--butter-strong);color:var(--ink)}
     body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;font-size:1rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:clip}
     h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.03em;line-height:1.1;color:var(--ink)}
-    h1 em,h2 em{font-family:'Plus Jakarta Sans',sans-serif;font-style:italic;font-weight:400;color:var(--apricot-deep)}
+    h1 em,h2 em{font-family:'Caveat',cursive;font-style:normal;font-weight:600;font-size:1.32em;line-height:.9;color:var(--apricot-deep);display:inline-block;transform:rotate(-2deg);margin:0 .14em}
     a{color:var(--apricot-text)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
@@ -86,7 +86,7 @@
     .nav-right a:not(.nav-btn)::after{content:'';position:absolute;left:0;bottom:-5px;height:2px;width:0;background:var(--apricot-deep);border-radius:2px;transition:width .28s cubic-bezier(.16,1,.3,1)}
     .nav-right a:not(.nav-btn):hover::after{width:100%}
     .nav-right a:hover{color:var(--ink)}
-    .nav-right a.nav-btn{background:var(--ink);color:var(--cream);padding:11px 26px;border-radius:999px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.86rem;transition:background .2s,box-shadow .25s,transform .25s;box-shadow:var(--shadow-rest)}
+    .nav-right a.nav-btn{background:var(--apricot-deep);color:#FDF3E3;padding:11px 26px;border-radius:999px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.86rem;transition:background .2s,box-shadow .25s,transform .25s;box-shadow:var(--shadow-rest)}
     .nav-right a.nav-btn:hover{background:#3A3327;color:var(--cream);box-shadow:var(--shadow-lift);transform:translateY(-1px)}
     .nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:8px;margin-left:4px}
     .nav-toggle span{display:block;height:2px;width:22px;background:var(--ink);border-radius:2px;transition:transform .25s cubic-bezier(.16,1,.3,1),opacity .2s}
@@ -142,7 +142,7 @@
     .hero-sub{font-size:1.04rem;color:var(--text-mid);max-width:520px;margin-bottom:32px;line-height:1.75}
     .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
     .btn{display:inline-block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.9rem;padding:15px 30px;border-radius:999px;text-decoration:none;transition:background .2s,color .2s,border-color .2s,box-shadow .3s,transform .3s cubic-bezier(.16,1,.3,1);cursor:pointer;border:none}
-    .btn-primary{background:var(--ink);color:var(--cream)!important;box-shadow:var(--shadow-rest)}
+    .btn-primary{background:var(--apricot-deep);color:#FDF3E3!important;box-shadow:var(--shadow-rest)}
     .btn-primary:hover{background:#3A3327;transform:translateY(-2px);box-shadow:var(--shadow-lift)}
     .btn-ghost{background:transparent;color:var(--ink)!important;border:1.5px solid var(--ink)}
     .btn-ghost:hover{background:var(--butter-soft)}
@@ -167,7 +167,9 @@
     .sec-head p{color:var(--text-mid)}
 
     /* ===== TESTIMONIALS, butter-tinted arched band ===== */
-    .proof{background:var(--butter-soft);border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);border-radius:var(--arch) var(--arch) 0 0;padding:64px clamp(24px,4vw,56px) 56px;position:relative;overflow:hidden}
+    .proof{background:#8E2430;border-top:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);border-radius:var(--arch) var(--arch) 0 0;padding:64px clamp(24px,4vw,56px) 56px;position:relative;overflow:hidden}
+    .proof .sec-header h2,.proof h2{color:#FDF3E3}
+    .proof h2 em{color:var(--butter)}
     .proof-inner{max-width:1240px;margin:0 auto;position:relative;z-index:1}
     .proof-head{text-align:center;margin-bottom:clamp(26px,3vw,36px)}
     .proof-head .pill{transform:rotate(2deg)}
@@ -254,9 +256,9 @@
     .phase-b{background:var(--mint-panel)}
     .phase-c{background:var(--butter-soft)}
     .phase-bar{position:sticky;top:64px;z-index:6;padding:0 clamp(24px,4vw,56px)}
-    .phase-a .phase-bar{background:#F6DCC6;border-bottom:1.5px solid var(--ink)}
-    .phase-b .phase-bar{background:#CFE5D9;border-bottom:1.5px solid var(--ink)}
-    .phase-c .phase-bar{background:#F3E4B4;border-bottom:1.5px solid var(--ink)}
+    .phase-a .phase-bar{background:#F6D3AE;border-bottom:1.5px solid var(--ink)}
+    .phase-b .phase-bar{background:#F3CFA6;border-bottom:1.5px solid var(--ink)}
+    .phase-c .phase-bar{background:#F3DCA6;border-bottom:1.5px solid var(--ink)}
     .phase-bar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:18px;padding:15px 0 14px;position:relative}
     .phase-n{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--apricot-text);background:var(--paper);border:1.5px solid var(--ink);width:38px;height:38px;border-radius:999px 999px 11px 11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .phase-b .phase-n{color:var(--mint-text)}.phase-c .phase-n{color:var(--butter-text)}
