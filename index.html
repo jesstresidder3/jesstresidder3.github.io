@@ -56,7 +56,9 @@
       --red-dark:#0B1226;
       --orange:#C95B27;
       --orange-deep:#A8481A;
-      --orange-soft:#F4DECC;
+      --orange-soft:#F6DFC9;
+      --gold:#E4A93C;
+      --gold-soft:#F6E7C6;
       --amber:#DFE7F2;
       --amber-text:#3D4E75;
       --butter:#EFE6CF;
@@ -152,24 +154,22 @@
     .mobile-menu a:active,.mobile-menu a:hover{background:var(--amber);color:var(--ink)}
 
     /* ===== MEDIA MARQUEE, the amber ribbon ===== */
-    .media{background:var(--cream);border-bottom:1px solid var(--line-soft);padding:8px 0 7px;overflow:hidden;margin-top:64px;position:relative}
+    .media{background:#FFFFFF;border-bottom:1px solid var(--line-soft);padding:6px 0 5px;overflow:hidden;margin-top:64px;position:relative}
     .media::before,.media::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
-    .media::before{left:0;background:linear-gradient(to right,var(--cream),transparent)}
-    .media::after{right:0;background:linear-gradient(to left,var(--cream),transparent)}
-    .media-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.02em;color:var(--text-light);text-align:center;display:block;margin:0 auto 3px;position:relative;z-index:3}
+    .media::before{left:0;background:linear-gradient(to right,#FFFFFF,transparent)}
+    .media::after{right:0;background:linear-gradient(to left,#FFFFFF,transparent)}
+    .media-label{font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:600;letter-spacing:-0.01em;color:var(--orange);text-align:center;display:block;margin:0 auto 1px;position:relative;z-index:3}
     .media-marquee{display:flex;width:max-content;will-change:transform;backface-visibility:hidden}
     .media-item{padding:2px 26px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-    .media-item img{height:22px;width:auto;object-fit:contain;filter:grayscale(1) opacity(0.55);transition:filter .3s,opacity .3s,transform .3s}
+    .media-item img{height:22px;width:auto;object-fit:contain;filter:grayscale(0.15) opacity(0.9);transition:filter .3s,opacity .3s,transform .3s}
     .media-item img:hover{filter:grayscale(0) opacity(1);transform:translateY(-1px)}
     .media-item img[alt="ABC News"]{height:34px}
     .media-item img[alt="The Advertiser"]{height:16px}.media-item img[alt="The Age"]{height:14px}
-    .media-item img[alt="SAFM 107.1"]{height:26px}
-    .media-item img[alt="SA Life"]{height:13px;filter:grayscale(1) opacity(0.55)}
+    .media-item img[alt="SAFM 107.1"]{height:20px}
+    .media-item img[alt="SA Life"]{height:13px;filter:grayscale(0.15) opacity(0.9)}
     .media-item img[alt="SA Life"]:hover{filter:grayscale(0) opacity(1)}
-    .media-item img[alt="Business News Australia"]{height:26px}
-    /* dark logos sit on a small light chip so they never read as broken images */
-    .media-item img[alt="Business News Australia"],.media-item img[alt="SAFM 107.1"]{background:var(--paper);border-radius:8px;padding:4px 11px;box-sizing:content-box;filter:grayscale(1) opacity(.85)}
-    .media-item img[alt="Business News Australia"]:hover,.media-item img[alt="SAFM 107.1"]:hover{filter:grayscale(0) opacity(1)}
+    .media-item img[alt="Business News Australia"]{height:20px}
+
 
     /* ===== HERO: chunky deep-red display type interlocking with the arch photo ===== */
     .hero{padding:60px clamp(24px,4vw,56px) 72px;background:var(--cream);position:relative;overflow:hidden}
@@ -177,10 +177,10 @@
     .hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:44px;align-items:center;position:relative;z-index:2}
     .hero-text{padding-bottom:0;position:relative;z-index:3}
     /* starburst anchored beside the headline, like the inspo's asterisk */
-    .hero-star{top:-120px;right:-170px;width:440px;height:440px;background:radial-gradient(circle,rgba(201,91,39,.16),transparent 50%)}
+    .hero-star{top:-120px;right:-170px;width:440px;height:440px;background:radial-gradient(circle,rgba(201,91,39,.22),transparent 50%)}
     .hero-star svg{display:none}
     /* petal flower tucked behind the arch's top-left corner, peeking out from the photo block */
-    .hero-petal{top:44%;left:-150px;width:400px;height:400px;z-index:0;background:radial-gradient(circle,rgba(96,130,190,.16),transparent 50%)}
+    .hero-petal{top:44%;left:-150px;width:400px;height:400px;z-index:0;background:radial-gradient(circle,rgba(96,130,190,.22),transparent 50%)}
     .hero-petal svg{display:none}
     /* Sticker labels */
     .pill{display:inline-flex;align-items:center;gap:7px;font-family:'Space Grotesk',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.01em;padding:7px 16px;border-radius:999px;margin-bottom:22px;background:var(--paper);border:1px solid var(--line);color:var(--ink);box-shadow:0 2px 6px rgba(16,27,55,.06);transition:transform .3s}
@@ -190,11 +190,13 @@
     .pill-blue .pill-dot{background:var(--red)}
     .pill-yellow .pill-dot{background:var(--amber)}
     .pill-aqua .pill-dot{background:var(--red-deep)}
-    .hero h1{font-size:clamp(2.35rem,5.4vw,3.9rem);font-weight:700;margin-bottom:26px;max-width:640px;letter-spacing:-0.045em;line-height:1.03;color:var(--ink);position:relative}
+    .hero h1{font-size:clamp(2rem,4.2vw,3.05rem);font-weight:700;margin-bottom:24px;max-width:600px;letter-spacing:-0.04em;line-height:1.06;color:var(--ink);position:relative}
     /* the opening phrase holds the red, the rest stays warm ink over a drawn-on squiggle */
     .hero h1 .lead{color:var(--ink)}
     .hero h1 .accent{color:var(--orange);position:relative;display:inline}
-    .hero-squig-seat{display:none}
+    .hero-squig-seat{display:block;max-width:230px;margin-top:12px}
+    .hero-squig{width:100%;height:auto}
+    .hero-squig path{fill:none;stroke:var(--gold);stroke-width:3.5;stroke-linecap:round}
     .hero-squig{width:100%;height:auto}
     .hero-squig path{fill:none;stroke:var(--orange);stroke-width:5;stroke-linecap:round}
     .hero-sub{font-size:1.04rem;color:var(--text-mid);max-width:490px;margin-bottom:36px;line-height:1.75}
@@ -213,7 +215,7 @@
     /* Arch photo interlocked with the type: seated on a solid deep-red block,
        pulled left so the headline column and the arch overlap on desktop */
     .hero-photo-col{--seat:26px;position:relative;width:340px}
-    .hero-photo-col::before{content:'';position:absolute;inset:-150px -170px;background:radial-gradient(circle at 68% 30%,rgba(201,91,39,.26),transparent 46%),radial-gradient(circle at 30% 74%,rgba(96,130,190,.22),transparent 44%)}
+    .hero-photo-col::before{content:'';position:absolute;inset:-150px -170px;background:radial-gradient(circle at 68% 30%,rgba(201,91,39,.32),transparent 46%),radial-gradient(circle at 30% 74%,rgba(96,130,190,.28),transparent 44%)}
     .hero-photo-col::after{content:'';position:absolute;top:-26px;right:-30px;width:120px;height:120px;border:1.5px dotted rgba(16,27,55,.45);border-radius:50%;z-index:2}
     .hero-photo-wrap{width:340px;height:424px;border-radius:26px;overflow:hidden;position:relative;z-index:1;border:7px solid var(--paper);outline:1px solid var(--line);box-shadow:var(--shadow-lift);background:var(--paper)}
     .hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top}
@@ -222,6 +224,21 @@
     .hero-cred a{color:inherit;text-decoration:underline;text-decoration-color:rgba(201,91,39,.45);text-underline-offset:3px;transition:text-decoration-color .15s}
     .hero-cred a:hover{text-decoration-color:var(--orange)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* ===== Weaving gold ribbons across section seams ===== */
+    .ribbon-seam{position:relative;height:0;z-index:6;pointer-events:none}
+    .ribbon{position:absolute;left:0;right:0;pointer-events:none;overflow:visible}
+    .ribbon svg{display:block;width:100%;height:auto;overflow:visible}
+    .ribbon path{fill:none;stroke:var(--gold);stroke-width:4;stroke-linecap:round}
+    .ribbon .rd{stroke:var(--red);stroke-width:1.6;stroke-dasharray:.004 .012;stroke-width:2}
+    .ribbon path{stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.6s cubic-bezier(.6,0,.2,1) .1s}
+    .ribbon .rd{stroke-dasharray:.004 .012}
+    .anim .ribbon.reveal:not(.v) path{stroke-dashoffset:1}
+    .anim .ribbon.reveal:not(.v) .rd{stroke-dashoffset:1.016}
+    .ribbon-a{top:-90px}
+    .ribbon-b{top:-70px}
+    .ribbon-c{top:-80px}
+    @media(max-width:900px){.ribbon{display:none}}
 
     /* ===== SECTIONS ===== */
     .sec{padding:72px clamp(24px,4vw,56px)}.sec-inner{max-width:1100px;margin:0 auto}
@@ -294,22 +311,24 @@
     .services-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:26px;align-items:start}
     .service-card{border:1px solid var(--line);border-radius:24px;padding:36px 30px 32px;transition:box-shadow .3s,transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;position:relative;overflow:hidden;box-shadow:var(--shadow-rest)}
     /* one deliberate tint per card: peach, cream, soft amber */
-    .services-grid .service-card{background:var(--paper)}
+    .services-grid .service-card:nth-child(1){background:var(--orange-soft)}
+    .services-grid .service-card:nth-child(2){background:var(--amber)}
+    .services-grid .service-card:nth-child(3){background:var(--gold-soft)}
     @media(min-width:901px){.services-grid .service-card:nth-child(2){margin-top:30px}}
     .service-card:hover{box-shadow:var(--shadow-lift);transform:translateY(-5px)}
-    .service-card .pill{margin-bottom:18px;align-self:flex-start;background:var(--paper)}
+    .service-card .pill{margin-bottom:18px;align-self:flex-start;background:var(--paper);box-shadow:none}
         .service-card h3{font-size:1.2rem;font-weight:700;margin-bottom:12px}
     .service-card p{color:var(--text-mid);font-size:.9rem;line-height:1.75;flex:1}
-    .service-detail{margin-top:18px;padding-top:14px;border-top:1px solid var(--line-soft);font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:600;color:var(--text-light);letter-spacing:.04em}
-    .service-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:1px solid var(--line-soft);transition:transform .4s cubic-bezier(.16,1,.3,1)}
-    .service-icon.ic-peach{background:var(--orange-soft)}
-    .service-icon.ic-blue{background:var(--amber)}
-    .service-icon.ic-yellow{background:var(--cream-deep)}
+    .service-detail{margin-top:18px;padding-top:14px;border-top:1px solid rgba(16,27,55,.14);font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:600;color:var(--text-light);letter-spacing:.04em}
+    .service-icon{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:none;box-shadow:var(--shadow-rest);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+    .service-icon.ic-peach{background:var(--orange)}
+    .service-icon.ic-blue{background:var(--red)}
+    .service-icon.ic-yellow{background:var(--gold)}
     .service-card:hover .service-icon{transform:scale(1.06)}
     .service-icon svg{width:24px;height:24px;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;fill:none}
-    .service-icon.ic-peach svg{stroke:var(--orange-deep)}
-    .service-icon.ic-blue svg{stroke:var(--red)}
-    .service-icon.ic-yellow svg{stroke:var(--text-mid)}
+    .service-icon.ic-peach svg{stroke:#fff}
+    .service-icon.ic-blue svg{stroke:#fff}
+    .service-icon.ic-yellow svg{stroke:#fff}
     .service-cta{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:.85rem;font-weight:600;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:11px 20px;border-radius:999px;text-decoration:none;transition:background .2s,transform .2s}
     .service-cta:hover{background:var(--amber);transform:translateY(-1px)}
     .service-cta svg{width:14px;height:14px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
@@ -778,6 +797,8 @@
     </div>
   </section>
 
+  <div class="ribbon-seam" aria-hidden="true"><div class="ribbon ribbon-a reveal"><svg viewBox="0 0 1440 240" preserveAspectRatio="xMidYMid meet"><path class="rd" d="M 1520 30 C 1220 6, 1040 150, 780 128 C 560 110, 470 20, 300 64 C 150 102, 90 190, -80 170" pathLength="1" transform="translate(0,16)"/><path d="M 1520 30 C 1220 6, 1040 150, 780 128 C 560 110, 470 20, 300 64 C 150 102, 90 190, -80 170" pathLength="1"/></svg></div></div>
+
   <!-- ===== TESTIMONIALS / PROOF, the full deep-red panel ===== -->
   <section class="sec proof panel" id="testimonials">
     <span class="shape proof-spark-a bob" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M50 0 C55 35 65 45 100 50 C65 55 55 65 50 100 C45 65 35 55 0 50 C35 45 45 35 50 0 Z"/></svg></span>
@@ -932,6 +953,8 @@
     </div>
   </section>
 
+  <div class="ribbon-seam" aria-hidden="true"><div class="ribbon ribbon-b reveal"><svg viewBox="0 0 1440 240" preserveAspectRatio="xMidYMid meet"><path class="rd" d="M -80 130 C 210 50, 420 44, 560 112 C 640 152, 606 212, 526 192 C 446 172, 486 92, 650 82 C 920 66, 1120 168, 1520 112" pathLength="1" transform="translate(0,16)"/><path d="M -80 130 C 210 50, 420 44, 560 112 C 640 152, 606 212, 526 192 C 446 172, 486 92, 650 82 C 920 66, 1120 168, 1520 112" pathLength="1"/></svg></div></div>
+
   <!-- ===== AI IN ACTION (chatbot vs workflow) ===== -->
   <section class="sec cvw panel" id="ai-in-action">
     <div class="sec-inner">
@@ -1003,6 +1026,8 @@
       </div>
     </div>
   </section>
+
+  <div class="ribbon-seam" aria-hidden="true"><div class="ribbon ribbon-c reveal"><svg viewBox="0 0 1440 240" preserveAspectRatio="xMidYMid meet"><path class="rd" d="M 1520 140 C 1240 66, 1150 196, 940 152 C 760 116, 700 52, 540 96 C 420 129, 360 60, 240 84" pathLength="1" transform="translate(0,16)"/><path d="M 1520 140 C 1240 66, 1150 196, 940 152 C 760 116, 700 52, 540 96 C 420 129, 360 60, 240 84" pathLength="1"/></svg></div></div>
 
   <!-- ===== FAQ ===== -->
   <section class="sec faq panel" id="faq">
