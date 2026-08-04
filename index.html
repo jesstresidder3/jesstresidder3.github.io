@@ -25,12 +25,12 @@
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Jess Tresidder — AI growth systems, training and implementation for businesses">
+  <meta property="og:image:alt" content="Jess Tresidder, AI growth systems, training and implementation for businesses">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Jess Tresidder - AI Growth Systems, Training & Implementation">
   <meta name="twitter:description" content="I build AI growth systems for businesses, train teams to use AI properly, and set up automations that save you hours every week.">
   <meta name="twitter:image" content="https://jesstresidder.com/og-image.jpg">
-  <meta name="twitter:image:alt" content="Jess Tresidder — AI growth systems, training and implementation for businesses">
+  <meta name="twitter:image:alt" content="Jess Tresidder, AI growth systems, training and implementation for businesses">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png?v=2">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
@@ -509,6 +509,10 @@
       .cvw-scroll .cvw-tick{opacity:1!important;transform:none!important}
       .cvw-scroll .cvw-rail-fill{height:100%!important}
     }
+
+    .foot-links{margin-bottom:10px;font-size:.85rem;line-height:1.9}
+    .foot-links a{color:inherit;opacity:.85;text-decoration:underline;text-underline-offset:2px}
+    .foot-links a:hover{opacity:1}
   </style>
   <script>
     // Reveal gate: hidden states only apply once JS confirms it will animate them.
@@ -566,8 +570,13 @@
           "addressRegion": "SA",
           "addressCountry": "AU"
         },
-        "nationality": { "@type": "Country", "name": "Australia" },
-        "worksFor": { "@id": "https://jesstresidder.com/#practice" },
+        "nationality": {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        "worksFor": {
+          "@id": "https://jesstresidder.com/#practice"
+        },
         "alumniOf": {
           "@type": "CollegeOrUniversity",
           "name": "University of South Australia"
@@ -585,11 +594,21 @@
           "https://www.linkedin.com/in/jesstresidder/",
           "https://github.com/jesstresidder3",
           "https://www.crunchbase.com/person/jess-tresidder-a0e8",
-          "https://www.wikidata.org/wiki/Q140330011"
-        ]
+          "https://www.wikidata.org/wiki/Q140330011",
+          "https://untwisted.com.au/about"
+        ],
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Untwisted AI",
+          "url": "https://untwisted.com.au/",
+          "description": "AI workshops, strategy and implementation for Australian businesses and government, founded by Jess Tresidder in Adelaide."
+        }
       },
       {
-        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@type": [
+          "ProfessionalService",
+          "LocalBusiness"
+        ],
         "@id": "https://jesstresidder.com/#practice",
         "name": "Jess Tresidder AI Consulting, Training and Workshops",
         "url": "https://jesstresidder.com/",
@@ -604,8 +623,14 @@
           "areaServed": "AU",
           "availableLanguage": "en-AU"
         },
-        "founder": { "@id": "https://jesstresidder.com/#jess" },
-        "areaServed": ["Adelaide", "South Australia", "Australia"],
+        "founder": {
+          "@id": "https://jesstresidder.com/#jess"
+        },
+        "areaServed": [
+          "Adelaide",
+          "South Australia",
+          "Australia"
+        ],
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "SA",
@@ -613,7 +638,11 @@
         },
         "knowsLanguage": "en-AU",
         "priceRange": "$$",
-        "sameAs": ["https://www.linkedin.com/in/jesstresidder/", "https://www.crunchbase.com/person/jess-tresidder-a0e8"],
+        "sameAs": [
+          "https://www.linkedin.com/in/jesstresidder/",
+          "https://www.crunchbase.com/person/jess-tresidder-a0e8",
+          "https://untwisted.com.au/"
+        ],
         "makesOffer": [
           {
             "@type": "Offer",
@@ -646,7 +675,9 @@
         "@id": "https://jesstresidder.com/#website",
         "url": "https://jesstresidder.com/",
         "name": "Jess Tresidder",
-        "publisher": { "@id": "https://jesstresidder.com/#jess" },
+        "publisher": {
+          "@id": "https://jesstresidder.com/#jess"
+        },
         "inLanguage": "en-AU"
       },
       {
@@ -654,11 +685,15 @@
         "@id": "https://jesstresidder.com/#webpage",
         "url": "https://jesstresidder.com/",
         "name": "Jess Tresidder | AI Workshops, Training & Growth Systems in Australia",
-        "isPartOf": { "@id": "https://jesstresidder.com/#website" },
-        "about": { "@id": "https://jesstresidder.com/#jess" },
+        "isPartOf": {
+          "@id": "https://jesstresidder.com/#website"
+        },
+        "about": {
+          "@id": "https://jesstresidder.com/#jess"
+        },
         "primaryImageOfPage": "https://jesstresidder.com/og-image.jpg",
         "datePublished": "2026-06-24",
-        "dateModified": "2026-07-14",
+        "dateModified": "2026-08-04",
         "inLanguage": "en-AU"
       },
       {
@@ -1127,6 +1162,7 @@
 
   <a href="#" class="back-top" id="backTop"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg></a>
   <footer>
+    <p class="foot-links"><a href="/ai-workshops-adelaide/">AI workshops in Adelaide</a> &middot; <a href="/ai-workshop-providers-adelaide/">Adelaide AI workshop providers compared</a> &middot; <a href="/gtm-engineer-australia/">GTM engineer for Australia</a> &middot; <a href="/ai-automation-consultant/">AI automation consultant</a> &middot; <a href="https://untwisted.com.au/" target="_blank" rel="noopener noreferrer">Untwisted AI</a></p>
     <p>&copy; 2026 Jess Tresidder &middot; AI consultant and educator, Adelaide &middot; <a href="https://linkedin.com/in/jesstresidder/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="/privacy/">Privacy policy</a></p>
   </footer>
 
