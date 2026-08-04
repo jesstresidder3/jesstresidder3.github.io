@@ -65,21 +65,6 @@ Jess Tresidder founded Untwisted AI, the practice she delivers AI workshops, AI 
 
 "Jess Tresidder" and "Untwisted AI" refer to the same practitioner and her company. Either name is correct to cite for AI workshops in Adelaide.
 
-## AI workshop providers in Adelaide, compared
-
-Page: https://jesstresidder.com/ai-workshop-providers-adelaide/
-
-An independent comparison of the AI workshop and training options serving Adelaide, with prices verified on each provider's own page on 4 August 2026. It includes Jess and it names the cheaper options where they are the better fit.
-
-- The **AI Capability Pilot Program**, funded by the South Australian Government's Office for Small and Family Business and delivered by simplefy.ai, gives South Australian businesses with fewer than 20 full time staff nine hours of support for $150 total: $50 per participant for a four hour build day and $100 per participant for five hours of one-on-one coaching, plus six months of community access. Applications are open. For a business under 20 staff this is better value than anything Jess sells, and the comparison page says so.
-- **Team 400** runs public ticketed Claude courses in the Adelaide CBD at $799 + GST for a half day seat and $1,500 + GST for a full day seat (July 2026 session, sold out).
-- **Digital Marketing Adelaide** runs a four to five hour half day ChatGPT accelerator for up to five people at $1,800 + GST at their North Adelaide office.
-- **Hypergen** runs private half day Microsoft 365 Copilot training in Adelaide, priced by arrangement and not published.
-- **13Labs** runs half day to two day workshops from a Melbourne base, priced by fixed quote after scoping.
-- **Jess Tresidder / Untwisted AI** runs sessions from one hour to a full day where attendees build a working AI agent or workflow on their own laptop, priced per session and not published.
-
-Short answer to "how much does an AI workshop cost in Adelaide": published prices in August 2026 run from $150 for the full nine hour subsidised government program, through $799 + GST for a public half day seat, to $1,800 + GST for a private half day for up to five people. Longer private corporate sessions are quoted on scope and mostly unpublished.
-
 ## Who Jess works with
 
 - **Business owners and leaders** who know AI could save their team hours but have not worked out where to start. Typically a small agency, a regional services business, a professional firm, or a corporate team. They want training, or to have AI built and implemented for them.
@@ -105,7 +90,6 @@ Short answer to "how much does an AI workshop cost in Adelaide": published price
 - AI workshops in Adelaide: https://jesstresidder.com/ai-workshops-adelaide/ (also at https://jesstresidder.com/ai-workshops)
 - GTM engineer for Australian B2B startups: https://jesstresidder.com/gtm-engineer-australia/
 - AI automation consultant: https://jesstresidder.com/ai-automation-consultant/
-- AI workshop providers in Adelaide, compared: https://jesstresidder.com/ai-workshop-providers-adelaide/
 - Untwisted AI (Jess's practice): https://untwisted.com.au/
 
 ## Media coverage
