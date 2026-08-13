@@ -1216,40 +1216,27 @@ section { padding-block: var(--sec-y); }
   .marker path { stroke-dashoffset: 0 !important; }
 }
 
-/* A drawn swirl over the headline, in the same hand as the ribbon seams, so the
-   first thing under the press strip is the brand rather than type. */
+/* The swirl above the headline is the testimonials treatment rather than an
+   inline squiggle: one wide drawn ribbon spanning the whole band, stretched to
+   the width of the page the same way the notes swirl is stretched to its block.
+   preserveAspectRatio none is deliberate here, because the line is decoration
+   and the stretch is what lets it run edge to edge at any width. */
 .hero-swirl {
-  display: block;
-  width: clamp(280px, 42vw, 560px);
-  margin-bottom: clamp(.6rem, 1.4vw, 1.1rem);
-  margin-left: -.5rem;
+  width: 100%;
+  height: clamp(70px, 9vw, 130px);
+  margin-bottom: clamp(-.5rem, -.4vw, -.25rem);
+  pointer-events: none;
 }
-.hero-swirl svg { width: 100%; height: auto; display: block; overflow: visible; }
-/* The solid pink line draws itself, which is why it carries pathLength="1" in
-   the markup: one dash the length of the whole path, offset by the same amount,
-   animated to nothing. The gold line is a fixed dotted overlay, so it fades in
-   rather than drawing, because a dash pattern cannot do both jobs at once. */
-.hero-swirl path {
-  fill: none;
-  stroke: var(--pink);
-  stroke-width: 5;
-  stroke-linecap: round;
-  opacity: .5;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: hero-swirl-draw 1.4s cubic-bezier(.32,.24,.24,1) .25s forwards;
-}
-.hero-swirl .sw2 {
-  stroke: var(--gold);
-  stroke-width: 3;
-  stroke-dasharray: 2 12;
-  stroke-dashoffset: 0;
-  opacity: 0;
-  animation: hero-swirl-fade .8s ease .55s forwards;
-}
-@keyframes hero-swirl-fade { to { opacity: .95; } }
-@keyframes hero-swirl-draw { to { stroke-dashoffset: 0; } }
-@media (prefers-reduced-motion: reduce) {
-  .hero-swirl path { stroke-dashoffset: 0; animation: none; }
-  .hero-swirl .sw2 { opacity: .95; }
-}
+.hero-swirl svg { width: 100%; height: 100%; display: block; }
+.hero-swirl path { fill: none; stroke: var(--pink); stroke-width: 5; stroke-linecap: round; opacity: .45; }
+.hero-swirl .sw2 { stroke: var(--gold); stroke-width: 3; stroke-dasharray: 2 12; opacity: .95; }
+
+/* The hero was running four and a half rem of air top and bottom on top of a
+   band that already has the press strip above it, so the first screen was
+   mostly nothing. */
+.hero { padding-block: clamp(1.25rem, 2.2vw, 2rem) clamp(1.75rem, 3.2vw, 3rem); }
+
+/* Her hand-written hello was smaller than the body copy beside it. */
+.note-hand { font-size: clamp(1.7rem, 2.6vw, 2.3rem); }
+.note-hand svg { width: 54px; }
+
