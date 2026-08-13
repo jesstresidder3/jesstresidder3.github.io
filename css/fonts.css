@@ -1,0 +1,47 @@
+/* Self-hosted, latin subset. No external font requests on any page. */
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/cabinet-grotesk-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/cabinet-grotesk-800.woff2') format('woff2');
+}
+
+/* Variable file, one download covers 400-700 */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/hanken-grotesk-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-500.woff2') format('woff2');
+}
+
+/* The one script face, used for two words on the whole site. The full latin
+   cut is 73KB, which is absurd for that, so this is subset to letters,
+   digits and basic punctuation: 39KB, and still wide enough that the script
+   wording can be changed without regenerating the file. Deliberately not
+   preloaded, because nothing set in it appears above the fold. */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/caveat-600-subset.woff2') format('woff2');
+  unicode-range: U+20-21, U+26-27, U+2C-2E, U+30-39, U+3F, U+41-5A, U+61-7A, U+2019;
+}

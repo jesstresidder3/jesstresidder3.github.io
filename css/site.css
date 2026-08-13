@@ -1,0 +1,1170 @@
+/* ==========================================================================
+   jesstresidder.com
+   The Untwisted system, inverted.
+
+   Untwisted runs a cream ground with near-black bands and one berry accent.
+   This site flips that: white ground, and where Untwisted goes to ink, this
+   goes to a saturated colour band with white knocked out of it. Pink carries
+   the brand, teal and gold break the rhythm so the page is not one field of
+   the same colour.
+
+   Colour rule: pink is the only brand colour used for text on white, and it
+   uses the deep tint to do it. Gold is graphic-only on white (it fails as
+   text). All three grounds are safe to knock white out of.
+
+   Type: Cabinet Grotesk display, Hanken Grotesk body, IBM Plex Mono labels,
+   Caveat for the two script moments and nothing else.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* Grounds */
+  --paper:     #FFFFFF;
+  /* Measured 1.005:1 against each other and 1.07:1 against white, which is a
+     banding artefact rather than a change of ground. Deepened so the block
+     edge actually reads as an edge. Both still carry body text above 10:1. */
+  --shell:     #FFE8F0;   /* pale pink band */
+  --mist:      #DCEFEC;   /* pale teal band, so the page is not all pink */
+  --raised:    #FFFFFF;   /* cards sit on the tinted grounds */
+
+  /* Text */
+  --ink:       #1A121C;
+  --text:      #241A26;
+  --muted:     #6B5A64;   /* 6.4:1 on white. Nothing lighter than this, ever. */
+  --on-colour: #FFFFFF;
+  /* Raised from .76, which measured 4.2:1 on teal and failed AA. At .86 it
+     clears on teal and on the ink footer. It is never used on pink: see the
+     note in the colour-band block. */
+  --on-colour-muted: rgba(255,255,255,.86);
+
+  /* The brand colour */
+  --pink:      #E01B5D;   /* band ground and buttons, white knocks out at 4.7:1 */
+  --pink-deep: #A8114A;   /* pink as text on white, 7.2:1 */
+  --pink-dark: #B31450;   /* button hover */
+  --pink-tint: #FFE3EE;
+
+  /* Supporting grounds */
+  --teal:      #0B6E6B;   /* white knocks out at 6.2:1 */
+  --teal-deep: #085553;
+  --gold:      #FFC233;   /* ink sits on it, never white */
+  --gold-deep: #E0A100;
+  /* Gold as TEXT needs lifting. Full gold is 3.8:1 on teal and 2.9:1 on pink,
+     so it is a background colour and a graphic rule, not a typeface colour.
+     These two are the text-safe steps: pale gold clears AA on teal and ink,
+     and the mid step clears the large-text bar on pink. */
+  --gold-text: #FFE6A8;
+  --gold-lift: #FFD470;
+
+  --line:      #F1DDE5;
+  --line-mid:  #E4C9D5;
+  --line-on-colour: rgba(255,255,255,.28);
+
+  /* Type */
+  --display: 'Cabinet Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --body:    'Hanken Grotesk', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono:    'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --script:  'Caveat', 'Segoe Script', cursive;
+
+  /* Rhythm */
+  --gut:     clamp(1rem, 2.4vw, 2rem);
+  --pad-x:   clamp(1.25rem, 5vw, 4rem);
+  --sec-y:   clamp(3rem, 5.6vw, 5.5rem);
+  --r-sm:    8px;
+  --radius:  16px;
+  --header-h: 68px;
+
+  --ease:    cubic-bezier(.16, 1, .3, 1);
+}
+
+/* --------------------------------------------------------------- reset */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html, body { overflow-x: clip; }
+
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.68;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+img { height: auto; }
+
+button, input, textarea, select { font: inherit; color: inherit; }
+
+:where(a) { color: var(--pink-deep); text-underline-offset: .22em; text-decoration-thickness: 1px; }
+:where(a):hover { color: var(--pink-dark); }
+
+:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+/* On a saturated ground a pink ring reads as a smudge, so it goes white. */
+.on-pink :focus-visible,
+.on-teal :focus-visible { outline-color: #fff; }
+.on-gold :focus-visible { outline-color: var(--ink); }
+
+::selection { background: var(--pink); color: #fff; }
+
+section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: var(--gold);
+  color: var(--ink);
+  padding: .7em 1.1em;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+.skip:focus { left: 0; }
+.skip:focus-visible { outline-color: var(--ink); }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --------------------------------------------------------------- type */
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.028em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+h1, .h1 {
+  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.01;
+  letter-spacing: -.04em;
+}
+h2, .h2 { font-size: clamp(1.8rem, 3.9vw, 2.95rem); font-weight: 800; letter-spacing: -.034em; }
+h3, .h3 { font-size: clamp(1.2rem, 1.9vw, 1.6rem); letter-spacing: -.024em; }
+h4       { font-size: 1.0625rem; letter-spacing: -.01em; }
+
+p { max-width: 64ch; }
+p + p { margin-top: 1.05em; }
+
+.lead {
+  font-size: clamp(1.09rem, 1.55vw, 1.3rem);
+  line-height: 1.58;
+  max-width: 48ch;
+}
+
+/* The label. Sentence case, never uppercase, with a colour rule in front of
+   it doing the work an all-caps eyebrow used to do. */
+.label {
+  font-family: var(--mono);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--pink-deep);
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font-variant-numeric: tabular-nums;
+}
+.label::before {
+  content: '';
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  background: currentColor;
+  flex: 0 0 auto;
+}
+.label.is-plain::before { display: none; }
+.label-n { opacity: .7; font-variant-numeric: tabular-nums; }
+.label-n::after { content: ''; display: inline-block; width: .55em; }
+.on-pink .label, .on-teal .label { color: var(--on-colour); }
+.on-gold .label { color: var(--ink); }
+
+/* The emphasised word in a heading takes a colour, not a second typeface.
+   Swapping face and slant mid-headline is the move that makes a heading look
+   assembled from parts; a colour swap in the same cut reads as design. */
+h1 em, h2 em, h3 em { font-style: normal; color: var(--pink-deep); }
+.on-pink h2 em { color: var(--gold-lift); }
+.on-teal h2 em { color: var(--gold-text); }
+.on-gold h2 em { color: var(--pink-deep); }
+
+.muted { color: var(--muted); }
+.on-pink .muted, .on-teal .muted { color: var(--on-colour-muted); }
+
+.small { font-size: .95rem; line-height: 1.6; }
+
+/* The script accent. One word in the hero, and the margin notes. Nowhere
+   else, because a second heading in it turns the page into a greetings card. */
+.script {
+  font-family: var(--script);
+  font-weight: 600;
+  color: var(--pink-deep);
+  letter-spacing: 0;
+  /* Caveat sits small for its point size, so it is stepped up to match the
+     x-height of the Cabinet Grotesk it sits inside. */
+  font-size: 1.24em;
+  line-height: .9;
+}
+.on-pink .script { color: var(--gold-lift); }
+.on-teal .script { color: var(--gold-text); }
+
+/* Handwritten margin note with a drawn arrow. Two on the site, maximum. */
+.note-hand {
+  font-family: var(--script);
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  color: var(--pink-deep);
+  display: inline-flex;
+  align-items: flex-end;
+  gap: .4rem;
+  transform: rotate(-3deg);
+}
+.note-hand svg { width: 42px; height: auto; flex: 0 0 auto; }
+.note-hand path { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+.on-gold .note-hand { color: var(--pink-deep); }
+
+/* --------------------------------------------------------------- layout */
+
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+  padding-inline: max(var(--pad-x), env(safe-area-inset-left));
+}
+.wrap-wide { max-width: 1320px; }
+
+section { padding-block: var(--sec-y); }
+.sec-tight { padding-block: calc(var(--sec-y) * .66); }
+
+.g12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gut);
+}
+
+/* The colour bands. Hard cuts between grounds, never a gradient between
+   them: the block edge is the whole point of the system. */
+.on-shell { background: var(--shell); }
+.on-mist  { background: var(--mist); }
+
+.on-pink { background: var(--pink); color: var(--on-colour); }
+.on-teal { background: var(--teal); color: var(--on-colour); }
+.on-pink h1, .on-pink h2, .on-pink h3, .on-pink h4,
+.on-teal h1, .on-teal h2, .on-teal h3, .on-teal h4 { color: var(--on-colour); }
+/* The pink is bright, which is the brief, and the cost of that is that it
+   only carries pure white as text. Nothing on the pink band is dimmed or
+   tinted: hierarchy there comes from size and weight instead of colour.
+   Teal is darker and does carry a muted step and a pale gold. */
+.on-pink .muted,
+.on-pink .contact-direct dt,
+.on-pink .sec-head p { color: #fff; }
+.on-pink a { color: #fff; }
+.on-pink a:hover { color: var(--gold-text); }
+.on-teal a { color: var(--gold-text); }
+.on-teal a:hover { color: #fff; }
+
+.on-gold { background: var(--gold); color: var(--ink); }
+/* A colour band crowds its type at the same padding that suits white. */
+.on-pink, .on-teal, .on-gold, .on-ink { padding-block: calc(var(--sec-y) * 1.2); }
+
+/* The ink band. Kept from the old site on Jess's instruction: the bright
+   bands carry the energy and this one carries the authority, so the page
+   closes on it rather than on a second field of pink. */
+.on-ink { background: var(--ink); color: #fff; }
+.on-ink h1, .on-ink h2, .on-ink h3, .on-ink h4 { color: #fff; }
+.on-ink h2 em { color: var(--gold-lift); }
+.on-ink .label { color: var(--gold-text); }
+.on-ink .muted, .on-ink .sec-head p { color: rgba(255,255,255,.82); }
+.on-ink a { color: var(--gold-text); }
+.on-ink a:hover { color: #fff; }
+.on-ink .btn { background: var(--pink); color: #fff; }
+.on-ink .btn:hover { background: var(--pink-dark); }
+.on-ink .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.32); }
+.on-ink .btn-ghost:hover { background: rgba(255,255,255,.1); border-color: #fff; color: #fff; }
+.on-ink :focus-visible { outline-color: var(--gold-lift); }
+.on-ink .contact-direct dt { color: rgba(255,255,255,.72); }
+.on-ink .contact-direct dd a { color: #fff; text-decoration-color: rgba(255,255,255,.3); }
+.on-ink .contact-direct dd a:hover { color: var(--gold-lift); }
+.on-ink .form-card,
+.on-ink .form-card h1, .on-ink .form-card h2, .on-ink .form-card h3 { color: var(--ink); }
+.on-ink .form-card .muted { color: var(--muted); }
+.on-ink .form-card a { color: var(--pink-deep); }
+.on-ink .creds li { border-color: rgba(255,255,255,.3); color: #fff; }
+.on-gold h1, .on-gold h2, .on-gold h3 { color: var(--ink); }
+.on-gold a { color: var(--ink); }
+
+/* --------------------------------------------------------------- buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6em;
+  padding: .82em 1.5em;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  background: var(--pink);
+  color: #fff;
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: .98rem;
+  letter-spacing: -.005em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .25s var(--ease), transform .25s var(--ease), border-color .25s var(--ease);
+}
+.btn:hover { background: var(--pink-dark); color: #fff; transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line-mid);
+}
+.btn-ghost:hover { background: var(--pink-tint); color: var(--pink-deep); border-color: var(--pink); }
+
+/* On a colour ground the accent follows the ground it sits on, so the pill
+   goes gold and the ghost goes to a white outline. */
+.on-pink .btn, .on-teal .btn { background: var(--gold); color: var(--ink); }
+.on-pink .btn:hover, .on-teal .btn:hover { background: #FFD470; color: var(--ink); }
+.on-pink .btn-ghost, .on-teal .btn-ghost {
+  background: transparent; color: #fff; border-color: var(--line-on-colour);
+}
+.on-pink .btn-ghost:hover, .on-teal .btn-ghost:hover { background: rgba(255,255,255,.12); color: #fff; border-color: #fff; }
+
+.on-gold .btn { background: var(--pink); color: #fff; }
+.on-gold .btn:hover { background: var(--pink-dark); }
+
+/* Text link with a rule that draws left to right on hover. */
+.link-arrow {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .45em;
+  font-weight: 600;
+  font-size: .98rem;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  border-bottom-color: color-mix(in srgb, currentColor 32%, transparent);
+  padding-bottom: 2px;
+  position: relative;
+}
+.link-arrow::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s var(--ease);
+}
+.link-arrow:hover::after { transform: scaleX(1); }
+.link-arrow span { transition: transform .25s var(--ease); display: inline-block; }
+.link-arrow:hover span { transform: translateX(4px); }
+
+/* --------------------------------------------------------------- header */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(255,255,255,.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s var(--ease);
+}
+.site-header[data-scrolled='true'] { border-bottom-color: var(--line); }
+
+.header-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gut);
+  min-height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .6rem;
+  text-decoration: none;
+  color: var(--ink);
+  flex: 0 0 auto;
+}
+.brand-name {
+  font-family: var(--display);
+  font-size: 1.22rem;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1;
+}
+.brand-tag {
+  font-size: .82rem;
+  color: var(--muted);
+  border-left: 1px solid var(--line-mid);
+  padding-left: .6rem;
+  line-height: 1.1;
+}
+@media (max-width: 900px) { .brand-tag { display: none; } }
+
+.nav { display: flex; align-items: center; gap: clamp(.9rem, 2.1vw, 1.9rem); }
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: .95rem;
+  font-weight: 500;
+  position: relative;
+  padding-block: .35em;
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 2px;
+  background: var(--pink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .28s var(--ease);
+}
+.nav a:hover::after, .nav a[aria-current='page']::after { transform: scaleX(1); }
+.nav a[aria-current='page'] { color: var(--pink-deep); }
+/* .nav a is more specific than .btn, so the pill reclaims its own colours. */
+.nav a.btn { background: var(--pink); color: #fff; padding: .6em 1.25em; font-size: .92rem; }
+.nav a.btn:hover { background: var(--pink-dark); color: #fff; }
+.nav a.btn::after { display: none; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px; height: 42px;
+  background: none;
+  border: 1px solid var(--line-mid);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px; width: 20px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .25s var(--ease), opacity .2s;
+}
+.nav-toggle[aria-expanded='true'] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded='true'] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded='true'] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .nav-toggle { display: flex; }
+  .nav {
+    position: absolute;
+    inset: 100% 0 auto 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 34px -22px rgba(26,18,28,.4);
+    padding: .25rem var(--pad-x) 1.4rem;
+  }
+  .nav[hidden] { display: none; }
+  .nav a { padding-block: .9em; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
+  .nav a::after { display: none; }
+  .nav a.btn { margin-top: 1rem; justify-content: center; border-bottom: 0; padding: .8em 1.4em; }
+}
+
+/* --------------------------------------------------------------- ribbon */
+
+/* The weaving gold ribbon across a section seam, carried over from the last
+   version of the site at Jess's request. The line draws itself in as the
+   seam scrolls into view, with a dotted pink companion running offset behind
+   it. Sat on a zero-height seat so it overlaps both grounds and never adds
+   its own vertical space. */
+.ribbon-seam { position: relative; height: 0; z-index: 6; pointer-events: none; }
+.ribbon { position: absolute; left: 0; right: 0; top: -90px; }
+.ribbon svg { display: block; width: 100%; height: auto; overflow: visible; }
+.ribbon path {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.6s cubic-bezier(.6, 0, .2, 1) .1s;
+}
+.ribbon .rd { stroke: var(--pink); stroke-width: 2; stroke-dasharray: .004 .012; }
+/* The generic reveal fades and lifts. The ribbon opts out of both, because
+   its entrance IS the stroke drawing on: a fade over the top hides the draw. */
+.anim .ribbon.rv:not(.in) { opacity: 1; transform: none; }
+.anim .ribbon.rv:not(.in) path { stroke-dashoffset: 1; }
+.anim .ribbon.rv:not(.in) .rd { stroke-dashoffset: 1.016; }
+/* On an ink or teal seam the dotted run flips to gold's pale step, because
+   the pink dots vanish against a dark ground. */
+.ribbon.is-on-dark .rd { stroke: var(--gold-text); }
+@media (max-width: 900px) { .ribbon { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ribbon path { stroke-dashoffset: 0; } }
+
+/* --------------------------------------------------------------- press */
+
+/* Pink, so the brand colour does a real job in the first 100 pixels rather
+   than appearing once halfway down. The logos are flattened silhouettes, so
+   they invert to a clean white knockout instead of needing a second set. */
+.press {
+  background: var(--pink);
+  padding-block: .55rem;
+  display: flex;
+  align-items: center;
+  gap: clamp(.75rem, 2vw, 1.5rem);
+  padding-inline: var(--pad-x) 0;
+  overflow: hidden;
+}
+.press-title {
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: #fff;
+  max-width: none;
+  flex: none;
+  white-space: nowrap;
+}
+@media (max-width: 560px) { .press-title { display: none; } }
+
+/* The track holds the set twice and travels exactly half its own width, so
+   the second copy sits where the first started at the moment it resets.
+   Nothing measures anything, which is why it cannot drift. */
+.press-marquee {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
+          mask-image: linear-gradient(to right, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
+}
+.press-row {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: pressMarq 48s linear infinite;
+}
+.press:hover .press-row { animation-play-state: paused; }
+@keyframes pressMarq { to { transform: translateX(-50%); } }
+
+.press-row img {
+  height: 17px;
+  width: auto;
+  max-width: 118px;
+  margin-inline: clamp(1.1rem, 2.6vw, 2.1rem);
+  object-fit: contain;
+  /* brightness(0) flattens each mark to black whatever colour it shipped in,
+     then invert lifts it to pure white. A bare invert() leaves the mid-grey
+     logos as mid-grey, which reads as a smudge on the pink. */
+  filter: brightness(0) invert(1);
+}
+/* Optical sizing, one line per mark. A single height across seven logos this
+   different in proportion leaves the ABC circle a speck and The Age a banner. */
+.press-row .pl-abc        { height: 30px; }
+.press-row .pl-newscomau  { height: 21px; }
+.press-row .pl-safm       { height: 20px; }
+.press-row .pl-salife     { height: 17px; }
+.press-row .pl-advertiser { height: 15px; }
+.press-row .pl-the-age    { height: 14px; }
+.press-row .pl-bna        { height: 13px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .press-row { animation: none; }
+  .press-marquee { overflow-x: auto; }
+}
+
+/* --------------------------------------------------------------- hero */
+
+.hero { padding-block: clamp(2.5rem, 5vw, 4.5rem) clamp(2.5rem, 5vw, 4.75rem); }
+.hero-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+/* Held below the global h1 size. The homepage headline runs to three lines,
+   and at the full display size those three lines eat the whole first screen
+   and push the photo and the sub-copy under the fold. */
+.hero h1 { max-width: 16ch; line-height: 1.06; }
+/* Three paragraphs at full lead size push the buttons under the fold on a
+   laptop, so the hero sub sits a step below the lead used elsewhere. */
+.hero-sub { margin-top: 1.4rem; color: var(--text); font-size: 1.09rem; line-height: 1.6; max-width: 46ch; }
+.hero-sub p + p { margin-top: .8em; }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .9rem 1.3rem;
+  margin-top: clamp(1.75rem, 3vw, 2.4rem);
+}
+.hero-cred {
+  margin-top: clamp(1.6rem, 2.6vw, 2.1rem);
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  font-size: .98rem;
+  color: var(--muted);
+  max-width: 52ch;
+}
+.hero-cred strong { color: var(--ink); font-weight: 700; }
+.hero-cred a { color: inherit; text-decoration-color: var(--line-mid); }
+.hero-cred a:hover { color: var(--pink-deep); }
+
+/* The photo sits on a flat pink block offset behind it. A solid colour block
+   rather than a soft shadow, because the block is the system. */
+.hero-photo { position: relative; width: 340px; justify-self: end; }
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: 20px -20px -20px 20px;
+  background: var(--pink);
+  border-radius: var(--radius);
+}
+.hero-photo img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius);
+}
+
+/* The written hello, tucked into the bottom-left corner of the photo block
+   with a drawn arrow back up at her. One of only two script moments on the
+   site, and the only one that is not set inside a heading. */
+/* Sat in the white gap between the copy column and the photo, so it reads as
+   a note in the margin rather than something written across her face. */
+.hero-hello {
+  position: absolute;
+  right: calc(100% + 1.2rem);
+  bottom: 26%;
+  z-index: 2;
+  white-space: nowrap;
+}
+@media (max-width: 1180px) { .hero-hello { display: none; } }
+
+/* The drawn marker stroke under the accent word. Runs on load, once. */
+.marker { position: relative; display: inline-block; }
+/* Sat tight to the baseline. At line-height 1.06 there is barely a descender's
+   worth of room under the word, so a stroke drawn any lower crosses into the
+   line beneath it. */
+.marker svg {
+  position: absolute;
+  left: -.03em; right: -.03em;
+  bottom: -.02em;
+  width: calc(100% + .06em);
+  height: 12px;
+  overflow: visible;
+}
+.marker path {
+  fill: none;
+  stroke: var(--gold-deep);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-marker .85s var(--ease) .55s forwards;
+}
+@keyframes draw-marker { to { stroke-dashoffset: 0; } }
+
+@media (max-width: 900px) {
+  .hero-in { grid-template-columns: 1fr; gap: 2.25rem; }
+  .hero-photo { width: min(260px, 62vw); justify-self: start; order: -1; }
+  .hero h1 { max-width: none; }
+}
+
+/* --------------------------------------------------------------- sections */
+
+.sec-head { max-width: 46rem; margin-bottom: clamp(1.75rem, 3.2vw, 2.6rem); }
+.sec-head .label { margin-bottom: 1rem; }
+.sec-head p { margin-top: .9rem; color: var(--muted); }
+.on-pink .sec-head p, .on-teal .sec-head p { color: var(--on-colour-muted); }
+
+/* Broken grid: body hangs in columns 1-6, the aside sits 8-12, column 7 stays
+   empty so the two never read as a two-up template. */
+.split { align-items: start; }
+.split > .split-main { grid-column: 1 / span 6; }
+.split > .split-aside { grid-column: 8 / span 5; }
+@media (max-width: 940px) {
+  .split > .split-main, .split > .split-aside { grid-column: 1 / -1; }
+  .split > .split-aside { margin-top: 2rem; }
+}
+
+/* --------------------------------------------------------------- quotes */
+
+/* The things people actually say, stepped down and to the right so the set
+   reads as a stack of overheard lines rather than a three-column card grid. */
+.quotes { display: grid; gap: 1rem; list-style: none; padding: 0; max-width: 54rem; }
+.quotes li {
+  background: rgba(255,255,255,.1);
+  border: 1px solid var(--line-on-colour);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  font-size: 1.09rem;
+  line-height: 1.55;
+  color: #fff;
+  max-width: none;
+}
+.quotes li:nth-child(2) { margin-left: clamp(0px, 4vw, 46px); border-left-color: #fff; }
+.quotes li:nth-child(3) { margin-left: clamp(0px, 8vw, 92px); border-left-color: var(--gold); }
+
+/* --------------------------------------------------------------- person */
+
+.person { align-items: start; }
+.person-photo { grid-column: 1 / span 5; position: relative; }
+.person-photo::before {
+  content: '';
+  position: absolute;
+  inset: -20px 20px 20px -20px;
+  background: var(--gold);
+  border-radius: var(--radius);
+}
+.person-photo img { position: relative; border-radius: var(--radius); width: 100%; }
+.person-body { grid-column: 7 / -1; }
+.person-body p { color: var(--muted); }
+@media (max-width: 940px) {
+  .person-photo { grid-column: 1 / span 8; margin-left: 18px; }
+  .person-body { grid-column: 1 / -1; margin-top: 2.5rem; }
+}
+
+.creds { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
+.creds li {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .02em;
+  border: 1px solid var(--line-mid);
+  border-radius: 999px;
+  padding: .45em .95em;
+  color: var(--text);
+}
+.on-pink .creds li, .on-teal .creds li { border-color: var(--line-on-colour); color: #fff; }
+
+/* --------------------------------------------------------------- services */
+
+/* Numbered rows, not a row of three matching cards. The number, the pitch and
+   the spec sit in three different columns at three different widths, which is
+   what stops the section reading as a template. */
+.svc {
+  padding-block: clamp(1.9rem, 3.4vw, 3rem);
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+.svc:first-of-type { border-top: 0; padding-top: 0; }
+.svc-num {
+  grid-column: 1 / span 1;
+  font-family: var(--mono);
+  font-size: .8rem;
+  letter-spacing: .02em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  padding-top: .55rem;
+}
+.svc-main { grid-column: 2 / span 6; }
+.svc-spec { grid-column: 9 / span 4; }
+.svc-main h3 { font-size: clamp(1.5rem, 3vw, 2.15rem); font-weight: 800; letter-spacing: -.032em; }
+/* The strand colour lives in the dot, which is decorative. The heading itself
+   stays ink, because gold and teal both fail as text at this size on white. */
+.svc-main h3 .dot {
+  display: inline-block;
+  width: .3em; height: .3em;
+  border-radius: 50%;
+  background: var(--strand, var(--pink));
+  vertical-align: .16em;
+  margin-left: .18em;
+}
+.svc-main p { margin-top: .9rem; color: var(--muted); }
+.svc-main .link-arrow { margin-top: 1.2rem; color: var(--pink-deep); }
+.svc-spec dl { display: grid; gap: .9rem; margin: 0; }
+.svc-spec dt {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--muted);
+  margin-bottom: .25rem;
+}
+.svc-spec dd { margin: 0; font-size: .98rem; line-height: 1.5; }
+@media (max-width: 980px) {
+  .svc-num, .svc-main, .svc-spec { grid-column: 1 / -1; }
+  .svc-num { padding-top: 0; margin-bottom: .5rem; }
+  .svc-spec { margin-top: 1.6rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+}
+
+/* --------------------------------------------------------------- notes */
+
+/* Real messages, treated as physical things. They are tilted and shadowed
+   because the whole point is that somebody actually sent them, and a flat
+   bordered card would read as copy somebody wrote. */
+.notes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  gap: clamp(1.1rem, 2.4vw, 2.2rem);
+}
+/* The heading sits inside the grid rather than above it, which fills the cell
+   the third receipt leaves empty and stops the section reading as a stray
+   card on its own row. */
+.notes .sec-head { grid-row: 2; align-self: center; margin-bottom: 0; max-width: none; }
+/* text-wrap: balance shrinks a six-line heading to its narrowest even block,
+   which here left the h2 using 290px of a 630px cell. */
+.notes .sec-head h2 { text-wrap: pretty; }
+@media (max-width: 880px) { .notes .sec-head { grid-row: auto; } }
+.note {
+  margin: 0;
+  background: var(--paper);
+  border-radius: var(--r-sm);
+  padding: clamp(1rem, 1.7vw, 1.3rem) clamp(1rem, 1.7vw, 1.3rem) clamp(.85rem, 1.3vw, 1.05rem);
+  box-shadow: 0 18px 38px -24px rgba(26,18,28,.55);
+}
+.note img { width: 100%; height: auto; border-radius: 6px; }
+.note figcaption {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .02em;
+  color: var(--muted);
+  margin-top: .9rem;
+}
+.note:nth-child(1) { transform: rotate(-1.5deg); }
+.note:nth-child(2) { transform: rotate(1.1deg); }
+.note:nth-child(3) { transform: rotate(-1.9deg); }
+@media (max-width: 880px) {
+  .notes { grid-template-columns: 1fr; }
+  .note { width: min(100%, 27rem); }
+}
+@media (prefers-reduced-motion: reduce) { .note { transform: none; } }
+
+/* --------------------------------------------------------------- compare */
+
+.compare { align-items: stretch; }
+.compare-col { display: flex; }
+.compare-col:first-child { grid-column: 1 / span 5; }
+.compare-col:last-child { grid-column: 7 / -1; }
+@media (max-width: 860px) { .compare-col:first-child, .compare-col:last-child { grid-column: 1 / -1; } }
+.compare-card {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 1.5rem 1.5rem 1.6rem;
+  width: 100%;
+}
+.compare-card.is-after { background: var(--teal); border-color: var(--teal); color: #fff; }
+.compare-card.is-after h3 { color: #fff; }
+.compare-tag {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--muted);
+  margin-bottom: .85rem;
+  display: block;
+}
+.compare-card.is-after .compare-tag { color: var(--gold-text); }
+.compare-card h3 { font-size: 1.15rem; }
+
+/* The fake chatbot reply. Deliberately drab, because it is the bad example. */
+.chat { display: grid; gap: .7rem; margin-top: 1.1rem; }
+.chat-user {
+  justify-self: end;
+  max-width: 84%;
+  background: var(--ink);
+  color: #fff;
+  padding: .7rem .95rem;
+  border-radius: var(--radius) var(--radius) 4px var(--radius);
+  font-size: .93rem;
+  line-height: 1.45;
+}
+.chat-ai {
+  justify-self: start;
+  max-width: 95%;
+  background: var(--shell);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: .85rem .95rem;
+  border-radius: var(--radius) var(--radius) var(--radius) 4px;
+  font-size: .92rem;
+  line-height: 1.55;
+}
+.chat-ai strong { color: var(--text); font-weight: 700; display: block; }
+.chat-ai span { display: block; margin-top: .5rem; }
+
+.steps { list-style: none; padding: 0; margin-top: 1.1rem; display: grid; gap: .9rem; }
+.steps li { display: grid; grid-template-columns: 1.7rem 1fr; gap: .8rem; align-items: start; }
+.steps i {
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--gold-text);
+  padding-top: .3em;
+  font-variant-numeric: tabular-nums;
+}
+.steps b { display: block; font-weight: 600; font-size: .98rem; }
+.steps span { font-size: .9rem; color: var(--on-colour-muted); line-height: 1.5; }
+
+/* The steps tick through on a loop while the card beside them sits there
+   doing nothing, forever. That contrast is the argument, so it earns the one
+   piece of looping motion on the page. */
+.steps li { animation: step-run 8s linear infinite; animation-delay: calc(var(--i) * 2s); }
+@keyframes step-run {
+  0%, 1%    { opacity: .45; }
+  3%, 22%   { opacity: 1; }
+  25%, 100% { opacity: .45; }
+}
+@media (prefers-reduced-motion: reduce) { .steps li { animation: none; opacity: 1; } }
+
+.compare-note { margin-top: 1.2rem; font-size: .92rem; color: var(--muted); }
+.compare-card.is-after .compare-note { color: var(--gold-text); font-weight: 600; }
+
+/* --------------------------------------------------------------- statement */
+
+.statement {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -.034em;
+  max-width: 26ch;
+}
+.statement mark { background: none; color: var(--pink-deep); }
+
+/* The statement holds the left seven columns and the qualifier sits bottom
+   right, so the band is one composed block instead of a headline with an
+   empty half beside it. */
+.statement-row { margin-top: 1.2rem; align-items: end; }
+.statement-row .statement { grid-column: 1 / span 7; }
+.statement-row .statement-note { grid-column: 9 / -1; max-width: none; font-size: 1.05rem; line-height: 1.6; }
+@media (max-width: 940px) {
+  .statement-row .statement, .statement-row .statement-note { grid-column: 1 / -1; }
+  .statement-row .statement-note { margin-top: 1.4rem; }
+}
+.on-pink .statement mark { color: var(--gold-lift); }
+.on-teal .statement mark { color: var(--gold-text); }
+
+/* --------------------------------------------------------------- faq */
+
+.faq-layout { align-items: start; }
+.faq-photo { grid-column: 1 / span 4; position: sticky; top: calc(var(--header-h) + 24px); }
+.faq-photo img { border-radius: var(--radius); width: 100%; }
+.faq-list { grid-column: 6 / -1; }
+@media (max-width: 940px) {
+  .faq-photo { grid-column: 1 / -1; position: static; max-width: 22rem; }
+  .faq-list { grid-column: 1 / -1; margin-top: 2rem; }
+}
+
+/* Native details/summary, so it opens with no JavaScript and keyboard users
+   get it for free. */
+.faq details { border-bottom: 1px solid var(--line); }
+.faq details:first-of-type { border-top: 1px solid var(--line); }
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.15rem 2.6rem 1.15rem 0;
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:hover { color: var(--pink-deep); }
+.faq summary::after {
+  content: '';
+  position: absolute;
+  right: .4rem; top: 50%;
+  width: 12px; height: 12px;
+  border-right: 2px solid var(--pink);
+  border-bottom: 2px solid var(--pink);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform .3s var(--ease);
+}
+.faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.faq .faq-body { padding-bottom: 1.4rem; }
+.faq .faq-body p { color: var(--muted); max-width: 70ch; }
+
+/* --------------------------------------------------------------- form */
+
+.form { display: grid; gap: 1.05rem; }
+.field { display: grid; gap: .4rem; }
+.field label { font-size: .92rem; font-weight: 600; color: var(--ink); }
+.field input, .field textarea, .field select {
+  border: 1.5px solid var(--line-mid);
+  background: var(--paper);
+  color: var(--text);
+  border-radius: var(--r-sm);
+  padding: .8em .95em;
+  font-size: 1rem;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: .8; }
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none;
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(224,27,93,.16);
+}
+.field textarea { min-height: 132px; resize: vertical; }
+
+/* A white card sitting inside a colour band inherits that band's knockout
+   text colours, which paints the heading white on white. Every light surface
+   that can sit on a band has to opt back out explicitly. */
+.on-pink .form-card, .on-teal .form-card,
+.on-pink .form-card h1, .on-pink .form-card h2, .on-pink .form-card h3,
+.on-teal .form-card h1, .on-teal .form-card h2, .on-teal .form-card h3 { color: var(--ink); }
+.on-pink .form-card .muted, .on-teal .form-card .muted { color: var(--muted); }
+.on-pink .form-card a, .on-teal .form-card a { color: var(--pink-deep); }
+.on-pink .note, .on-teal .note,
+.on-pink .note figcaption, .on-teal .note figcaption { color: var(--muted); }
+.on-pink .compare-card:not(.is-after), .on-teal .compare-card:not(.is-after) { color: var(--text); }
+.on-pink .compare-card:not(.is-after) h3, .on-teal .compare-card:not(.is-after) h3 { color: var(--ink); }
+
+.form-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--text);
+}
+.form-card h3 { margin-bottom: 1.2rem; }
+.form-card .btn { width: 100%; justify-content: center; background: var(--pink); color: #fff; }
+.form-card .btn:hover { background: var(--pink-dark); }
+
+/* The contact heading is a long single sentence carried over from the live
+   page. At full h2 size it runs to five lines and swamps the band. */
+#contact .split-main h2 { font-size: clamp(1.6rem, 2.7vw, 2.2rem); max-width: 18ch; }
+
+.contact-direct { display: grid; gap: 1.2rem; margin-top: 1.9rem; }
+.contact-direct dt {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--on-colour-muted);
+  margin-bottom: .2rem;
+}
+.contact-direct dd { margin: 0; font-size: 1.09rem; }
+.contact-direct dd a { color: #fff; text-decoration-color: var(--line-on-colour); }
+.contact-direct dd a:hover { color: var(--gold); }
+
+.book-row { display: flex; align-items: center; gap: 1.1rem; margin-top: 1.9rem; flex-wrap: wrap; }
+.book-avatar {
+  width: 74px; height: 88px;
+  border-radius: var(--r-sm);
+  object-fit: cover;
+  object-position: top;
+  flex: 0 0 auto;
+}
+
+/* --------------------------------------------------------------- footer */
+
+.site-footer {
+  background: var(--ink);
+  color: #fff;
+  padding-block: clamp(2.2rem, 3.6vw, 3rem) 1.7rem;
+}
+.footer-top { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gut); }
+.footer-brand { grid-column: 1 / span 5; }
+.footer-brand .brand-name { color: #fff; font-size: 1.5rem; }
+.footer-brand p { color: rgba(255,255,255,.7); margin-top: .8rem; font-size: .98rem; max-width: 34ch; }
+.footer-nav { grid-column: 7 / span 3; }
+.footer-contact { grid-column: 10 / span 3; }
+.footer-nav h2, .footer-contact h2 {
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: rgba(255,255,255,.62);
+  margin-bottom: .9rem;
+}
+.footer-nav ul, .footer-contact ul { list-style: none; padding: 0; display: grid; gap: .55rem; }
+.footer-nav a, .footer-contact a { color: #fff; text-decoration: none; font-size: .96rem; }
+.footer-nav a:hover, .footer-contact a:hover { color: var(--gold); }
+.footer-stamp {
+  margin-top: clamp(2.2rem, 4.5vw, 3.5rem);
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255,255,255,.16);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .7rem 1.5rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .02em;
+  color: rgba(255,255,255,.62);
+}
+.footer-stamp a { color: rgba(255,255,255,.62); text-decoration-color: rgba(255,255,255,.3); }
+.footer-stamp a:hover { color: #fff; }
+.site-footer :focus-visible { outline-color: var(--gold); }
+@media (max-width: 900px) {
+  .footer-brand, .footer-nav, .footer-contact { grid-column: 1 / -1; }
+  .footer-nav, .footer-contact { margin-top: 1.9rem; }
+}
+
+/* --------------------------------------------------------------- page hero */
+
+/* Inner pages open the same way: the title on white, then a pink rule that
+   carries the eye into the first section. */
+.page-hero { padding-block: clamp(2.5rem, 4.5vw, 4rem) clamp(2rem, 3.5vw, 3rem); }
+.page-hero .label { margin-bottom: 1.1rem; }
+.page-hero h1 { max-width: 17ch; }
+.page-hero .lead { margin-top: 1.4rem; max-width: 54ch; color: var(--muted); }
+.page-hero .hero-actions { margin-top: 2rem; }
+
+/* --------------------------------------------------------------- reveal */
+
+/* Hidden states only apply once the head script confirms an observer exists
+   and motion is allowed, so no-JS and reduced-motion render from first paint. */
+.rv { transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.anim .rv:not(.in) { opacity: 0; transform: translateY(20px); }
+.rv.in { transition-delay: calc(var(--i, 0) * 80ms); }
+
+/* The headline arrives from under a mask rather than fading up. A fade reads
+   as a page still loading; a mask reads as a decision. The padding and the
+   negative margin cancelling it are not optional: overflow hidden clips
+   descenders otherwise, and a sheared 'y' gives the technique away. */
+.mask { display: block; overflow: hidden; padding-bottom: .14em; margin-bottom: -.14em; }
+.mask > * { display: block; }
+@keyframes mask-up { from { transform: translateY(106%); } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(16px); } }
+.hero .mask > *, .page-hero .mask > * {
+  animation: mask-up 1s var(--ease) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 120ms);
+}
+.hero .rise, .page-hero .rise {
+  animation: rise-in .9s var(--ease) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 120ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  .rv, .anim .rv:not(.in) { opacity: 1 !important; transform: none !important; }
+  .marker path { stroke-dashoffset: 0 !important; }
+}
