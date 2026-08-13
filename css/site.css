@@ -537,7 +537,7 @@ section { padding-block: var(--sec-y); }
    reads on a light ground. A pink rule closes the strip so the brand still
    owns the first 120 pixels. */
 .press {
-  background: var(--paper);
+  background: var(--butter);
   border-bottom: 3px solid var(--pink);
   padding-block: .55rem;
   display: flex;
@@ -866,12 +866,12 @@ section { padding-block: var(--sec-y); }
    the seams, sized to the band and sitting under the cards. */
 .notes-swirl {
   position: absolute;
-  inset: -8% -6%;
+  inset: -10% -6% 42% -6%;
   z-index: 0;
   pointer-events: none;
 }
 .notes-swirl svg { width: 100%; height: 100%; }
-.notes-swirl path { fill: none; stroke: var(--pink); stroke-width: 5; stroke-linecap: round; opacity: .5; }
+.notes-swirl path { fill: none; stroke: var(--pink); stroke-width: 5; stroke-linecap: round; opacity: .38; }
 .notes-swirl .sw2 { stroke: #fff; stroke-width: 2.5; stroke-dasharray: 2 14; opacity: .9; }
 .notes > * { position: relative; z-index: 1; }
 /* Declared after the child rule above so it wins the tie: the swirl leaves
@@ -1214,4 +1214,27 @@ section { padding-block: var(--sec-y); }
   }
   .rv, .anim .rv:not(.in) { opacity: 1 !important; transform: none !important; }
   .marker path { stroke-dashoffset: 0 !important; }
+}
+
+/* A drawn swirl over the headline, in the same hand as the ribbon seams, so the
+   first thing under the press strip is the brand rather than type. */
+.hero-swirl {
+  display: block;
+  width: clamp(180px, 22vw, 300px);
+  margin-bottom: clamp(.9rem, 1.8vw, 1.4rem);
+}
+.hero-swirl svg { width: 100%; height: auto; display: block; overflow: visible; }
+.hero-swirl path {
+  fill: none;
+  stroke: var(--pink);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: hero-swirl-draw 1.4s cubic-bezier(.32,.24,.24,1) .25s forwards;
+}
+.hero-swirl .sw2 { stroke: var(--gold); stroke-width: 2.5; opacity: .9; animation-delay: .42s; }
+@keyframes hero-swirl-draw { to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-swirl path { stroke-dashoffset: 0; animation: none; }
 }
