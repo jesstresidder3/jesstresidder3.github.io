@@ -53,6 +53,37 @@
     window.addEventListener('scroll', setScrolled, { passive: true });
   }
 
+  /* ---- contact form ---- */
+  // Posted natively, FormSubmit decides what the visitor sees next and it is
+  // frequently their own branded page rather than the _next redirect. The
+  // AJAX endpoint returns JSON and never navigates, so the send happens in
+  // the background and the visitor lands on /thank-you/ every time. The
+  // native POST with _next stays as the no-JS fallback.
+  var form = document.querySelector('form[action*="formsubmit.co"]');
+  if (form && window.fetch) {
+    var onContactSubmit = function (ev) {
+      ev.preventDefault();
+      var btn = form.querySelector('[type="submit"]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      var url = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+      fetch(url, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      }).then(function (r) {
+        if (!r.ok) throw new Error('send failed');
+        window.location.href = '/thank-you/';
+      }).catch(function () {
+        // The background send failed, so fall back to the native POST and
+        // let FormSubmit handle it however it will.
+        if (btn) { btn.disabled = false; }
+        form.removeEventListener('submit', onContactSubmit);
+        form.submit();
+      });
+    };
+    form.addEventListener('submit', onContactSubmit);
+  }
+
   /* ---- reveal on entry ---- */
   if ('IntersectionObserver' in window && document.documentElement.classList.contains('anim')) {
     var obs = new IntersectionObserver(function (entries) {
