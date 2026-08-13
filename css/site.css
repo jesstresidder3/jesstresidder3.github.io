@@ -26,6 +26,7 @@
      edge actually reads as an edge. Both still carry body text above 10:1. */
   --shell:     #FFE8F0;   /* pale pink band */
   --mist:      #DCEFEC;   /* pale teal band, so the page is not all pink */
+  --butter:    #FFEFC2;   /* pale gold band; ink 16:1, muted 5.6:1, pink-deep 6.5:1 */
   --raised:    #FFFFFF;   /* cards sit on the tinted grounds */
 
   /* Text */
@@ -268,6 +269,7 @@ section { padding-block: var(--sec-y); }
    them: the block edge is the whole point of the system. */
 .on-shell { background: var(--shell); }
 .on-mist  { background: var(--mist); }
+.on-butter { background: var(--butter); }
 
 .on-pink { background: var(--pink); color: var(--on-colour); }
 .on-teal { background: var(--teal); color: var(--on-colour); }
@@ -530,11 +532,13 @@ section { padding-block: var(--sec-y); }
 
 /* --------------------------------------------------------------- press */
 
-/* Pink, so the brand colour does a real job in the first 100 pixels rather
-   than appearing once halfway down. The logos are flattened silhouettes, so
-   they invert to a clean white knockout instead of needing a second set. */
+/* White, so the mastheads run in their own colours: Jess asked for the
+   original coloured logos over the knockout treatment, and colour only
+   reads on a light ground. A pink rule closes the strip so the brand still
+   owns the first 120 pixels. */
 .press {
-  background: var(--pink);
+  background: var(--paper);
+  border-bottom: 3px solid var(--pink);
   padding-block: .55rem;
   display: flex;
   align-items: center;
@@ -547,7 +551,7 @@ section { padding-block: var(--sec-y); }
   font-size: .7rem;
   font-weight: 500;
   letter-spacing: .04em;
-  color: #fff;
+  color: var(--pink-deep);
   max-width: none;
   flex: none;
   white-space: nowrap;
@@ -565,6 +569,10 @@ section { padding-block: var(--sec-y); }
   -webkit-mask-image: linear-gradient(to right, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
           mask-image: linear-gradient(to right, transparent, #000 3rem, #000 calc(100% - 3rem), transparent);
 }
+/* The coloured set brightens to full strength under the cursor, the same
+   move the old site ran. */
+.press-row img { filter: grayscale(.15) opacity(.92); transition: filter .3s var(--ease); }
+.press-row img:hover { filter: none; }
 .press-row {
   display: flex;
   width: max-content;
@@ -575,25 +583,21 @@ section { padding-block: var(--sec-y); }
 @keyframes pressMarq { to { transform: translateX(-50%); } }
 
 .press-row img {
-  height: 17px;
+  height: 18px;
   width: auto;
-  max-width: 118px;
+  max-width: 150px;
   margin-inline: clamp(1.1rem, 2.6vw, 2.1rem);
   object-fit: contain;
-  /* brightness(0) flattens each mark to black whatever colour it shipped in,
-     then invert lifts it to pure white. A bare invert() leaves the mid-grey
-     logos as mid-grey, which reads as a smudge on the pink. */
-  filter: brightness(0) invert(1);
 }
 /* Optical sizing, one line per mark. A single height across seven logos this
    different in proportion leaves the ABC circle a speck and The Age a banner. */
-.press-row .pl-abc        { height: 30px; }
-.press-row .pl-newscomau  { height: 21px; }
-.press-row .pl-safm       { height: 20px; }
-.press-row .pl-salife     { height: 17px; }
-.press-row .pl-advertiser { height: 15px; }
-.press-row .pl-the-age    { height: 14px; }
-.press-row .pl-bna        { height: 13px; }
+.press-row .pl-abc        { height: 32px; }
+.press-row .pl-safm       { height: 22px; }
+.press-row .pl-newscomau  { height: 22px; }
+.press-row .pl-bna        { height: 22px; }
+.press-row .pl-advertiser { height: 16px; }
+.press-row .pl-salife     { height: 14px; }
+.press-row .pl-the-age    { height: 15px; }
 
 @media (prefers-reduced-motion: reduce) {
   .press-row { animation: none; }
@@ -754,6 +758,22 @@ section { padding-block: var(--sec-y); }
   .person-body { grid-column: 1 / -1; margin-top: 2.5rem; }
 }
 
+/* Display scale on the about heading, and a drawn squiggle under it, so the
+   section carries the same weight as the testimonial band above it. */
+.person-body h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); }
+.person-squig { display: block; max-width: 240px; margin-top: .9rem; }
+.person-squig svg { width: 100%; height: auto; }
+.person-squig path {
+  fill: none;
+  stroke: var(--gold-deep);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.1s cubic-bezier(.6, 0, .2, 1) .25s;
+}
+.anim .rv:not(.in) .person-squig path { stroke-dashoffset: 1; }
+
 .creds { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.6rem; }
 .creds li {
   font-family: var(--mono);
@@ -826,14 +846,37 @@ section { padding-block: var(--sec-y); }
   grid-template-columns: repeat(2, 1fr);
   align-items: start;
   gap: clamp(1.1rem, 2.4vw, 2.2rem);
+  position: relative;
 }
 /* The heading sits inside the grid rather than above it, which fills the cell
    the third receipt leaves empty and stops the section reading as a stray
-   card on its own row. */
+   card on its own row. Display scale, on Jess's instruction: the receipts
+   shrink and the words grow. */
 .notes .sec-head { grid-row: 2; align-self: center; margin-bottom: 0; max-width: none; }
 /* text-wrap: balance shrinks a six-line heading to its narrowest even block,
    which here left the h2 using 290px of a 630px cell. */
-.notes .sec-head h2 { text-wrap: pretty; }
+.notes .sec-head h2 { text-wrap: pretty; font-size: clamp(2rem, 3.6vw, 3.1rem); }
+/* Held below the cell width so the screenshots read as clippings pinned to
+   the band rather than as panels of it. The odd cards keep left, the even
+   push right, so the column edges stop lining up. */
+.notes .note { width: min(100%, 30rem); }
+.notes figure:nth-of-type(even) { justify-self: end; }
+
+/* The pink swirl running behind the receipts. Same drawn-ribbon language as
+   the seams, sized to the band and sitting under the cards. */
+.notes-swirl {
+  position: absolute;
+  inset: -8% -6%;
+  z-index: 0;
+  pointer-events: none;
+}
+.notes-swirl svg { width: 100%; height: 100%; }
+.notes-swirl path { fill: none; stroke: var(--pink); stroke-width: 5; stroke-linecap: round; opacity: .5; }
+.notes-swirl .sw2 { stroke: #fff; stroke-width: 2.5; stroke-dasharray: 2 14; opacity: .9; }
+.notes > * { position: relative; z-index: 1; }
+/* Declared after the child rule above so it wins the tie: the swirl leaves
+   the grid flow entirely and sits under the cards. */
+.notes > .notes-swirl { position: absolute; z-index: 0; }
 @media (max-width: 880px) { .notes .sec-head { grid-row: auto; } }
 .note {
   margin: 0;
@@ -850,14 +893,18 @@ section { padding-block: var(--sec-y); }
   color: var(--muted);
   margin-top: .9rem;
 }
-.note:nth-child(1) { transform: rotate(-1.5deg); }
-.note:nth-child(2) { transform: rotate(1.1deg); }
-.note:nth-child(3) { transform: rotate(-1.9deg); }
+.note { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.notes figure:nth-of-type(1) { transform: rotate(-1.5deg); }
+.notes figure:nth-of-type(2) { transform: rotate(1.1deg); }
+.notes figure:nth-of-type(3) { transform: rotate(-1.9deg); }
+/* Straightening under the cursor is the interaction: the clipping picks
+   itself up off the band to be read. */
+.note:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 26px 44px -24px rgba(26,18,28,.6); }
 @media (max-width: 880px) {
   .notes { grid-template-columns: 1fr; }
   .note { width: min(100%, 27rem); }
 }
-@media (prefers-reduced-motion: reduce) { .note { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .notes figure { transform: none !important; } }
 
 /* --------------------------------------------------------------- compare */
 
