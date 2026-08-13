@@ -537,7 +537,7 @@ section { padding-block: var(--sec-y); }
    reads on a light ground. A pink rule closes the strip so the brand still
    owns the first 120 pixels. */
 .press {
-  background: var(--butter);
+  background: var(--paper);
   border-bottom: 3px solid var(--pink);
   padding-block: .55rem;
   display: flex;
@@ -1240,3 +1240,19 @@ section { padding-block: var(--sec-y); }
 .note-hand { font-size: clamp(1.7rem, 2.6vw, 2.3rem); }
 .note-hand svg { width: 54px; }
 
+
+/* The header carries the butter band instead of the press strip. Three white
+   bands stacked at the top of the page (header, press, hero) read as one large
+   blank, and colouring the top one gives the page an edge to start from.
+   The comment block on --butter records the measured contrast: ink 16:1 and
+   pink-deep 6.5:1 on this ground, so the nav links and the current-page state
+   both clear AA without changing colour. */
+.site-header { background: rgba(255, 239, 194, .96); }
+.site-header[data-scrolled='true'] { border-bottom-color: rgba(26, 18, 28, .14); }
+
+/* The mobile panel drops out of the header, so it takes the header's ground
+   rather than reverting to white halfway down the screen. */
+@media (max-width: 900px) {
+  .nav { background: #FFEFC2; }
+  .nav a { border-bottom-color: rgba(26, 18, 28, .12); }
+}
