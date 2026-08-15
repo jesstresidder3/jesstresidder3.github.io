@@ -617,6 +617,38 @@ section { padding-block: var(--sec-y); }
    and at the full display size those three lines eat the whole first screen
    and push the photo and the sub-copy under the fold. */
 .hero h1 { max-width: 16ch; line-height: 1.06; }
+/* The advocacy line, set between the headline and the sub-copy. It runs in the
+   display face so it reads as a second headline rather than as the first line
+   of the paragraph under it, with the pink opening the line and the gold
+   sweep under the phrase that carries the point. */
+.hero-tag {
+  margin-top: 1.15rem;
+  max-width: 44ch;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.04rem, 1.5vw, 1.18rem);
+  line-height: 1.5;
+  letter-spacing: -.015em;
+  color: var(--ink);
+}
+.hero-tag-lead { color: var(--pink-deep); font-weight: 800; }
+/* Held on one line so the sweep never breaks in half across a line end, and
+   kept shallow so it runs under the descenders rather than through them. */
+.hero-tag-hi {
+  white-space: nowrap;
+  box-shadow: inset 0 -.26em 0 var(--gold);
+  padding-inline: .1em;
+}
+.person-tag {
+  margin-top: 1.3rem;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.06rem;
+  line-height: 1.45;
+  letter-spacing: -.015em;
+  color: var(--ink);
+}
+
 /* Three paragraphs at full lead size push the buttons under the fold on a
    laptop, so the hero sub sits a step below the lead used elsewhere. */
 .hero-sub { margin-top: 1.4rem; color: var(--text); font-size: 1.09rem; line-height: 1.6; max-width: 46ch; }
@@ -1339,6 +1371,26 @@ section { padding-block: var(--sec-y); }
   line-height: 1;
 }
 .venture-note { font-size: .95rem; line-height: 1.5; color: rgba(255,255,255,.72); max-width: 46ch; }
+/* The founder credit, carried as a face plus a mono line rather than as another
+   sentence in the note. It is the one place on the page where the two
+   businesses are tied together, so it gets the gold and its own row. */
+.venture-by {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  margin-top: .5rem;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .06em;
+  color: var(--gold-text);
+}
+.venture-by img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--gold);
+}
 .venture-go {
   display: inline-flex;
   align-items: center;
@@ -1358,6 +1410,22 @@ section { padding-block: var(--sec-y); }
   .venture-card { grid-template-columns: minmax(0, 1fr); text-align: left; }
   .venture-go { justify-self: start; }
 }
+
+/* The same card again, sitting directly under the hero at about two thirds the
+   size. The full version lower down keeps the description line; this one runs
+   on the name, the founder credit and the button, so it reads as a signpost
+   instead of repeating the section below it. */
+.venture-lift { margin-block: clamp(.5rem, 1.4vw, 1.1rem) clamp(1.5rem, 3vw, 2.5rem); }
+.venture-card--slim {
+  margin-top: 0;
+  padding: clamp(1rem, 2.1vw, 1.4rem) clamp(1.1rem, 2.4vw, 1.7rem);
+  gap: clamp(.9rem, 2vw, 1.5rem);
+}
+.venture-card--slim .venture-mark { width: clamp(54px, 6vw, 78px); }
+.venture-card--slim .venture-title { font-size: clamp(1.3rem, 2.3vw, 1.7rem); }
+.venture-card--slim .venture-label { font-size: .68rem; }
+.venture-card--slim .venture-by { margin-top: .35rem; }
+.venture-card--slim .venture-go { padding: .64em 1.15em; font-size: .88rem; }
 
 /* The venture is named in the hero credit line and in the about block, so the
    link is marked rather than left to look like body text. */
