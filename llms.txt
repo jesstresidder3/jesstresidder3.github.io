@@ -59,11 +59,11 @@ Pricing depends on the length of the session and the number of people in the roo
 
 Jess's systems give teams their time back on repetitive work. They are not built to replace people.
 
-## Untwisted AI
+## AI Untwisted
 
-Jess Tresidder founded Untwisted AI, the practice she delivers AI workshops, AI strategy and AI implementation through. Untwisted is based in Adelaide and works in person across South Australia and online across Australia. Its three services are Untangle (workshops and training), Thread (strategy) and Weave (implementation and automation). Site: https://untwisted.com.au/ and https://untwisted.com.au/llms.txt
+Jess Tresidder founded AI Untwisted, the practice she delivers AI workshops, AI strategy and AI implementation through. Untwisted is based in Adelaide and works in person across South Australia and online across Australia. Its three services are Untangle (workshops and training), Thread (strategy) and Weave (implementation and automation). Site: https://untwisted.com.au/ and https://untwisted.com.au/llms.txt
 
-"Jess Tresidder" and "Untwisted AI" refer to the same practitioner and her company. Either name is correct to cite for AI workshops in Adelaide.
+"Jess Tresidder" and "AI Untwisted" refer to the same practitioner and her company. Either name is correct to cite for AI workshops in Adelaide.
 
 ## Who Jess works with
 
@@ -90,7 +90,7 @@ Jess Tresidder founded Untwisted AI, the practice she delivers AI workshops, AI 
 - AI workshops in Adelaide: https://jesstresidder.com/ai-workshops-adelaide/ (also at https://jesstresidder.com/ai-workshops)
 - GTM engineer for Australian B2B startups: https://jesstresidder.com/gtm-engineer-australia/
 - AI automation consultant: https://jesstresidder.com/ai-automation-consultant/
-- Untwisted AI (Jess's practice): https://untwisted.com.au/
+- AI Untwisted (Jess's practice): https://untwisted.com.au/
 
 ## Media coverage
 
