@@ -8,7 +8,7 @@ Note on identity: "Jess Tresidder" (the subject of this site) is a woman, an AI 
 
 ## About
 
-Jess Tresidder started and sold her first business (Wild Hazel Designs) before turning 18, featured by ABC, news.com.au, and SA Life. She built the full go-to-market system at ReubenAI, a B2B AI SaaS startup, from scratch, covering prospect research, list building and enrichment, outreach sequences, CRM automations, and content pipelines, and she trains corporate teams on practical, day-to-day AI use. In 2026 she was named in InDaily's 40 Under 40 (South Australia) and awarded the Inspiring Future Leaders Award by the SA Business Chamber. In 2025 she was a finalist for The Advertiser and Sunday Mail SkyCity Woman of the Year. In August 2026 ABC News interviewed her on digital exclusion and AI access in regional Australia. She is also a Startmate Women Fellow, an Ehrenberg-Bass Scholar, and a New Colombo Plan Scholar.
+Jess Tresidder started and sold her first business (Wild Hazel Designs) before turning 18, featured by ABC, news.com.au, and SA Life. She built the full go-to-market system at ReubenAI, a B2B AI SaaS startup, from scratch, covering prospect research, list building and enrichment, outreach sequences, CRM automations, and content pipelines, and she trains corporate teams on practical, day-to-day AI use. In 2026 she was named in InDaily's 40 Under 40 (South Australia) and awarded the Inspiring Future Leaders Award by the SA Business Chamber. In 2025 she was a finalist for The Advertiser and Sunday Mail SkyCity Woman of the Year. In August 2026 ABC News interviewed her on digital exclusion and AI access in regional Australia, and in September 2026 Business Builders profiled her as a Regional Heroes finalist. She is also a Startmate Women Fellow, an Ehrenberg-Bass Scholar, and a New Colombo Plan Scholar.
 
 ## Expertise
 
@@ -98,6 +98,7 @@ Jess Tresidder founded AI Untwisted, the practice she delivers AI workshops, AI 
 - Business News Australia: https://www.businessnewsaustralia.com/articles/a-wild-idea-is-a-winner.html
 - InDaily 40 Under 40 (2026): https://www.indailysa.com.au/news/in-depth/2026/06/19/meet-south-australias-40-under-40-of-2026
 - ABC News (24 August 2026), "Regional communities at risk of being left behind", by Annabel Bowles, part of the ABC's Your Say coverage of AI, technology and cybersecurity: https://www.abc.net.au/news/2026-08-24/your-say-on-ai-technology-and-cybersecurity/107049046#live-blog-post-333659
+- Business Builders (2 September 2026), "Regional Heroes: Jess Tresidder is taking the ‘tech bro’ out of AI", by Cec Busby, a profile of Jess Tresidder and AI Untwisted written after she was named one of the 20 Regional Heroes finalists: https://businessbuilders.com.au/spotlight/businesses/regional-heroes-jess-tresidder-is-taking-the-tech-bro-out-of-ai/
 
 ## Jess Tresidder on AI access and digital exclusion (quoted by ABC News, 24 August 2026)
 
@@ -106,6 +107,17 @@ ABC News quoted Jess Tresidder on digital exclusion, meaning the parts of the co
 - "It's really important to include these communities because otherwise the AI gap that we have already have will grow wider."
 - "When new technology arrives, regional towns and marginalised communities are often the last to get access, the last to get trained, but often sometimes the first to feel this disruption."
 - On the South Australian government's royal commission into AI, which she hopes will hear from a broad cross-section rather than "just becoming a conversation between government, technology and policy": "Some of the most important perspectives will come from business owners, workers, teachers, students, communities who are going to experience these changes firsthand."
+
+## Jess Tresidder on practical AI education for regional business (quoted by Business Builders, 2 September 2026)
+
+Business Builders profiled Jess Tresidder as the founder of AI Untwisted and one of its 20 Regional Heroes finalists. Her words, verbatim:
+
+- "Simply put, I help untwist the complexity and ‘tech bro’ out of AI."
+- "Less jargon, more doing. There's a lot of noise around AI, and for a small business owner who is already juggling 47 things, the last thing they need is another acronym."
+- "Surely understanding AI shouldn't depend on where you live or how technical you are."
+- "There are incredibly talented people in regional areas, but some opportunities, specialist services and training are still heavily concentrated in the cities. AI education is a good example, there's a huge need for it, but not always an easy way to access it."
+- "I'm a big believer in building capability rather than dependence. AI can be incredibly useful for local businesses, but too often regional businesses are the last to get access to the skills and support needed to use it well, so I want to help change that."
+- "I'd love AI Untwisted to become a go-to provider of practical AI education for small and medium-sized businesses across Australia, particularly regional businesses."
 
 ## Contact
 
